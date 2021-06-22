@@ -36,6 +36,8 @@
     </script>
     <link rel="stylesheet" type="text/css" href="css/aos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <!-- <script src="https://kit.fontawesome.com/274adbce03.js"></script> -->
 </head>
 <body>
@@ -59,44 +61,48 @@
                 <a href="https://www.instagram.com/foodstudiosl/" target="_blank">  <span> <i class="fa fa-instagram"></i> </span></a>
             </div>
             <div class="footer-navigation">
-                <ul class="nav navbar-nav navbar-center">
-                    <li class="active">
-                        <a href="https://www.foodstudio.lk/">
-                            Home              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/about-us">
-                            About Us              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/tenant-and-cuisines">
-                            Tenants &amp; Cuisines              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/whats-on">
-                            What's On              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/event-spaces">
-                            Event Spaces              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/media">
-                            Media              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/fs-store">
-                            FS Store              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/careers">
-                            Careers              </a>
-                    </li>
-                    <li>
-                        <a href="https://www.foodstudio.lk/contact-us">
-                            Contact Us              </a>
-                    </li>
-                </ul>
+              <ul class="nav navbar-nav navbar-center">
+
+                <li class="{{ Request::segment(1)==null ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/">
+                        Home</a>
+                </li>
+                <li class="{{ Request::segment(1)=='about-us' ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/about-us">
+                        About Us</a>
+                </li>
+                <li class="{{ Request::segment(1)=='tenant-and-cuisines' ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/tenant-and-cuisines">
+                        Tenants &amp; Cuisines</a>
+                </li>
+                <li class="{{ Request::segment(1)=='whats-on' ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/whats-on">
+                        What's On</a>
+                </li>
+                <li class="{{ Request::segment(1)=='event-spaces' ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/event-spaces">
+                        Event Spaces</a>
+                </li>
+                <li class="{{ Request::segment(1)=='media' ? 'active' :null || 
+                                Request::segment(1)=='media-tenant' ? 'active' :null || Request::segment(1)=='media-video' ? 'active' :null ||
+                                Request::segment(1)=='media-social' ? 'active' :null }}">
+                                    <a href="http://127.0.0.1:8000/media">
+                                        Media              </a>
+                </li>
+                
+                <li class="{{ Request::segment(1)=='fs-store' ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/fs-store">
+                        FS Store</a>
+                </li>
+                <li class="{{ Request::segment(1)=='careers' ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/careers">
+                        Careers</a>
+                </li>
+                <li class="{{ Request::segment(1)=='contact-us' ? 'active' :null }}">
+                    <a href="http://127.0.0.1:8000/contact-us">
+                        Contact Us</a>
+                </li>
+              </ul>
             </div>
         </div>
     </div>
@@ -105,7 +111,7 @@
         <div class="container-fuild">
             <div class="row m-0">
                 <div class="col-sm-6 text-left">
-                    <p>&copy;  All Rights Reserved.</p>
+                    <p>&copy; 2021 All Rights Reserved.</p>
                 </div>
                 <div class="col-sm-6 text-right">
                     <p>Web Design &amp; Development by <a href="https://www.enspirer.com" target="_blank"><b>Enspirer</b></a></p>
@@ -115,3 +121,101 @@
     </div>
 </footer>
 <a id="button"></a>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://www.foodstudio.lk/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.foodstudio.lk/js/aos.js"></script>
+<script type="text/javascript" src="https://www.foodstudio.lk/js/script.js"></script>
+<!--<script type="text/javascript" src="https://www.foodstudio.lk/js/jquery.easing.min.js"></script>-->
+<!--<script type="text/javascript" src="https://www.foodstudio.lk/js/jslide.js"></script>-->
+
+<script type="text/javascript" src="https://www.foodstudio.lk/js/owl.carousel.min.js"></script>
+<!-- <script type="text/javascript" src="js/owl.carousel.min.js"></script> -->
+
+<script type="text/javascript">
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 35,
+    nav: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+</script>
+
+<script type="text/javascript">
+    $('#homeCarousel').carousel({
+      interval: 2000
+    });
+</script>
+<script type="text/javascript">
+
+        $('#slides-a').jslide({
+            mode: 'fade'
+        });
+
+</script>
+
+<script>
+        var duration = 20; // duration in seconds
+var fadeAmount = 0.3; // fade duration amount relative to the time the image is visible
+
+$(document).ready(function (){
+  var images = $("#slideshow img");
+  var numImages = images.size();
+  var durationMs = duration * 1000;
+  var imageTime = durationMs / numImages; // time the image is visible 
+  var fadeTime = imageTime * fadeAmount; // time for cross fading
+  var visibleTime = imageTime  - (imageTime * fadeAmount * 2);// time the image is visible with opacity == 1
+  var animDelay = visibleTime * (numImages - 1) + fadeTime * (numImages - 2); // animation delay/offset for a single image 
+  
+  images.each( function( index, element ){
+    if(index != 0){
+      $(element).css("opacity","0");
+      setTimeout(function(){
+        doAnimationLoop(element,fadeTime, visibleTime, fadeTime, animDelay);
+      },visibleTime*index + fadeTime*(index-1));
+    }else{
+      setTimeout(function(){
+        $(element).animate({opacity:0},fadeTime, function(){
+          setTimeout(function(){
+            doAnimationLoop(element,fadeTime, visibleTime, fadeTime, animDelay);
+          },animDelay )
+        });
+      },visibleTime);
+    }
+  });
+});
+
+// creates a animation loop
+function doAnimationLoop(element, fadeInTime, visibleTime, fadeOutTime, pauseTime){
+  fadeInOut(element,fadeInTime, visibleTime, fadeOutTime ,function(){
+    setTimeout(function(){
+      doAnimationLoop(element, fadeInTime, visibleTime, fadeOutTime, pauseTime);
+    },pauseTime);
+  });
+}
+
+// shorthand for in- and out-fading
+function fadeInOut( element, fadeIn, visible, fadeOut, onComplete){
+  return $(element).animate( {opacity:1}, fadeIn ).delay( visible ).animate( {opacity:0}, fadeOut, onComplete);
+}
+</script>      
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#exampleModalCenter').modal('show');
+    });
+    $("#close-btn").click(function () {
+       $('#exampleModalCenter').modal('hide');
+    });
+</script>
