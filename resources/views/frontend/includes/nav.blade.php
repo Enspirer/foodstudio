@@ -1,48 +1,80 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
-    <a href="{{ route('frontend.index') }}" class="navbar-brand">{{ app_name() }}</a>
+<div class="main-nav ">
+    <nav class="navbar navbar-default">
+        <div class="container">
 
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="@lang('labels.general.toggle_navigation')">
-        <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-            @if(config('locale.status') && count(config('locale.languages')) > 1)
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownLanguageLink" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">@lang('menus.language-picker.language') ({{ strtoupper(app()->getLocale()) }})</a>
+            <div class="navbar-header">
+                <button type="button" class="main-menu-toggle navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://www.foodstudio.lk/">
+                    <img src="https://www.foodstudio.lk/img/logo-fs.png">
+                </a>
+            </div>
 
-                    @include('includes.partials.lang')
-                </li>
-            @endif
 
-            @auth
-                <li class="nav-item"><a href="{{route('frontend.user.dashboard')}}" class="nav-link {{ active_class(Route::is('frontend.user.dashboard')) }}">@lang('navs.frontend.dashboard')</a></li>
-            @endauth
+            <div class="bottomnav collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            @guest
-                <li class="nav-item"><a href="{{route('frontend.auth.login')}}" class="nav-link {{ active_class(Route::is('frontend.auth.login')) }}">@lang('navs.frontend.login')</a></li>
+                <!--<li class=""><img src="https://www.foodstudio.lk/img/logo-fs-round.png"></li>-->
 
-                @if(config('access.registration'))
-                    <li class="nav-item"><a href="{{route('frontend.auth.register')}}" class="nav-link {{ active_class(Route::is('frontend.auth.register')) }}">@lang('navs.frontend.register')</a></li>
-                @endif
-            @else
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuUser" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">{{ $logged_in_user->name }}</a>
+                <div class="container">
+                    <div class="row">
+                        <div class="leftLogo col-md-1">
+                            <div class="navLogoRound navLogoRound-d-none">
+                                <img src="https://www.foodstudio.lk/img/logo-fs-round.png">
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <ul class="nav navbar-nav navbar-center">
 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuUser">
-                        @can('view backend')
-                            <a href="{{ route('admin.dashboard') }}" class="dropdown-item">@lang('navs.frontend.user.administration')</a>
-                        @endcan
-
-                        <a href="{{ route('frontend.user.account') }}" class="dropdown-item {{ active_class(Route::is('frontend.user.account')) }}">@lang('navs.frontend.user.account')</a>
-                        <a href="{{ route('frontend.auth.logout') }}" class="dropdown-item">@lang('navs.general.logout')</a>
+                                <li class="active">
+                                    <a href="https://www.foodstudio.lk/">
+                                        Home              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/about-us">
+                                        About Us              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/tenant-and-cuisines">
+                                        Tenants &amp; Cuisines              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/whats-on">
+                                        What's On              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/event-spaces">
+                                        Event Spaces              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/media">
+                                        Media              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/fs-store">
+                                        FS Store              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/careers">
+                                        Careers              </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.foodstudio.lk/contact-us">
+                                        Contact Us              </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="leftLogo col-md-1">
+                        </div>
                     </div>
-                </li>
-            @endguest
+                </div>
 
-            <li class="nav-item"><a href="{{route('frontend.contact')}}" class="nav-link {{ active_class(Route::is('frontend.contact')) }}">@lang('navs.frontend.contact')</a></li>
-        </ul>
-    </div>
-</nav>
+
+            </div>
+        </div>
+    </nav>
+</div>
