@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Studio</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="icon" type="image/png" href="img/logo-fs.png" sizes="32x32"/>
+    <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('css/style.css')}}">
+    <link rel="icon" type="image/png" href="{{url('img/logo-fs.png')}}" sizes="32x32"/>
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -51,7 +51,7 @@
     <div class="container-fuild">
         <div class="row footer-container m-0">
             <div class="logo-img-div">
-                <img src="img/logo-fs.png">
+                <img src="{{url('img/logo-fs.png')}}">
             </div>
             <div class="socail-media-panel">
                 <a href="https://www.facebook.com/FoodStudioSL" target="_blank"><span> <i class="fa fa-facebook-f"></i> </span></a>
