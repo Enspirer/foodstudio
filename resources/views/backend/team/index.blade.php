@@ -10,7 +10,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>Job Group&nbsp;</strong>
+                    <strong>Team&nbsp;</strong>
 
                     <div class="btn btn-primary pull-right ml-3" data-toggle="modal" data-target="#exampleModal">Add New</div>
                    
@@ -21,9 +21,10 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
+                                <th scope="col">Team Name</th>
+                                <th scope="col">Job Role</th>
                                 <th scope="col">Job Group</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Created At</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -42,7 +43,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
          
-                <form action="{{route('admin.jobgroup.add_job_group')}}" method="post">
+                <form action="{{route('admin.team.add_team')}}" method="post" enctype="multipart/form-data">
                 
                     {{csrf_field()}}
                     <div class="modal-header">
@@ -56,9 +57,28 @@
                             <label>Name</label>
                             <input type="text" class="form-control" name="name" required>
                         </div>
+                        <div class="form-group">
+                            <label>Job Role</label>
+                            <input type="text" class="form-control" name="role" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Job Group</label>
+                            <select class="form-control" name="jobgroup" required>
+                                @foreach($jobgroup as $job)
+                                    <option value=" {{$job->jobgroup_name}} "> {{$job->jobgroup_name}} </option>
+                                @endforeach                                    
+                            </select>
+                        </div>
                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description"  rows="4"></textarea>
+                        <textarea class="form-control" name="description"  rows="4" required></textarea>
+
+                        <br>
+                        <div class="form-group">
+                            <label>Image (400px * 500px) </label>
+                            <input type="file" class="form-control-file" name="image">
+                        </div>  
                     </div>
                     <div class="modal-footer">
                         
@@ -71,40 +91,6 @@
         </div>
     </div>
 
-
-    <!-- Modal edit -->
-    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <span id="form_result"></span>
-                <form action="{{route('admin.jobgroup.update_job')}}" method="post">
-                   
-                    {{csrf_field()}}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name" id="name"  required>
-                        </div>
-                        
-                        <label>Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="4"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="hidden" name="hidden_id" id="hidden_id" />
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" name="action_button" id="action_button" value="Update">
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </div>
 
      <!-- Modal delete email-->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
@@ -120,7 +106,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <h5>Are you sure you want to remove this Job Group?</h5>
+                            <h5>Are you sure you want to remove this Team?</h5>
                         </div>                        
 
                     </div>
@@ -140,37 +126,18 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.jobgroup.GetTableDetails')}}",
+                ajax: "{{route('admin.team.GetTableDetails')}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
+                    {data: 'name', name: 'name'},
+                    {data: 'job_role', name: 'job_role'},
                     {data: 'jobgroup_name', name: 'jobgroup_name'},
                     {data: 'description', name: 'description'},
-                    {data: 'created_at', name: 'created_at'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
-
-            $(document).on('click', '.edit', function(){
-
-            var user_id;
-
-            var user_id = $(this).attr('id');
-            $('#form_result').html('');
-            $.ajax({
-            url :"jobgroup/edit/"+user_id,
-
-            dataType:"json",
-            success:function(data)
-            {
-                $('#name').val(data.result.jobgroup_name);
-                $('#description').val(data.result.description);
-                $('#hidden_id').val(user_id);
-                $('#editModal').modal('show');
-            }
-            })
-            });    
 
             var user_id;
 
@@ -181,7 +148,7 @@
 
             $('#ok_button').click(function(){
             $.ajax({
-            url:"jobgroup/delete/"+user_id,
+            url:"team/delete/"+user_id,
             
             success:function(data)
             {

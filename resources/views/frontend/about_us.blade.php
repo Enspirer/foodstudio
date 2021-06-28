@@ -101,269 +101,36 @@
             </div>
           </div>
 
-<h1 class="underline">
-           <span class="yellow-text">Directors</span>
+
+          @foreach($datas as $key => $data)
+
+          <h1 class="underline">
+            {!!$key!!}
           </h1>
           
           <div class="row m-0">
+
+          @foreach($data as $dat)
             <div class="col-sm-3">
-              <div class="director-profile">
-                <img src="img/Director/Naveed.jpg" style="width:100%">
+                <div class="director-profile">
+                  <img src="{{url('files/profile/',$dat->image)}}" style="width:100%" >
+                </div>
+
+                <div class="details-box">
+                  <h4>{{ $dat->name }}</h4>
+                  <p>{{ $dat->job_role }}</p>
+                </div>
               </div>
-
-              <div class="details-box">
-                <h4>Naveed Cader</h4>
-                <p>Vice Chairman / Director Finance</p>
-              </div>
-            </div>
-
-            <div class="col-sm-3">
-              <div class="director-profile">
-                <img src="img/Director/Nadeem.jpg" style="width:100%">
-              </div>
-
-              <div class="details-box">
-                <h4>Nadeem Rajabdeen</h4>
-                <p>CEO/ Director Administration</p>
-              </div>
-            </div>
-            
-            <!--   <div class="col-sm-3">-->
-            <!--  <div class="director-profile">-->
-            <!--    <img src="img/unnamed.png">-->
-            <!--  </div>-->
-
-            <!--  <div class="details-box">-->
-            <!--    <h4>Vernon Lim</h4>-->
-            <!--    <p>CEO/ Director Administration</p>-->
-            <!--  </div>-->
-            <!--</div>-->
-            
-            
-            <!--   <div class="col-sm-3">-->
-            <!--  <div class="director-profile">-->
-            <!--    <img src="img/unnamed.png">-->
-            <!--  </div>-->
-
-            <!--  <div class="details-box">-->
-            <!--    <h4>Dennis Siu</h4>-->
-            <!--    <p>CEO/ Director Administration</p>-->
-            <!--  </div>-->
-            <!--</div>-->
-            
-            
-          </div>
+            @endforeach 
         </div>
-
-        <div class="director-detail-panel">
-          <h1 class="underline">
-            Non-Executive <span class="yellow-text">Directors</span>
-          </h1>
-          <div class="row m-0">
-            <!--<div class="col-sm-2 twenty-percent-width">-->
-            <!--  <div class="director-profile">-->
-            <!--     <img src="img/unnamed.png">-->
-            <!--  </div>-->
-
-            <!--  <div class="details-box">-->
-            <!--    <h4>Hussein Akbarally</h4>-->
-    
-            <!--  </div>-->
-            <!--</div>-->
-
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                   <img src="img/Director/Hussein.jpg" style="width: 100%;">
-               
-              </div>
-
-              <div class="details-box">
-                <h4>Imran Akbarally</h4>
-                <!-- <p>Director</p> -->
-              </div>
-            </div>
-
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                <!-- <img src="img/man-in-suit.png"> -->
-                <img src="img/Director/Dennis Siu.jpg" style="width: 100%;">
-              </div>
-              <div class="details-box">
-                <h4>Dennis Siu</h4>
-                <!-- <p>Director</p> -->
-              </div>
-            </div>
-
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                <!-- <img src="img/profile-talent-andrew-okeefe-feature.png"> -->
-                <img src="img/Director/Vernon.jpg" style="width: 100%;">
-              </div>
-
-              <div class="details-box">
-                <h4>Vernon Lim</h4>
-                <!-- <p>Director</p> -->
-              </div>
-            </div>
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                <img src="img/Director/Fahad.jpg" style="width: 100%;">
-              </div>
-
-              <div class="details-box">
-                <h4>Fahad Mowlana</h4>
-                <!-- <p>Director</p> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="management-detail-panel">
-          <h1 class="underline">
-            Management <span class="yellow-text">Team</span>
-          </h1>
-
-
- <div class="row m-0">
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                 <img src="img/unnamed.png" style="width: 100%;">
-              </div>
-
-              <div class="details-box">
-         <h4>Louzanne Perera</h4>
-                  <p>Head of Marketing &amp; Communications</p>
-    
-              </div>
-            </div>
-
-    <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-               <img src="img/Director/Saman.jpg" style="width: 100%;">
-              </div>
-
-              <div class="details-box">
-               <h4>Saman Amarathunga</h4>
-                  <p>Head of Engineering &amp; Maintenance</p>
-              </div>
-            </div>
             
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                    <img src="img/Director/Sheriff.jpg" style="width: 100%;">
-               
-              </div>
-
-              <div class="details-box">
-                  <h4>Shihar Omar Sheriff</h4>
-                  <p>Manager Operations</p>
-              </div>
-            </div>
-
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                <!-- <img src="img/man-in-suit.png"> -->
-              <img src="img/unnamed.png" style="width: 100%;">
-              </div>
-              <div class="details-box">
-               <h4>Kavisha Wilathgamuwa</h4>
-                  <p>Manager Finance</p>
-              </div>
-            </div>
-
-            <div class="col-sm-2 twenty-percent-width">
-              <div class="director-profile">
-                <!-- <img src="img/profile-talent-andrew-okeefe-feature.png"> -->
-                  <img src="img/Director/Feron.jpg" style="width: 100%;">
-              </div>
-
-              <div class="details-box">
-                <h4>Feron Hassen</h4>
-                  <p>Assistant Manager HR &amp; Administration</p>
-              </div>
-            </div>
-        
-          </div>
-          
-          
- <!--<div class="owl-carousel owl-theme">-->
- 
- 
-          <!--<div class="">-->
-          <!--  <a href="">-->
-          <!--    <div class="item text-center">-->
-          <!--      <div class="director-profile">-->
-          <!--        <img src="img/unnamed.png" style="width: 100%;">-->
-          <!--      </div>-->
-
-          <!--      <div class="details-box">-->
-          <!--        <h4>Louzanne Perera</h4>-->
-          <!--        <p>Head of Marketing &amp; Communications</p>-->
-          <!--      </div>-->
-          <!--    </div>-->
-          <!--  </a>-->
-
-          <!--   <a href="">-->
-          <!--    <div class="item text-center">-->
-          <!--      <div class="director-profile">-->
-          <!--        <img src="img/Director/Saman.jpg" style="width: 100%;">-->
-          <!--      </div>-->
-
-          <!--      <div class="details-box">-->
-          <!--        <h4>Saman Amarathunga</h4>-->
-          <!--        <p>Head of Engineering &amp; Maintenance</p>-->
-          <!--      </div>-->
-          <!--    </div>-->
-          <!--  </a>-->
-            
-          <!--     <a href="">-->
-          <!--    <div class="item text-center">-->
-          <!--      <div class="director-profile">-->
-          <!--        <img src="img/Director/Sheriff.jpg" style="width: 100%;">-->
-          <!--      </div>-->
-
-          <!--      <div class="details-box">-->
-          <!--        <h4>Shihar Omar Sheriff</h4>-->
-          <!--        <p>Manager Operations</p>-->
-          <!--      </div>-->
-          <!--    </div>-->
-          <!--  </a>-->
-
-
-          <!--  <a href="">-->
-          <!--    <div class="item text-center">-->
-          <!--      <div class="director-profile">-->
-          <!--        <img src="img/unnamed.png" style="width: 100%;">-->
-          <!--      </div>-->
-
-          <!--      <div class="details-box">-->
-          <!--        <h4>Kavisha Wilathgamuwa</h4>-->
-          <!--        <p>Manager Finance</p>-->
-          <!--      </div>-->
-          <!--    </div>-->
-          <!--  </a>-->
-
- 
-         
-
-          <!--  <a href="">-->
-          <!--    <div class="item text-center">-->
-          <!--      <div class="director-profile">-->
-          <!--        <img src="img/Director/Feron.jpg" style="width: 100%;">-->
-          <!--      </div>-->
-
-          <!--      <div class="details-box">-->
-          <!--        <h4>Feron Hassen</h4>-->
-          <!--        <p>Assistant Manager HR &amp; Administration</p>-->
-          <!--      </div>-->
-          <!--    </div>-->
-          <!--  </a>-->
-
-          <!--</div>-->
-        </div>
-      </div>
+          @endforeach               
+                 
+   </div>         
+           
     </div>
-
   </div>
+
+</div>
 
 @endsection

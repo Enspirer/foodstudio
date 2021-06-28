@@ -16,7 +16,6 @@ class JobGroupController extends Controller
         return view('backend.job_group.index');
     }
 
-
     public function add_job_group(Request $request)
     {        
         // dd($request);
@@ -52,22 +51,38 @@ class JobGroupController extends Controller
                     ->make(true);
         }
         return back();
+    }
 
-        // if($request->ajax())
-        // {
-        //     $group = DB::table('job_groups')->orderBy('id');
-            
-        //     return DataTables::of($group)
-        //             ->addColumn('action', function($data){
-        //                 $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-primary btn-sm">Edit</button>';
-        //                 $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
-        //                 return $button;
-        //             })
-        //             ->rawColumns(['action'])
-        //             ->make(true);
-        // } 
+    public function update_job(Request $request)
+    {    
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required'
+        ]);    
 
+        $updategroup = new JobGroup;
+        $updategroup->jobgroup_name=$request->name;
+        $updategroup->description=$request->description;
+   
+        JobGroup::whereId($request->hidden_id)->update($updategroup->toArray());
 
+        return back();                      
+
+    }
+
+    public function edit($id)
+    {
+        if(request()->ajax())
+        {
+            $data = JobGroup::findOrFail($id);
+            return response()->json(['result' => $data]);
+        }
+    }
+
+    public function destroy($id)
+    {
+        $data = JobGroup::findOrFail($id);
+        $data->delete();
     }
 
 
