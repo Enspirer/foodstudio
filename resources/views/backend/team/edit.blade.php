@@ -31,7 +31,7 @@
                             <select class="form-control" name="jobgroup">
         
                                 @foreach($groups as $group)
-                                    <option value="{{$group->jobgroup_name}}" {{ $team->jobgroup_name == $group->jobgroup_name ? "selected" : "" }}> {{$group->jobgroup_name}} </option>
+                                    <option value="{{$group->id}}" {{ $team->jobgroup_name == $group->id ? "selected" : "" }}> {{$group->jobgroup_name}} </option>
                                 @endforeach
                                     
                             </select>

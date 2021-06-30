@@ -15,12 +15,21 @@ class AboutUsController extends Controller
         // $datas = Team::all();
         // dd($datas);
 
-        $datadirector = DB::table('teams')->get()->groupBy('jobgroup_name');
-        // dd($datadirector);
+        // $datas = DB::table('teams')->get()->groupBy('jobgroup_name');
+
+        // $datastwo = DB::table('job_groups')->get()->groupBy('html_code');
+        // dd($datas);
+
+        $datas = DB::table('job_groups')->orderBy('order', 'ASC')->get();
+
+       
+   
+        // dd($datas);
 
 
         return view('frontend.about_us',[
-            'datas' => $datadirector 
+            'datas' => $datas
+            // 'datastwo' => $datastwo
         ]);
     }
 }

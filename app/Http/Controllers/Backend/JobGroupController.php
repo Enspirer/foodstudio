@@ -21,14 +21,18 @@ class JobGroupController extends Controller
         // dd($request);
         $request->validate([
             'name' => 'required',
-            'description' => 'required'
+            'html' => 'required',
+            'description' => 'required',
+            'order' => 'required'
         ]);
 
         $addgroup = new JobGroup;
 
         $addgroup->user_id = auth()->user()->id;
-        $addgroup->jobgroup_name=$request->name;
+        $addgroup->jobgroup_name=$request->name;        
+        $addgroup->html_code=$request->html;
         $addgroup->description=$request->description;
+        $addgroup->order=$request->order;
 
         $addgroup->save();
 
@@ -57,12 +61,16 @@ class JobGroupController extends Controller
     {    
         $request->validate([
             'name' => 'required',
-            'description' => 'required'
+            'html' => 'required',
+            'description' => 'required',
+            'order' => 'required'
         ]);    
 
         $updategroup = new JobGroup;
         $updategroup->jobgroup_name=$request->name;
+        $updategroup->html_code=$request->html;
         $updategroup->description=$request->description;
+        $updategroup->order=$request->order;
    
         JobGroup::whereId($request->hidden_id)->update($updategroup->toArray());
 

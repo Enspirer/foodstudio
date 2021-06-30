@@ -19,11 +19,22 @@
                     Job Group
                 </a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/team'))}}" href="{{ route('admin.team.index') }}">
                     <i class="nav-icon fas fa-users"></i>                 
                     Team
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{active_class(Route::is('admin/tenant'))}}" href="{{ route('admin.tenant.index') }}">
+                    <i class="nav-icon fas fa-building"></i>       
+                    Location
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{active_class(Route::is('admin/tenants'))}}" href="{{ route('admin.tenants.index') }}">
+                    <i class="nav-icon fas fa-store"></i>           
+                    Tenants
                 </a>
             </li>
 

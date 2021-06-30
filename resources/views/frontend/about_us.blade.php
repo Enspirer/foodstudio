@@ -105,12 +105,12 @@
           @foreach($datas as $key => $data)
 
           <h1 class="underline">
-            {!!$key!!}
+            {!!$data->html_code!!}
           </h1>
           
           <div class="row m-0">
 
-          @foreach($data as $dat)
+          @foreach(App\Models\Team::where('jobgroup_name',$data->id)->get() as $dat)
             <div class="col-sm-3">
                 <div class="director-profile">
                   <img src="{{url('files/profile/',$dat->image)}}" style="width:100%" >
@@ -121,7 +121,8 @@
                   <p>{{ $dat->job_role }}</p>
                 </div>
               </div>
-            @endforeach 
+            @endforeach
+
         </div>
             
           @endforeach               

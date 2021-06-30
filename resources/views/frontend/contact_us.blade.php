@@ -39,48 +39,29 @@
       <p>Got a question about what we do? Have a suggestion? Feel free to get in touch with us through our official channels or through social media. We would love to hear from you!</p>
     </div>
   </div>
+
+
   <div class="row">
+
+  @foreach($datas as $key => $data)
+  
     <div class="col-sm-4">
-      <h4 class="mt-20"><strong>Head Office</strong></h4>
-      <p class="mt-20"><strong>Address</strong></p>
-      <address>
-        147 Kynsey Road,<br> Colombo 8.
-      </address>
-
-      <p class="mt-20"><strong>Email</strong></p>
-      <p>info@foodstudio.lk</p>
-
-      <p class="mt-20"><strong>Contact</strong></p>
-      <p>0761 414 242</p>
-    </div>
-
-    <div class="col-sm-4">
-      <h4 class="mt-20"><strong>Colombo City Center</strong></h4>
-      <p class="mt-20"><strong>Address</strong></p>
-      <address>
-        3rd Floor, Colombo City Centre, <br> 137 Sir James Peiries Mw <br> Colombo-02.
-      </address>
-
-      <p class="mt-20"><strong>Email</strong></p>
-      <p>info@foodstudio.lk</p>
-
-      <p class="mt-20"><strong>Contact</strong></p>
-      <p>0761 414 242</p>
-    </div>
-
-    <div class="col-sm-4">
-      <h4 class="mt-20"><strong>One Galle Face</strong></h4>
-      <p class="mt-20"><strong>Address</strong></p>
-      <address>
-        Lower Ground, One Galle Face Mall<br> 02 Centre Rd, <br> Colombo-03.
-      </address>
-      <p class="mt-20"><strong>Email</strong></p>
-      <p>info@foodstudio.lk</p>
-
-      <p class="mt-20"><strong>Contact</strong></p>
-      <p>0761 414 242</p>
-    </div>
     
+      <h4 class="mt-20"><strong>{!!$data->name!!}</strong></h4>
+      <p class="mt-20"><strong>Address</strong></p>
+      <address>
+      {!!$data->address!!}
+      </address>
+
+      <p class="mt-20"><strong>Email</strong></p>
+      <p>{!!$data->email!!}</p>
+
+      <p class="mt-20"><strong>Contact</strong></p>
+      <p>{!!$data->contact_number!!}</p>
+    </div>
+
+    @endforeach  
+   
 
   </div>
 

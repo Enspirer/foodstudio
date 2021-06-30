@@ -20,7 +20,7 @@ use App\Http\Controllers\Frontend\User\ProfileController;
  */
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/about-us', [AboutUsController::class, 'index'])->name('index');
-Route::get('/tenant-and-cuisines', [TenantAndCuisineController::class, 'index'])->name('index');
+Route::get('/tenant-and-cuisines/{id}', [TenantAndCuisineController::class, 'index'])->name('index');
 Route::get('/whats-on', [WhatsOnController::class, 'index'])->name('index');
 Route::get('/event-spaces', [EventSpacesController::class, 'index'])->name('index');
 Route::get('/media', [MediaController::class, 'index'])->name('index');

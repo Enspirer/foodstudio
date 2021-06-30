@@ -63,45 +63,45 @@
             <div class="footer-navigation">
               <ul class="nav navbar-nav navbar-center">
 
-                <li class="{{ Request::segment(1)==null ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/">
-                        Home</a>
-                </li>
-                <li class="{{ Request::segment(1)=='about-us' ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/about-us">
-                        About Us</a>
-                </li>
-                <li class="{{ Request::segment(1)=='tenant-and-cuisines' ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/tenant-and-cuisines">
-                        Tenants &amp; Cuisines</a>
-                </li>
-                <li class="{{ Request::segment(1)=='whats-on' ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/whats-on">
-                        What's On</a>
-                </li>
-                <li class="{{ Request::segment(1)=='event-spaces' ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/event-spaces">
-                        Event Spaces</a>
-                </li>
-                <li class="{{ Request::segment(1)=='media' ? 'active' :null || 
+              <li class="{{ Request::segment(1)==null ? 'active' :null }}">
+                                <a href="{{url('/')}}">
+                                        Home              </a>
+                                </li>
+                                <li class="{{ Request::segment(1)=='about-us' ? 'active' :null }}">
+                                    <a href="{{url('about-us')}}">
+                                        About Us              </a>
+                                </li>
+                                <li class="{{ Request::segment(1)=='tenant-and-cuisines' ? 'active' :null }}">
+                                    <a href="{{url('tenant-and-cuisines/1')}}">
+                                        Tenants &amp; Cuisines              </a>
+                                </li>
+                                <li class="{{ Request::segment(1)=='whats-on' ? 'active' :null }}">
+                                    <a href="{{url('whats-on')}}">
+                                        What's On              </a>
+                                </li>
+                                <li class="{{ Request::segment(1)=='event-spaces' ? 'active' :null }}">
+                                    <a href="{{url('event-spaces')}}">
+                                        Event Spaces              </a>
+                                </li>
+                                <li class="{{ Request::segment(1)=='media' ? 'active' :null || 
                                 Request::segment(1)=='media-tenant' ? 'active' :null || Request::segment(1)=='media-video' ? 'active' :null ||
                                 Request::segment(1)=='media-social' ? 'active' :null }}">
-                                    <a href="http://127.0.0.1:8000/media">
+                                    <a href="{{url('media')}}">
                                         Media              </a>
-                </li>
-                
-                <li class="{{ Request::segment(1)=='fs-store' ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/fs-store">
-                        FS Store</a>
-                </li>
-                <li class="{{ Request::segment(1)=='careers' ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/careers">
-                        Careers</a>
-                </li>
-                <li class="{{ Request::segment(1)=='contact-us' ? 'active' :null }}">
-                    <a href="http://127.0.0.1:8000/contact-us">
-                        Contact Us</a>
-                </li>
+                                </li>
+                                
+                                <li class="{{ Request::segment(1)=='fs-store' ? 'active' :null }}">
+                                    <a href="{{url('fs-store')}}">
+                                        FS Store              </a>
+                                </li>
+                                <li class="{{ Request::segment(1)=='careers' ? 'active' :null }}">
+                                    <a href="{{url('careers')}}">
+                                        Careers              </a>
+                                </li>
+                                <li class="{{ Request::segment(1)=='contact-us' ? 'active' :null }}">
+                                    <a href="{{url('contact-us')}}">
+                                        Contact Us              </a>
+                                </li>
               </ul>
             </div>
         </div>
