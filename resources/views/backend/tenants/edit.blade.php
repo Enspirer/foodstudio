@@ -19,15 +19,10 @@
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" class="form-control" name="name" value="{{ $tenant->name }}" required>
-                        </div>  
-
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description" rows="2" required>{{ $tenant->description }}</textarea>
                         </div> 
 
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Logo</label>
                             <input type="file" class="form-control-file" name="image1">
                         </div> 
                         <img src="{{url('files/tenants/',$tenant->photo)}}" style="width: 30%" alt="">
@@ -39,6 +34,34 @@
                         <br>
                         <img src="{{url('files/tenants/',$tenant->menu)}}" style="width: 30%" alt="">                                               
                         
+                        <!-- <hr style="border-top: 3px solid #bbb; border-radius: 5px;">  -->
+
+                        <br><br>
+                        <div class="card">
+                            <div class="card-header">
+                                Pop-Up Section
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" name="description" rows="5" required>{{ $tenant->description }}</textarea>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label>Pop-Up Image</label>
+                                    <input type="file" class="form-control-file" name="popimage">
+                                </div>       
+                                <br>
+                                <img src="{{url('files/tenants/',$tenant->pop_photo)}}" style="width: 30%" alt="">                  
+                                <br><br><br>
+                                <div class="form-group">
+                                    <label>Upload Menu ( pdf )</label>
+                                    <input type="file" class="form-control-file" name="upload">
+                                    <br>
+                                    <!-- {{$tenant->upload}} -->
+                                </div>
+                            </div>
+                        </div>                         
 
                     </div>
                     <div class="modal-footer">

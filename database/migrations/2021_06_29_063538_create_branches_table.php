@@ -17,6 +17,7 @@ class CreateBranchesTable extends Migration
             $table->bigIncrements('id');
             $table->text('name');
             $table->text('logo');
+            $table->text('image');
             $table->text('address');            
             $table->text('email');
             $table->text('contact_number'); 

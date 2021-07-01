@@ -34,13 +34,31 @@ Breadcrumbs::for('admin.tenant.cuisine_edit', function ($trail) {
 
 
 
-
 Breadcrumbs::for('admin.tenants.index', function ($trail) {
     $trail->push('Tenants', route('admin.tenants.index'));
 });
 Breadcrumbs::for('admin.tenants.edit', function ($trail) {
     $trail->push('Edit Tenants', route('admin.tenants.edit',1));
 });
+
+
+Breadcrumbs::for('admin.feature.index', function ($trail) {
+    $trail->push('Feature Events', route('admin.feature.index'));
+});
+Breadcrumbs::for('admin.promotion.index', function ($trail) {
+    $trail->push('Promotions', route('admin.promotion.index'));
+});
+Breadcrumbs::for('admin.promotion.edit', function ($trail) {
+    $trail->push('Edit Promotion', route('admin.promotion.edit',1));
+});
+Breadcrumbs::for('admin.voucher.index', function ($trail) {
+    $trail->push('Voucher', route('admin.voucher.index'));
+});
+
+Breadcrumbs::for('admin.voucher.edit', function ($trail) {
+    $trail->push('Edit Voucher', route('admin.voucher.edit',1));
+});
+
 
 
 require __DIR__.'/auth.php';

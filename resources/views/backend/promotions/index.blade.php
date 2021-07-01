@@ -10,7 +10,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>Location&nbsp;</strong>
+                    <strong>Promotions&nbsp;</strong>
 
                     <div class="btn btn-primary pull-right ml-3" data-toggle="modal" data-target="#exampleModal">Add New</div>
                    
@@ -21,12 +21,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">Branch Name</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Number</th>
-                                <th scope="col">Order</th>
+                                <th scope="col">Image</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">Link</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -45,7 +42,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
          
-                <form action="{{route('admin.tenant.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.promotion.store')}}" method="post" enctype="multipart/form-data">
                 
                     {{csrf_field()}}
                     <div class="modal-header">
@@ -55,49 +52,26 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name" required>
-                        </div>                                             
-                                                
-                        <label>Address</label>
-                        <textarea class="form-control" name="address"  rows="2" required></textarea>
-                        <br>
-
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" class="form-control" name="email" required>
-                        </div> 
-                        <div class="form-group">
-                            <label>Contact Number</label>
-                            <input type="text" class="form-control" name="number" required>
-                        </div> 
-                        <div class="form-group">
-                            <label>Order</label>
-                            <input type="text" class="form-control" name="order" required>
-                        </div> 
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description"  rows="2" required></textarea>
-                        </div> 
-                        <!-- <div class="form-group">
-                            <label>Json Data</label>
-                            <input type="text" class="form-control" name="json" required>
-                        </div>  -->
-
-                        <div class="form-group">
-                            <label>Logo ( width = 55px ) </label>
-                            <input type="file" class="form-control-file" name="image">
+                            <label>Image (366 * 548px) </label>
+                            <input type="file" class="form-control-file" name="image" required>
                         </div>  
+                                                                        
+                        <label>Description</label>
+                        <textarea class="form-control" name="description" rows="4"></textarea>
+
+                        <br>
                         <div class="form-group">
-                            <label>Image ( 757px * 756px )</label>
-                            <input type="file" class="form-control-file" name="image2">
-                        </div> 
+                            <label>Link</label>
+                            <input type="text" class="form-control" name="link">
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" value="Add New">
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Add New">
                     </div>
                 </form>
 
@@ -105,7 +79,7 @@
         </div>
     </div>
 
-
+    
      <!-- Modal delete email-->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -120,7 +94,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <h5>Are you sure you want to remove this Tenent & Cuisine?</h5>
+                            <h5>Are you sure you want to remove this Promotion?</h5>
                         </div>                        
 
                     </div>
@@ -140,20 +114,18 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.tenant.GetTableDetails')}}",
+                ajax: "{{route('admin.promotion.GetTableDetails')}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'name', name: 'name'},
-                    {data: 'address', name: 'address'},
-                    {data: 'email', name: 'email'},
-                    {data: 'contact_number', name: 'contact_number'},
-                    {data: 'order', name: 'order'},
+                    {data: 'image', name: 'image'},
                     {data: 'description', name: 'description'},
+                    {data: 'link', name: 'link'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
+
 
             var user_id;
 
@@ -164,7 +136,7 @@
 
             $('#ok_button').click(function(){
             $.ajax({
-            url:"tenant/delete/"+user_id,
+            url:"promotion/delete/"+user_id,
             
             success:function(data)
             {

@@ -13,7 +13,7 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/jobgroup'))}}" href="{{ route('admin.jobgroup.index') }}">
                     <i class="nav-icon fas fa-user-friends"></i>                    
                     Job Group
@@ -24,8 +24,8 @@
                     <i class="nav-icon fas fa-users"></i>                 
                     Team
                 </a>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
                 <a class="nav-link {{active_class(Route::is('admin/tenant'))}}" href="{{ route('admin.tenant.index') }}">
                     <i class="nav-icon fas fa-building"></i>       
                     Location
@@ -36,7 +36,81 @@
                     <i class="nav-icon fas fa-store"></i>           
                     Tenants
                 </a>
-            </li>
+            </li> -->
+                <li class="nav-item nav-dropdown ">
+                    <a class="nav-link nav-dropdown-toggle " href="#">
+                        <i class="nav-icon fas fa-users-cog"></i>
+                        About Us
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/jobgroup'))}}" href="{{ route('admin.jobgroup.index') }}">
+                                <!-- <i class="nav-icon fas fa-user-friends"></i>                     -->
+                                Job Group
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/team'))}}" href="{{ route('admin.team.index') }}">
+                                <!-- <i class="nav-icon fas fa-users"></i>                  -->
+                                Team
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="nav-item nav-dropdown ">
+                    <a class="nav-link nav-dropdown-toggle " href="#">
+                        <i class="nav-icon fas fa-building"></i>
+                        Tenants and Cuisine
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/tenant'))}}" href="{{ route('admin.tenant.index') }}">
+                                <!-- <i class="nav-icon fas fa-building"></i>        -->
+                                Location
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/tenants'))}}" href="{{ route('admin.tenants.index') }}">
+                                <!-- <i class="nav-icon fas fa-store"></i>            -->
+                                Tenants
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown ">
+                    <a class="nav-link nav-dropdown-toggle " href="#">
+                        <i class="nav-icon fab fa-elementor"></i>
+                        What's On
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/feature'))}}" href="{{ route('admin.feature.index') }}">                            
+                                Feature Events
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/promotion'))}}" href="{{ route('admin.promotion.index') }}">                               
+                                Promotions
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/voucher'))}}" href="{{ route('admin.voucher.index') }}">                           
+                                Vouchers
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+
 
             @if ($logged_in_user->isAdmin())
                 <li class="nav-title">

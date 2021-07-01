@@ -54,15 +54,10 @@
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" class="form-control" name="name" required>
-                        </div>  
+                        </div>                           
 
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description"  rows="2" required></textarea>
-                        </div> 
-
-                        <div class="form-group">
-                            <label>Image</label>
+                            <label>Logo</label>
                             <input type="file" class="form-control-file" name="image1">
                         </div>  
 
@@ -71,6 +66,31 @@
                             <input type="file" class="form-control-file" name="image2">
                         </div> 
 
+                        <!-- <hr style="border-top: 3px solid #bbb; border-radius: 5px;"> -->                        
+
+
+                        <br>
+                        <div class="card">
+                            <div class="card-header">
+                                Pop-Up Section
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea class="form-control" name="description" rows="5" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Pop-Up Image</label>
+                                    <input type="file" class="form-control-file" name="popimage">
+                                </div>                                                
+
+                                <div class="form-group">
+                                    <label>Upload Menu ( pdf )</label>
+                                    <input type="file" class="form-control-file" name="upload">
+                                </div>
+                            </div>
+                        </div>                      
+                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

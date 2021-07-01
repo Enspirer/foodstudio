@@ -29,7 +29,15 @@ class BranchController extends Controller
             $image_url = $preview_fileName;
         }else{
             $image_url = null;
-        }       
+        } 
+        if($request->file('image2'))
+        {
+            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
+            $fullURLsPreviewFile2 = $request->image2->move(public_path('files/branch_logo'), $preview_fileName2);
+            $image_url2 = $preview_fileName2;
+        }else{
+            $image_url2 = null;
+        }      
         
         $addbranch = new Branch;
 
@@ -40,6 +48,7 @@ class BranchController extends Controller
         $addbranch->order=$request->order;
         $addbranch->description=$request->description;
         $addbranch->logo=$image_url;
+        $addbranch->image=$image_url2;
 
         $addbranch->save();
 
@@ -76,7 +85,15 @@ class BranchController extends Controller
             $image_url = $preview_fileName;
         }else{
             $image_url = null;
-        }       
+        }    
+        if($request->file('image2'))
+        {
+            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
+            $fullURLsPreviewFile2 = $request->image2->move(public_path('files/branch_logo'), $preview_fileName2);
+            $image_url2 = $preview_fileName2;
+        }else{
+            $image_url2 = null;
+        }    
         
         $updatebranch = new Branch;
 
@@ -87,6 +104,7 @@ class BranchController extends Controller
         $updatebranch->order=$request->order;
         $updatebranch->description=$request->description;
         $updatebranch->logo=$image_url;
+        $updatebranch->image=$image_url2;
 
         Branch::whereId($request->hidden_id)->update($updatebranch->toArray());
                

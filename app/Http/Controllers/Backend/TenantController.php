@@ -37,7 +37,24 @@ class TenantController extends Controller
             $image_url2 = $preview_fileName2;
         }else{
             $image_url2 = null;
-        }       
+        } 
+        
+        if($request->file('popimage'))
+        {
+            $preview_fileName3 = time().'_'.rand(1000,10000).'.'.$request->popimage->getClientOriginalExtension();
+            $fullURLsPreviewFile3 = $request->popimage->move(public_path('files/tenants'), $preview_fileName3);
+            $image_url3 = $preview_fileName3;
+        }else{
+            $image_url3 = null;
+        }
+        if($request->file('upload'))
+        {
+            $preview_fileName4 = time().'_'.rand(1000,10000).'.'.$request->upload->getClientOriginalExtension();
+            $fullURLsPreviewFile4 = $request->upload->move(public_path('files/pdf_upload'), $preview_fileName4);
+            $upload_url = $preview_fileName4;
+        }else{
+            $upload_url = null;
+        }
         
         $addtenants = new Tenant;
 
@@ -45,6 +62,8 @@ class TenantController extends Controller
         $addtenants->description=$request->description;
         $addtenants->photo=$image_url1;
         $addtenants->menu=$image_url2;
+        $addtenants->pop_photo=$image_url3;
+        $addtenants->upload=$upload_url;
 
         $addtenants->save();
 
@@ -101,7 +120,23 @@ class TenantController extends Controller
             $image_url2 = $preview_fileName2;
         }else{
             $image_url2 = null;
-        }       
+        }   
+        if($request->file('popimage'))
+        {
+            $preview_fileName3 = time().'_'.rand(1000,10000).'.'.$request->popimage->getClientOriginalExtension();
+            $fullURLsPreviewFile3 = $request->popimage->move(public_path('files/tenants'), $preview_fileName3);
+            $image_url3 = $preview_fileName3;
+        }else{
+            $image_url3 = null;
+        }
+        if($request->file('upload'))
+        {
+            $preview_fileName4 = time().'_'.rand(1000,10000).'.'.$request->upload->getClientOriginalExtension();
+            $fullURLsPreviewFile4 = $request->upload->move(public_path('files/pdf_upload'), $preview_fileName4);
+            $upload_url = $preview_fileName4;
+        }else{
+            $upload_url = null;
+        }    
         
         $updatetenants = new Tenant;
 
@@ -109,6 +144,8 @@ class TenantController extends Controller
         $updatetenants->description=$request->description;
         $updatetenants->photo=$image_url1;
         $updatetenants->menu=$image_url2;  
+        $updatetenants->pop_photo=$image_url3;
+        $updatetenants->upload=$upload_url;
 
         Tenant::whereId($request->hidden_id)->update($updatetenants->toArray());        
                

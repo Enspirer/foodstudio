@@ -43,6 +43,23 @@
 
   <div class="row">
 
+  <div class="col-sm-4">
+    
+      <h4 class="mt-20"><strong>Head Office</strong></h4>
+      <p class="mt-20"><strong>Address</strong></p>
+      <address>
+      147 Kynsey Road,<br> Colombo 8.
+      </address>
+
+      <p class="mt-20"><strong>Email</strong></p>
+      <p>info@foodstudio.lk</p>
+
+      <p class="mt-20"><strong>Contact</strong></p>
+      <p>0761 414 242</p>
+    </div>
+
+
+
   @foreach($datas as $key => $data)
   
     <div class="col-sm-4">

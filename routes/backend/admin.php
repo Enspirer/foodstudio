@@ -6,6 +6,10 @@ use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\BranchController;
 use App\Http\Controllers\Backend\TenantController;
 
+use App\Http\Controllers\Backend\FeatureEventsController;
+use App\Http\Controllers\Backend\PromotionsController;
+use App\Http\Controllers\Backend\VouchersController;
+
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -49,3 +53,24 @@ Route::get('tenants/getdetails', [TenantController::class, 'GetTableDetails'])->
 Route::get('tenants/edit/{id}', [TenantController::class, 'edit'])->name('tenants.edit');
 Route::post('tenants/update', [TenantController::class, 'update'])->name('tenants.update');
 Route::get('tenants/delete/{id}', [TenantController::class, 'destroy'])->name('tenants.destroy');
+
+Route::get('feature', [FeatureEventsController::class, 'index'])->name('feature.index');
+Route::post('feature/insert', [FeatureEventsController::class, 'store'])->name('feature.store');
+Route::get('feature/getdetails', [FeatureEventsController::class, 'GetTableDetails'])->name('feature.GetTableDetails');
+Route::get('feature/edit/{id}', [FeatureEventsController::class, 'edit'])->name('feature.edit');
+Route::post('feature/update', [FeatureEventsController::class, 'update'])->name('feature.update');
+Route::get('feature/delete/{id}', [FeatureEventsController::class, 'destroy'])->name('feature.destroy');
+
+Route::get('promotion', [PromotionsController::class, 'index'])->name('promotion.index');
+Route::post('promotion/insert', [PromotionsController::class, 'store'])->name('promotion.store');
+Route::get('promotion/getdetails', [PromotionsController::class, 'GetTableDetails'])->name('promotion.GetTableDetails');
+Route::get('promotion/edit/{id}', [PromotionsController::class, 'edit'])->name('promotion.edit');
+Route::post('promotion/update', [PromotionsController::class, 'update'])->name('promotion.update');
+Route::get('promotion/delete/{id}', [PromotionsController::class, 'destroy'])->name('promotion.destroy');
+
+Route::get('voucher', [VouchersController::class, 'index'])->name('voucher.index');
+Route::post('voucher/insert', [VouchersController::class, 'store'])->name('voucher.store');
+Route::get('voucher/getdetails', [VouchersController::class, 'GetTableDetails'])->name('voucher.GetTableDetails');
+Route::get('voucher/edit/{id}', [VouchersController::class, 'edit'])->name('voucher.edit');
+Route::post('voucher/update', [VouchersController::class, 'update'])->name('voucher.update');
+Route::get('voucher/delete/{id}', [VouchersController::class, 'destroy'])->name('voucher.destroy');

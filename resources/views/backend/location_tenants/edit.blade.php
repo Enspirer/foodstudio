@@ -52,6 +52,12 @@
                             <br>
                             <img src="{{url('files/branch_logo/',$branch->logo)}}" style="width: 30%;"  alt="" >
                         </div>  
+                        <div class="form-group">
+                            <label>Image </label>
+                            <input type="file" class="form-control-file" name="image2">
+                            <br>
+                            <img src="{{url('files/branch_logo/',$branch->image)}}" style="width: 30%;"  alt="" >
+                        </div> 
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" name="hidden_id" value="{{ $branch->id }}"/>

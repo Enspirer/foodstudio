@@ -10,7 +10,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>Location&nbsp;</strong>
+                    <strong>Feature Events&nbsp;</strong>
 
                     <div class="btn btn-primary pull-right ml-3" data-toggle="modal" data-target="#exampleModal">Add New</div>
                    
@@ -21,12 +21,9 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">Branch Name</th>
-                                <th scope="col">Address</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Number</th>
-                                <th scope="col">Order</th>
+                                <th scope="col">Title</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">Link</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -45,7 +42,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
          
-                <form action="{{route('admin.tenant.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.feature.store')}}" method="post" enctype="multipart/form-data">
                 
                     {{csrf_field()}}
                     <div class="modal-header">
@@ -56,48 +53,69 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name" required>
-                        </div>                                             
-                                                
-                        <label>Address</label>
-                        <textarea class="form-control" name="address"  rows="2" required></textarea>
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" required>
+                        </div>
+                                                                        
+                        <label>Description</label>
+                        <textarea class="form-control" name="description"  rows="4" required></textarea>
+
                         <br>
+                        <div class="form-group">
+                            <label>Link</label>
+                            <input type="text" class="form-control" name="link" required>
+                        </div>
 
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" class="form-control" name="email" required>
-                        </div> 
-                        <div class="form-group">
-                            <label>Contact Number</label>
-                            <input type="text" class="form-control" name="number" required>
-                        </div> 
-                        <div class="form-group">
-                            <label>Order</label>
-                            <input type="text" class="form-control" name="order" required>
-                        </div> 
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description"  rows="2" required></textarea>
-                        </div> 
                         <!-- <div class="form-group">
-                            <label>Json Data</label>
-                            <input type="text" class="form-control" name="json" required>
-                        </div>  -->
-
-                        <div class="form-group">
-                            <label>Logo ( width = 55px ) </label>
+                            <label>Image (400px * 500px) </label>
                             <input type="file" class="form-control-file" name="image">
-                        </div>  
-                        <div class="form-group">
-                            <label>Image ( 757px * 756px )</label>
-                            <input type="file" class="form-control-file" name="image2">
-                        </div> 
+                        </div>   -->
                     </div>
                     <div class="modal-footer">
                         
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-primary" value="Add New">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal edit -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <span id="form_result"></span>
+                <form action="{{route('admin.feature.update')}}" method="post">
+                   
+                    {{csrf_field()}}
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" id="title" required>
+                        </div>
+                                                                        
+                        <label>Description</label>
+                        <textarea class="form-control" name="description" id="description" rows="4" required></textarea>
+
+                        <br>
+                        <div class="form-group">
+                            <label>Link</label>
+                            <input type="text" class="form-control" name="link" id="link" required>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="hidden_id" id="hidden_id" />
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" value="Add New">
+                        <input type="submit" class="btn btn-success" name="action_button" id="action_button" value="Update">
                     </div>
                 </form>
 
@@ -120,7 +138,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <h5>Are you sure you want to remove this Tenent & Cuisine?</h5>
+                            <h5>Are you sure you want to remove this Feature Event?</h5>
                         </div>                        
 
                     </div>
@@ -140,19 +158,38 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.tenant.GetTableDetails')}}",
+                ajax: "{{route('admin.feature.GetTableDetails')}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'name', name: 'name'},
-                    {data: 'address', name: 'address'},
-                    {data: 'email', name: 'email'},
-                    {data: 'contact_number', name: 'contact_number'},
-                    {data: 'order', name: 'order'},
+                    {data: 'title', name: 'title'},
                     {data: 'description', name: 'description'},
+                    {data: 'link', name: 'link'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
+            });
+
+
+            $(document).on('click', '.edit', function(){
+
+            var user_id;
+
+            var user_id = $(this).attr('id');
+            $('#form_result').html('');
+            $.ajax({
+            url :"feature/edit/"+user_id,
+
+            dataType:"json",
+            success:function(data)
+            {
+                $('#title').val(data.result.title);
+                $('#description').val(data.result.description);
+                $('#link').val(data.result.link);
+                $('#hidden_id').val(user_id);
+                $('#editModal').modal('show');
+            }
+            })
             });
 
             var user_id;
@@ -164,7 +201,7 @@
 
             $('#ok_button').click(function(){
             $.ajax({
-            url:"tenant/delete/"+user_id,
+            url:"feature/delete/"+user_id,
             
             success:function(data)
             {

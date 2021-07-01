@@ -89,6 +89,78 @@
 
 <!-- modal -->
 
+<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+   <img src="img/Popups_Food concept.png" style="width: 100%;">
+  <a> <div style="    position: absolute;
+    top: 25px;
+    right: 28px;"><i id="close-btn" style="color:#fff;font-size:20px" class="fa fa-times"></i></div></a>
+  </div>
+</div> -->
+
+
+<div class="modal fade" id="tenantpopuomodal" tabindex="-1" role="dialog" aria-labelledby="tenantsModalLabel" style="display: none;">  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="row flex-align-items-center" style="width: 100%;">
+          <div class="container">
+            <div class="row" style="display: flex;">
+              <div class="col-sm-6">
+                      <div class="image-content p-0" style="padding-top: 0 !important;">
+                        <img style="width: 100%;" src="https://www.foodstudio.lk/img/OGF/China_Express/Tennakoon.png">
+                      </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="discription-content text-center">
+                  <h1 class="underline">China Express</h1>
+                  <p class="mb-20">Appetising Chinese staples with spot-on flavours, China Express encompasses three stalls, each with its own flavour option. Xilan satisfies spicy local palates with that familiar Lankan Chinese kick, Mala Hot Pot serves a Sichuan specialty, and China Street serves Mao cuisine. China Express stays true to the bona fide tastes of Chinese cuisines, no matter what you crave.</p>
+
+                  <a href="https://www.foodstudio.lk/img/OGF/China_Express/China Express menu-digital.pdf" type="button" download="" class="btn btn-menu">Download Our menu</a>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></div>
+
+  
+
+<script>
+  function opentenantpopuomodal(val) {
+    // Prevent the # from being at the url
+    event.preventDefault();
+    openmodalpopup();
+
+    if (val.length == 0) {
+      document.getElementById("tenantpopuomodal").innerHTML = "";
+      return;
+    }
+    else {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("tenantpopuomodal").innerHTML = this.responseText;
+          }
+      };
+      xmlhttp.open("GET", "https://www.foodstudio.lk/includes/get-tenant-details.php?q=" + val, true);
+      xmlhttp.send();
+    }
+  }
+
+  function openmodalpopup(){
+    $('#tenantpopuomodal').modal('show');
+  }
+</script>
+
 
 
 @endsection
