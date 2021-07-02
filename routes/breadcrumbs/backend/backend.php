@@ -54,9 +54,22 @@ Breadcrumbs::for('admin.promotion.edit', function ($trail) {
 Breadcrumbs::for('admin.voucher.index', function ($trail) {
     $trail->push('Voucher', route('admin.voucher.index'));
 });
-
 Breadcrumbs::for('admin.voucher.edit', function ($trail) {
     $trail->push('Edit Voucher', route('admin.voucher.edit',1));
+});
+
+
+Breadcrumbs::for('admin.corporatenews.index', function ($trail) {
+    $trail->push('Corporate News', route('admin.corporatenews.index'));
+});
+Breadcrumbs::for('admin.corporatenews.edit', function ($trail) {
+    $trail->push('Edit Corporate News', route('admin.corporatenews.edit',1));
+});
+Breadcrumbs::for('admin.tenantnews.index', function ($trail) {
+    $trail->push('Tenants News', route('admin.tenantnews.index'));
+});
+Breadcrumbs::for('admin.tenantnews.edit', function ($trail) {
+    $trail->push('Edit Tenants News', route('admin.tenantnews.edit',1));
 });
 
 

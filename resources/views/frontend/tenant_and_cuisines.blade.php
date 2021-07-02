@@ -46,7 +46,7 @@
       @foreach($datas as $key => $data)               
 
     <li class="tenant-tab">
-      <a style="border: 1px solid;border-radius: 8px;display: flex;" href="http://127.0.0.1:8000/tenant-and-cuisines/{{ $data->id }}" aria-expanded="false">
+      <a style="border: 1px solid;border-radius: 8px;display: flex;" href="{{url('tenant-and-cuisines',$data->id)}}" aria-expanded="false">
         <img src="{{url('files/branch_logo/',$data->logo)}}" style="margin: auto;">
       </a>
     </li>          
@@ -64,7 +64,7 @@
 
         <div class="col-sm-3">
           <div class="menue-type-box ccc" style="background-image: url('{{url('files/tenants/',$ten->menu)}}'); background-size: cover; background-repeat: no-repeat;">
-            <a href="#" onclick="opentenantpopuomodal(9)">
+            <a href="#" onclick="opentenantpopuomodal({{$ten->id}})">
               <div class="name-logo-container">
                 <img src="{{url('files/tenants/',$ten->photo)}}">
                 <p>{{ $ten->name }}</p>
@@ -89,7 +89,7 @@
 
 <!-- modal -->
 
-<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+<!-- <div class="modal fade in" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: block; padding-right: 7px;">
   <div class="modal-dialog modal-dialog-centered " role="document">
    <img src="img/Popups_Food concept.png" style="width: 100%;">
   <a> <div style="    position: absolute;
@@ -98,6 +98,7 @@
   </div>
 </div> -->
 
+@foreach($tenants as $key => $ten) 
 
 <div class="modal fade" id="tenantpopuomodal" tabindex="-1" role="dialog" aria-labelledby="tenantsModalLabel" style="display: none;">  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -110,15 +111,15 @@
             <div class="row" style="display: flex;">
               <div class="col-sm-6">
                       <div class="image-content p-0" style="padding-top: 0 !important;">
-                        <img style="width: 100%;" src="https://www.foodstudio.lk/img/OGF/China_Express/Tennakoon.png">
+                        <img style="width: 100%;" src="{{url('files/tenants/',$ten->pop_photo)}}">
                       </div>
               </div>
               <div class="col-sm-6">
                 <div class="discription-content text-center">
-                  <h1 class="underline">China Express</h1>
-                  <p class="mb-20">Appetising Chinese staples with spot-on flavours, China Express encompasses three stalls, each with its own flavour option. Xilan satisfies spicy local palates with that familiar Lankan Chinese kick, Mala Hot Pot serves a Sichuan specialty, and China Street serves Mao cuisine. China Express stays true to the bona fide tastes of Chinese cuisines, no matter what you crave.</p>
+                  <h1 class="underline">{{ $ten->name }}</h1>
+                  <p class="mb-20">{{ $ten->description }}</p>
 
-                  <a href="https://www.foodstudio.lk/img/OGF/China_Express/China Express menu-digital.pdf" type="button" download="" class="btn btn-menu">Download Our menu</a>
+                  <a href="{{url('files/pdf_upload/',$ten->upload)}}" type="button" download="" class="btn btn-menu">Download Our menu</a>
                   <br>
                   <br>
                   <br>
@@ -132,7 +133,7 @@
     </div>
   </div></div>
 
-  
+  @endforeach 
 
 <script>
   function opentenantpopuomodal(val) {
@@ -151,7 +152,7 @@
               document.getElementById("tenantpopuomodal").innerHTML = this.responseText;
           }
       };
-      xmlhttp.open("GET", "https://www.foodstudio.lk/includes/get-tenant-details.php?q=" + val, true);
+      xmlhttp.open("GET", "{{url('get-tenants-detail')}}/" + val, true);
       xmlhttp.send();
     }
   }

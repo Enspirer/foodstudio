@@ -36,10 +36,10 @@
   <div class="row">
     <div class="media-navigation">
       <ul class="list-inline">
-        <li class="active"><a href="media">Corporate News</a></li>
-        <li><a href="http://127.0.0.1:8000/media-tenant">Tenants News</a></li>
-        <li><a href="http://127.0.0.1:8000/media-video">Videos</a></li>
-        <li><a href="http://127.0.0.1:8000/media-social">Social Responsibility</a></li>
+        <li class="active"><a href="{{url('media')}}">Corporate News</a></li>
+        <li><a href="{{url('media-tenant')}}">Tenants News</a></li>
+        <li><a href="{{url('media-video')}}">Videos</a></li>
+        <li><a href="{{url('media-social')}}">Social Responsibility</a></li>
       </ul>
     </div>
   </div>
@@ -74,124 +74,139 @@
    <!--         </div>-->
    <!--       </a>-->
    <!--     </div>-->
-        
+   @foreach($cnewstop as $key => $ctop)
+
         <div class="col-sm-6 mt-20 news-main-box">
-          <a href="https://www.yamu.lk/place/food-studio-sl-colombo-city-centre/review-241212" target="_blank">
+          <a href="{!!$ctop->link!!}" target="_blank">
             <div class="news-image-box">
-              <img src="https://www.foodstudio.lk/img/news/news_02444.jpg" width="100%">
+              <img src="{{url('files/corporate_news/',$ctop->image)}}" width="100%" height="500px">
               <div class="highlight-news">Top News</div>--&gt;
             </div>
             <div class="news-details-box">
-              <h3>Food Studio (Colombo City Centre)</h3>
-              <p>The Colombo City Centre, is Colombo's first, proper, mall. It's got a great layout, good architecture and is home to a range of shops (that already exist around Colombo). It's essentially an Abans/Softlogic hybrid plant. </p>
+              <h3>{!!$ctop->title!!}</h3>
+              <p>{!!$ctop->description!!}</p>
             </div>
           </a>
         </div>
+        @endforeach    
+
+        @foreach($cnewsfeatured as $key => $cfeatured)
         
         <div class="col-sm-6 mt-20 news-main-box">
-          <a href="https://www.yamu.lk/place/food-studio-sl-colombo-city-centre/review-241212" target="_blank">
+          <a href="{!!$cfeatured->link!!}" target="_blank">
             <div class="news-image-box">
-              <img src="https://www.foodstudio.lk/img/news/news_0222.jpg" width="100%">
+              <img src="{{url('files/corporate_news/',$cfeatured->image)}}" width="100%" height="500px">
               <div class="highlight-news">Featured Story</div>
             </div>
             <div class="news-details-box">
-              <h3>Food Studio - The Paragon of Food courts</h3>
-              <p>Situated on the 3rd floor of Colombo City Center and the Lower Ground floor of One Galle Face Mall, Food Studio is not your typical food court. Consisting of a myriad of cuisines, irresistible aromas and an astounding setup... </p>
+              <h3>{!!$cfeatured->title!!}</h3>
+              <p>{!!$cfeatured->description!!}</p>
             </div>
           </a>
         </div>
+
+        @endforeach
         
        
       </div>
 
 <br>
- <div class="row flex-align-items-center">
+
+  @foreach($cnews as $key => $cnew)
+
+      <!-- <div class="row flex-align-items-center"> -->
      
         <div class="col-sm-6 mt-20 news-main-box">
-          <a href="https://www.yamu.lk/place/food-studio-sl-colombo-city-centre/review-241212" target="_blank">
+          <a href="{!!$cnew->link!!}" target="_blank">
             <div class="news-image-box">
-              <img src="https://www.foodstudio.lk/img/news/news_0233.jpg" width="100%">
+              <img src="{{url('files/corporate_news/',$cnew->image)}}" width="100%" height="500px">
       
             </div>
             <div class="news-details-box">
-              <h3>Food Studio: One Galle Face Mall</h3>
-              <p>Located at the lower ground floor of the One Galle Face Mall is Colombo’s most unique food court, Food Studio. When you walk into Food Studio it feels as if you’ve stepped onto a 1960’s movie set. </p>
+              <h3>{!!$cnew->title!!}</h3>
+              <p>{!!$cnew->description!!}</p>
             </div>
           </a>
         </div>
         
-     </div>
-      <!--<div class="row flex-align-items-center">-->
-      <!--  <div class="col-sm-6 mt-20 news-main-box">-->
-      <!--    <a href="https://www.foodstudio.lk/events-inner?news_id=1">-->
-      <!--      <div class="news-image-box">-->
-      <!--        <img src="https://www.foodstudio.lk/img/news_03.png" width="100%">-->
-      <!--        <div class="news-date">-->
-      <!--          <span class="date">02</span> <br>-->
-      <!--          <span class="month">June</span> <br>-->
-      <!--          <span class="year">2020</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      <div class="news-details-box">-->
-      <!--        <h3>Lorem Ipsum is simply dummy text</h3>-->
-      <!--        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>-->
-      <!--      </div>-->
-      <!--    </a>-->
-      <!--  </div>-->
+     <!-- </div> -->
+     
+  @endforeach  
 
-      <!--  <div class="col-sm-6 mt-20 news-main-box">-->
-      <!--    <a href="https://www.foodstudio.lk/events-inner?news_id=1">-->
-      <!--      <div class="news-image-box">-->
-      <!--        <img src="https://www.foodstudio.lk/img/news_04.png" width="100%">-->
-      <!--        <div class="news-date">-->
-      <!--          <span class="date">01</span> <br>-->
-      <!--          <span class="month">June</span> <br>-->
-      <!--          <span class="year">2020</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      <div class="news-details-box">-->
-      <!--        <h3>Lorem Ipsum is simply dummy text</h3>-->
-      <!--        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>-->
-      <!--      </div>-->
-      <!--    </a>-->
-      <!--  </div>-->
-      <!--</div>-->
 
-      <!--<div class="row flex-align-items-center">-->
-      <!--  <div class="col-sm-6 mt-20 news-main-box">-->
-      <!--    <a href="https://www.foodstudio.lk/events-inner?news_id=1">-->
-      <!--      <div class="news-image-box">-->
-      <!--        <img src="https://www.foodstudio.lk/img/news_05.png" width="100%">-->
-      <!--        <div class="news-date">-->
-      <!--          <span class="date">25</span> <br>-->
-      <!--          <span class="month">May</span> <br>-->
-      <!--          <span class="year">2020</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      <div class="news-details-box">-->
-      <!--        <h3>Lorem Ipsum is simply dummy text</h3>-->
-      <!--        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>-->
-      <!--      </div>-->
-      <!--    </a>-->
-      <!--  </div>-->
+      <!-- <div class="row flex-align-items-center">
+       <div class="col-sm-6 mt-20 news-main-box">
+         <a href="https://www.foodstudio.lk/events-inner?news_id=1">
+           <div class="news-image-box">
+             <img src="https://www.foodstudio.lk/img/news_03.png" width="100%">
+             <div class="news-date">
+               <span class="date">02</span> <br>
+               <span class="month">June</span> <br>
+               <span class="year">2020</span>
+             </div>
+           </div>
+           <div class="news-details-box">
+             <h3>Lorem Ipsum is simply dummy text</h3>
+             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+           </div>
+         </a>
+       </div>
 
-      <!--  <div class="col-sm-6 mt-20 news-main-box">-->
-      <!--    <a href="https://www.foodstudio.lk/events-inner?news_id=1">-->
-      <!--      <div class="news-image-box">-->
-      <!--        <img src="https://www.foodstudio.lk/img/news_06.png" width="100%">-->
-      <!--        <div class="news-date">-->
-      <!--          <span class="date">09</span> <br>-->
-      <!--          <span class="month">May</span> <br>-->
-      <!--          <span class="year">2020</span>-->
-      <!--        </div>-->
-      <!--      </div>-->
-      <!--      <div class="news-details-box">-->
-      <!--        <h3>Lorem Ipsum is simply dummy text</h3>-->
-      <!--        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>-->
-      <!--      </div>-->
-      <!--    </a>-->
-      <!--  </div>-->
-      <!--</div>-->
+       <div class="col-sm-6 mt-20 news-main-box">
+         <a href="https://www.foodstudio.lk/events-inner?news_id=1">
+           <div class="news-image-box">
+             <img src="https://www.foodstudio.lk/img/news_04.png" width="100%">
+             <div class="news-date">
+               <span class="date">01</span> <br>
+               <span class="month">June</span> <br>
+               <span class="year">2020</span>
+             </div>
+           </div>
+           <div class="news-details-box">
+             <h3>Lorem Ipsum is simply dummy text</h3>
+             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+           </div>
+         </a>
+       </div>
+      </div> -->
+
+      <!-- <div class="row flex-align-items-center">
+       <div class="col-sm-6 mt-20 news-main-box">
+         <a href="https://www.foodstudio.lk/events-inner?news_id=1">
+           <div class="news-image-box">
+             <img src="https://www.foodstudio.lk/img/news_05.png" width="100%">
+             <div class="news-date">
+               <span class="date">25</span> <br>
+               <span class="month">May</span> <br>
+               <span class="year">2020</span>
+             </div>
+           </div>
+           <div class="news-details-box">
+             <h3>Lorem Ipsum is simply dummy text</h3>
+             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+           </div>
+         </a>
+       </div>
+
+       <div class="col-sm-6 mt-20 news-main-box">
+         <a href="https://www.foodstudio.lk/events-inner?news_id=1">
+           <div class="news-image-box">
+             <img src="https://www.foodstudio.lk/img/news_06.png" width="100%">
+             <div class="news-date">
+               <span class="date">09</span> <br>
+               <span class="month">May</span> <br>
+               <span class="year">2020</span>
+             </div>
+           </div>
+           <div class="news-details-box">
+             <h3>Lorem Ipsum is simply dummy text</h3>
+             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text...</p>
+           </div>
+         </a>
+       </div>
+      </div> -->
+
+
     </div>
   </div>
 </div>

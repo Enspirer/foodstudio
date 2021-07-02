@@ -36,10 +36,10 @@
   <div class="row">
     <div class="media-navigation">
       <ul class="list-inline">
-        <li><a href="media">Corporate News</a></li>
-        <li><a href="http://127.0.0.1:8000/media-tenant">Tenants News</a></li>
-        <li class="active"><a href="http://127.0.0.1:8000/media-video">Videos</a></li>
-        <li><a href="http://127.0.0.1:8000/media-social">Social Responsibility</a></li>
+        <li><a href="{{url('media')}}">Corporate News</a></li>
+        <li><a href="{{url('media-tenant')}}">Tenants News</a></li>
+        <li class="active"><a href="{{url('media-video')}}">Videos</a></li>
+        <li><a href="{{url('media-social')}}">Social Responsibility</a></li>
       </ul>
     </div>
   </div>

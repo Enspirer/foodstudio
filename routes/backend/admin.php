@@ -10,6 +10,9 @@ use App\Http\Controllers\Backend\FeatureEventsController;
 use App\Http\Controllers\Backend\PromotionsController;
 use App\Http\Controllers\Backend\VouchersController;
 
+use App\Http\Controllers\Backend\CorporateNewsController;
+use App\Http\Controllers\Backend\TenantNewsController;
+
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -74,3 +77,19 @@ Route::get('voucher/getdetails', [VouchersController::class, 'GetTableDetails'])
 Route::get('voucher/edit/{id}', [VouchersController::class, 'edit'])->name('voucher.edit');
 Route::post('voucher/update', [VouchersController::class, 'update'])->name('voucher.update');
 Route::get('voucher/delete/{id}', [VouchersController::class, 'destroy'])->name('voucher.destroy');
+
+Route::get('corporatenews', [CorporateNewsController::class, 'index'])->name('corporatenews.index');
+Route::post('corporatenews/insert', [CorporateNewsController::class, 'store'])->name('corporatenews.store');
+Route::get('corporatenews/getdetails', [CorporateNewsController::class, 'GetTableDetails'])->name('corporatenews.GetTableDetails');
+Route::get('corporatenews/edit/{id}', [CorporateNewsController::class, 'edit'])->name('corporatenews.edit');
+Route::post('corporatenews/update', [CorporateNewsController::class, 'update'])->name('corporatenews.update');
+Route::get('corporatenews/delete/{id}', [CorporateNewsController::class, 'destroy'])->name('corporatenews.destroy');
+
+Route::get('tenantnews', [TenantNewsController::class, 'index'])->name('tenantnews.index');
+Route::post('tenantnews/insert', [TenantNewsController::class, 'store'])->name('tenantnews.store');
+Route::get('tenantnews/getdetails', [TenantNewsController::class, 'GetTableDetails'])->name('tenantnews.GetTableDetails');
+Route::get('tenantnews/edit/{id}', [TenantNewsController::class, 'edit'])->name('tenantnews.edit');
+Route::post('tenantnews/update', [TenantNewsController::class, 'update'])->name('tenantnews.update');
+Route::get('tenantnews/delete/{id}', [TenantNewsController::class, 'destroy'])->name('tenantnews.destroy');
+
+

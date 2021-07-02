@@ -36,40 +36,44 @@
   <div class="row">
     <div class="media-navigation">
       <ul class="list-inline">
-        <li><a href="media">Corporate News</a></li>
-        <li class="active"><a href="http://127.0.0.1:8000/media-tenant">Tenants News</a></li>
-        <li><a href="http://127.0.0.1:8000/media-video">Videos</a></li>
-        <li><a href="http://127.0.0.1:8000/media-social">Social Responsibility</a></li>
+        <li><a href="{{url('media')}}">Corporate News</a></li>
+        <li class="active"><a href="{{url('media-tenant')}}">Tenants News</a></li>
+        <li><a href="{{url('media-video')}}">Videos</a></li>
+        <li><a href="{{url('media-social')}}">Social Responsibility</a></li>
       </ul>
     </div>
   </div>
 </div>
 
 <div class="container-fluid media-container">
+
+
+@foreach($tnews as $key => $tnew)
+
   <div class="row">
     <div class="container">
       <div class="row tenent-media-panel flex-align-items-center m-0">
         <div class="col-sm-6 p-30 pr-20 tenant-img-container">
           <div class="tenanent-news-box">
-            <img src="https://www.foodstudio.lk/img/news/news_03.jpg" width="100%">
+            <img src="{{url('files/tenant_news/',$tnew->image)}}" width="100%">
           </div>
         </div>
         <div class="col-sm-6 tenant-desc-container p-30 pl-20">
           <div class="description-panel">
-            <img src="https://www.foodstudio.lk/img/news/logo1.png" width="18%">
-            <p class="date mt-10">29 August 2020</p>
-            <a href="http://www.ft.lk/ft-lite/The-Sizzle-opens-outlet-at-Food-Studio-Colombo-City-Centre/6-705279" target="_blank">
-            <h3 class="underline-sm">The Sizzle opens outlet at Food Studio, Colombo City Centre</h3></a>
-            <p class="mt-20">The Sizzle has opened its latest outlet in Food Studio at the Colombo City Centre and is all set to serve the local community.
-                Lovers of the sizzling platters in Colombo can now head over to the restaurant’s brand-new outlet at Food Studio, located at the third floor
-                of Colombo City Centre – a very convenient and easy-to-reach location with ample parking space, and enjoy their yummy choices.</p>
+            <img src="{{url('files/tenant_news/',$tnew->logo)}}" width="18%">
+            <p class="date mt-10">{{ date('d F Y', strtotime($tnew->created_at))  }}</p>
+            <a href="{{ $tnew->link }}" target="_blank">
+            <h3 class="underline-sm">{{ $tnew->title }}</h3></a>
+            <p class="mt-20">{{ $tnew->description }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  @endforeach 
   
-    <div class="row">
+    <!-- <div class="row">
     <div class="container">
       <div class="row tenent-media-panel flex-align-items-center m-0">
         <div class="col-sm-6 p-30 pr-20 tenant-img-container">
@@ -88,9 +92,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
-      <div class="row">
+      <!-- <div class="row">
     <div class="container">
       <div class="row tenent-media-panel flex-align-items-center m-0">
         <div class="col-sm-6 p-30 pr-20 tenant-img-container">
@@ -109,9 +113,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
-       <div class="row">
+       <!-- <div class="row">
     <div class="container">
       <div class="row tenent-media-panel flex-align-items-center m-0">
         <div class="col-sm-6 p-30 pr-20 tenant-img-container">
@@ -130,50 +134,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
   
-         <div class="row">
-    <div class="container">
-      <div class="row tenent-media-panel flex-align-items-center m-0">
-        <div class="col-sm-6 p-30 pr-20 tenant-img-container">
-          <div class="tenanent-news-box">
-            <img src="https://www.foodstudio.lk/img/news/news_07.jpg" width="100%">
-          </div>
-        </div>
-        <div class="col-sm-6 tenant-desc-container p-30 pl-20">
-          <div class="description-panel">
-            <img src="https://www.foodstudio.lk/img/news/logo3.png" width="18%">
-            <p class="date mt-10">18 July 2019</p>
-            <a href="https://foodieslanka.com/places/breakfast-1/twister-one-galle-face-food-studio/" target="_blank">
-            <h3 class="underline-sm">Twister (One Galle Face) – Food Studio</h3></a>
-            <p class="mt-20">One Galle Face literally took Colombo by storm. From the opening date to this very day there has been a steady flow of tourists, window shoppers, jaywalkers and genuine buyers walking the extensive halls. It is quite an extent for a mall and going through one floor alone can have you exhausted.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+     
   
-      <div class="row">
-    <div class="container">
-      <div class="row tenent-media-panel flex-align-items-center m-0">
-        <div class="col-sm-6 p-30 pr-20 tenant-img-container">
-          <div class="tenanent-news-box">
-            <img src="https://www.foodstudio.lk/img/news/news_01.jpg" width="100%">
-          </div>
-        </div>
-        <div class="col-sm-6 tenant-desc-container p-30 pl-20">
-          <div class="description-panel">
-            <img src="https://www.foodstudio.lk/img/news/header-adaderana-biz-new-logo.png" width="18%">
-            <p class="date mt-10">03 March 2020</p>
-            <a href="http://bizenglish.adaderana.lk/brave-blokes-take-on-the-monster-burger-challenge-at-cheeseheads/" target="_blank">
-            <h3 class="underline-sm">Brave blokes take on the ‘Monster Burger’ challenge at Cheeseheads</h3></a>
-            <p class="mt-20">If a cheeseburger filled with cheese sauce is not already cheesy enough, how about the patty stuffed with mozzarella too? Last week, gutty contestants took on a trailblazing food challenge when Cheeseheads...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+   
   
   <!--<div class="row">-->
   <!--  <div class="container">-->

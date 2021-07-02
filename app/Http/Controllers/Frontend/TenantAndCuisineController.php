@@ -27,16 +27,22 @@ class TenantAndCuisineController extends Controller
         $tenants = Tenant::whereIn('id',$tenants_id)->get();
         // dd($tenants);
 
-        // dd($data);
-   
-        // dd($datas);
 
         return view('frontend.tenant_and_cuisines',[
             'datas' => $datas,
             'tenants' => $tenants
         ]);
+    }
 
-
+    public function gettenantdetail($id)
+    {
+        $tenant = Tenant::where('id',$id)->first();
+        return view('frontend.tenant_detail',[
+            'tenant' => $tenant
+        ]);
 
     }
+
+
+
 }
