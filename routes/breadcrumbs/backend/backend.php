@@ -71,6 +71,21 @@ Breadcrumbs::for('admin.tenantnews.index', function ($trail) {
 Breadcrumbs::for('admin.tenantnews.edit', function ($trail) {
     $trail->push('Edit Tenants News', route('admin.tenantnews.edit',1));
 });
+Breadcrumbs::for('admin.video.index', function ($trail) {
+    $trail->push('Video', route('admin.video.index'));
+});
+Breadcrumbs::for('admin.video.edit', function ($trail) {
+    $trail->push('Edit Video', route('admin.video.edit',1));
+});
+Breadcrumbs::for('admin.social.index', function ($trail) {
+    $trail->push('Social Responsibility', route('admin.social.index'));
+});
+Breadcrumbs::for('admin.social.edit', function ($trail) {
+    $trail->push('Edit Social Responsibility', route('admin.social.edit',1));
+});
+Breadcrumbs::for('admin.social.editvid', function ($trail) {
+    $trail->push('Edit Social Responsibility', route('admin.social.editvid',1));
+});
 
 
 

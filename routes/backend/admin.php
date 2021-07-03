@@ -12,6 +12,8 @@ use App\Http\Controllers\Backend\VouchersController;
 
 use App\Http\Controllers\Backend\CorporateNewsController;
 use App\Http\Controllers\Backend\TenantNewsController;
+use App\Http\Controllers\Backend\VideoController;
+use App\Http\Controllers\Backend\SocialResponsibilityController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -91,5 +93,22 @@ Route::get('tenantnews/getdetails', [TenantNewsController::class, 'GetTableDetai
 Route::get('tenantnews/edit/{id}', [TenantNewsController::class, 'edit'])->name('tenantnews.edit');
 Route::post('tenantnews/update', [TenantNewsController::class, 'update'])->name('tenantnews.update');
 Route::get('tenantnews/delete/{id}', [TenantNewsController::class, 'destroy'])->name('tenantnews.destroy');
+
+Route::get('video', [VideoController::class, 'index'])->name('video.index');
+Route::post('video/insert', [VideoController::class, 'store'])->name('video.store');
+Route::get('video/getdetails', [VideoController::class, 'GetTableDetails'])->name('video.GetTableDetails');
+Route::get('video/edit/{id}', [VideoController::class, 'edit'])->name('video.edit');
+Route::post('video/update', [VideoController::class, 'update'])->name('video.update');
+Route::get('video/delete/{id}', [VideoController::class, 'destroy'])->name('video.destroy');
+
+Route::get('social', [SocialResponsibilityController::class, 'index'])->name('social.index');
+Route::post('social/insert', [SocialResponsibilityController::class, 'store'])->name('social.store');
+Route::post('social/inserttwo', [SocialResponsibilityController::class, 'storetwo'])->name('social.storetwo');
+Route::get('social/getdetails', [SocialResponsibilityController::class, 'GetTableDetails'])->name('social.GetTableDetails');
+Route::get('social/edit/{id}', [SocialResponsibilityController::class, 'edit'])->name('social.edit');
+Route::get('social/editvid/{id}', [SocialResponsibilityController::class, 'editvid'])->name('social.editvid');
+Route::post('social/update', [SocialResponsibilityController::class, 'update'])->name('social.update');
+Route::post('social/updatetwo', [SocialResponsibilityController::class, 'update'])->name('social.updatetwo');
+Route::get('social/delete/{id}', [SocialResponsibilityController::class, 'destroy'])->name('social.destroy');
 
 

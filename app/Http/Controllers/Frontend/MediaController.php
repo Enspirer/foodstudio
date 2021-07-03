@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\CorporateNews;
 use App\Models\TenantNews;
+use App\Models\Video;
 use DB;
 
 class MediaController extends Controller
@@ -27,7 +28,6 @@ class MediaController extends Controller
     public function tenant()
     {
         $tnews = DB::table('tenant_news')->orderBy('order', 'DESC')->get();
-        // TenantNews::whereDate('created_at', date('Y-m-d'))->get();
 
         return view('frontend.media_tenant',[
             'tnews' => $tnews
@@ -35,10 +35,24 @@ class MediaController extends Controller
     }
     public function video()
     {
-        return view('frontend.media_video');
+
+        $videos = DB::table('videos')->orderBy('order', 'DESC')->get();
+        $defaultvideo = DB::table('videos')->orderBy('order', 'DESC')->first();
+        // dd($defaultvideo);
+
+        return view('frontend.media_video',[
+            'videos' => $videos,
+            'defaultvideo' => $defaultvideo
+        ]);
     }
     public function social()
     {
-        return view('frontend.media_social');
+        $socialres = DB::table('social_responsibilities')->orderBy('order', 'DESC')->get();
+
+
+        return view('frontend.media_social',[
+            'socialres' => $socialres
+            // 'defaultvideo' => $defaultvideo
+        ]);
     }
 }

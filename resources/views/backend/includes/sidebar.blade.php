@@ -125,6 +125,16 @@
                                 Tenants News
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/video'))}}" href="{{ route('admin.video.index') }}">                            
+                                Video
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/social'))}}" href="{{ route('admin.social.index') }}">                            
+                                Social Responsibility
+                            </a>
+                        </li>
                         
 
                     </ul>

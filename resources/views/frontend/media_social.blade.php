@@ -46,66 +46,60 @@
 </div>
 
 <div class="container-fluid social-container mt-20 mb-20">
+
+
+@foreach($socialres as $key => $social)
+
+@if($social->type =='1') 
+
+<input type="hidden" value="{{ preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $social->video, $matches) }}" />
   <div class="row">
     <div class="container social-res-panel">
       <div class="row m-0 flex-align-items-center">
         <div class="col-sm-6 p-40 pr-20">
           <div class="tenanent-news-box">
-              <iframe width="100%" height="300" src="https://www.youtube.com/embed/FKVzHYkVf4c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/{{ $matches[0] }}"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                <!-- https://www.youtube.com/watch?v=FITTkh-kf6g -->
             <!--<img src="https://www.foodstudio.lk/img/tenants_news_01.png" width="100%">-->
           </div>
         </div>
         <div class="col-sm-6 p-40 pl-20">
           <div class="description-panel">
             <!--<p class="date mt-10">02 June 2020</p>-->
-            <h4 class="underline-sm">
-World Food Day 2020</h4>
-            <p class="mt-20">Food Studio in partnership with IWMI &amp; Food and Agriculture Organization of the United Nations is taking action to ensure #ZeroWaste by finding innovative approaches to Reduce, Recycle &amp; Reuse food waste at all our outlets.</p>
+            <h4 class="underline-sm">{{ $social->title }}</h4>
+            <p class="mt-20">{{ $social->description }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  @else
 
   <div class="row">
     <div class="container social-res-panel">
       <div class="row m-0 flex-align-items-center">
         <div class="col-sm-6 p-40 pl-20">
           <div class="tenanent-news-box">
-            <img src="https://www.foodstudio.lk/img/178924125_2555970224710977_2332768624476573998_n.jpg" width="100%">
+            <img src="{{url('files/social_responsible/',$social->image)}}" width="100%">
           </div>
         </div>
         <div class="col-sm-6 p-40 pr-20">
           <div class="description-panel">
             <!--<p class="date mt-10">02 June 2020</p>-->
-            <h4 class="underline-sm">WE FIGHT FOOD WASTE!</h4>
-            <p class="mt-20">Our mission is to ignite change regarding the global food waste issue. Together with the Food &amp; Agricultural Organization of the United Nations, Food Studio today launches a campaign to not only draw attention to the problem, but also to engage with society at all levels, including our own staff, in sharing practical, creative and impactful ways we can all change our behavior to minimize food waste.
-Let's start by not feeding our garbage bins. Simple actions from both the vendors &amp; consumers alike can help us take significant strides towards minimizing food waste.</p>
+            <h4 class="underline-sm">{{ $social->title }}</h4>
+            <p class="mt-20">{{ $social->description }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!--<div class="row">-->
-  <!--  <div class="container social-res-panel">-->
-  <!--    <div class="row m-0 flex-align-items-center">-->
-  <!--      <div class="col-sm-6 p-40 pr-20">-->
-  <!--        <div class="tenanent-news-box">-->
-  <!--          <img src="https://www.foodstudio.lk/img/tenants_news_03.png" width="100%">-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--      <div class="col-sm-6 p-40 pl-20">-->
-  <!--        <div class="description-panel">-->
-  <!--          <p class="date mt-10">02 June 2020</p>-->
-  <!--          <h4 class="underline-sm">Lorem Ipsum is simply dummy text.</h4>-->
-  <!--          <p class="mt-20">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to-->
-  <!--            make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>-->
-  <!--        </div>-->
-  <!--      </div>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
+  @endif
+
+  @endforeach 
+
+
 </div>
 
 
