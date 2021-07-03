@@ -51,13 +51,13 @@
       <div class="row m-0 mt-10 flex-align-items-center">
       
       
-      
+      <input type="hidden" value="{{ preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $defaultvideo->link, $defaultmatch) }}" />
 
         <div class="col-sm-9 p-0">
           <div class="video-content-box p-30 pt-0">
               <div id="youtubeplayer">
                   <!--<iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>-->
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/FMxRlrhMlFw?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{ $defaultmatch[0] }}?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
               </div>
           </div>
         </div>
