@@ -14,6 +14,8 @@ use App\Http\Controllers\Backend\CorporateNewsController;
 use App\Http\Controllers\Backend\TenantNewsController;
 use App\Http\Controllers\Backend\VideoController;
 use App\Http\Controllers\Backend\SocialResponsibilityController;
+use App\Http\Controllers\Backend\JobOpportunityController;
+use App\Http\Controllers\Backend\ContactsController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -110,5 +112,22 @@ Route::get('social/editvid/{id}', [SocialResponsibilityController::class, 'editv
 Route::post('social/update', [SocialResponsibilityController::class, 'update'])->name('social.update');
 Route::post('social/updatetwo', [SocialResponsibilityController::class, 'update'])->name('social.updatetwo');
 Route::get('social/delete/{id}', [SocialResponsibilityController::class, 'destroy'])->name('social.destroy');
+
+Route::get('careers', [JobOpportunityController::class, 'index'])->name('careers.index');
+Route::post('careers/insert', [JobOpportunityController::class, 'store'])->name('careers.store');
+Route::get('careers/getdetails', [JobOpportunityController::class, 'GetTableDetails'])->name('careers.GetTableDetails');
+Route::get('careers/edit/{id}', [JobOpportunityController::class, 'edit'])->name('careers.edit');
+Route::post('careers/update', [JobOpportunityController::class, 'update'])->name('careers.update');
+Route::get('careers/delete/{id}', [JobOpportunityController::class, 'destroy'])->name('careers.destroy');
+
+Route::get('candidate', [JobOpportunityController::class, 'candidate_index'])->name('candidate.candidate_index');
+Route::get('candidate/getdetails', [JobOpportunityController::class, 'candidate_GetTableDetails'])->name('candidate.candidate_GetTableDetails');
+Route::get('candidate/delete/{id}', [JobOpportunityController::class, 'delete'])->name('candidate.delete');
+
+Route::get('contactus', [ContactsController::class, 'index'])->name('contactus.index');
+Route::get('contactus/getdetails', [ContactsController::class, 'GetTableDetails'])->name('contactus.GetTableDetails');
+Route::get('contactus/delete/{id}', [ContactsController::class, 'delete'])->name('contactus.delete');
+Route::post('contactus/update', [ContactsController::class, 'update'])->name('contactus.update');
+Route::get('contactus/edit/{id}', [ContactsController::class, 'edit'])->name('contactus.edit');
 
 

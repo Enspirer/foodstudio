@@ -94,33 +94,34 @@
         <div class="col-md-6 col-sm-6 col-xs-12">
       <div class="contact-form-panel text-center">
         <h4 class="underline" style="margin-left:15px">Contact Us</h4>
-        <form>
+        <form action="{{route('frontend.contactus.store')}}" method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
           <div class="form-group ">
             <div class="row m-0">
               <div class="col-sm-6 mt-10">
-                <input type="text" name="" class="form-control" placeholder="Name">
+                <input type="text" name="name" class="form-control" placeholder="Name">
               </div>
 
               <div class="col-sm-6 mt-10">
-                <input type="email" name="" class="form-control" placeholder="Email">
+                <input type="text" name="email" class="form-control" placeholder="Email">
               </div>
             </div>
           </div>
           <div class="form-group">
             <div class="row m-0">
               <div class="col-sm-6 mt-10">
-                <input type="text" name="" class="form-control" placeholder="Contact">
+                <input type="text" name="contact" class="form-control" placeholder="Contact">
               </div>
 
               <div class="col-sm-6 mt-10">
-                <input type="text" name="" class="form-control" placeholder="Subject">
+                <input type="text" name="subject" class="form-control" placeholder="Subject">
               </div>
             </div>
           </div>
           <div class="form-group">
             <div class="row m-0">
               <div class="col-sm-12 mt-10">
-                <textarea class="form-control" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" placeholder="Message"></textarea>
               </div>
             </div>
           </div>

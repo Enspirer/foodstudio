@@ -88,6 +88,25 @@ Breadcrumbs::for('admin.social.editvid', function ($trail) {
 });
 
 
+Breadcrumbs::for('admin.careers.index', function ($trail) {
+    $trail->push('Job Opportunity', route('admin.careers.index'));
+});
+Breadcrumbs::for('admin.careers.edit', function ($trail) {
+    $trail->push('Edit Job Opportunity', route('admin.careers.edit',1));
+});
+Breadcrumbs::for('admin.candidate.candidate_index', function ($trail) {
+    $trail->push('Candidates', route('admin.candidate.candidate_index'));
+});
+
+Breadcrumbs::for('admin.contactus.index', function ($trail) {
+    $trail->push('Contact Us', route('admin.contactus.index'));
+});
+Breadcrumbs::for('admin.contactus.edit', function ($trail) {
+    $trail->push('Edit Contact Us', route('admin.contactus.edit',1));
+});
+
+
+
 
 require __DIR__.'/auth.php';
 require __DIR__.'/log-viewer.php';

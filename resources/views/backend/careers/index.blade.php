@@ -10,7 +10,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <strong>Team&nbsp;</strong>
+                    <strong>Job Opportunity&nbsp;</strong>
 
                     <div class="btn btn-primary pull-right ml-3" data-toggle="modal" data-target="#exampleModal">Add New</div>
                    
@@ -21,10 +21,10 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">Team Name</th>
-                                <th scope="col">Job Role</th>
-                                <th scope="col">Job Group</th>
+                                <th scope="col">Title</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">Order</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -43,7 +43,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
          
-                <form action="{{route('admin.team.add_team')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.careers.store')}}" method="post" enctype="multipart/form-data">
                 
                     {{csrf_field()}}
                     <div class="modal-header">
@@ -54,36 +54,32 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" name="name" required>
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="title" required>
                         </div>
-                        <div class="form-group">
-                            <label>Job Role</label>
-                            <input type="text" class="form-control" name="role" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label>Job Group</label>
-                            <select class="form-control" name="jobgroup" required>
-                                @foreach($jobgroup as $job)
-                                    <option value=" {{$job->id}} "> {{$job->jobgroup_name}} </option>
-                                @endforeach                                    
-                            </select>
-                        </div>
-                        
+                                                                        
                         <label>Description</label>
                         <textarea class="form-control" name="description"  rows="4" required></textarea>
 
                         <br>
                         <div class="form-group">
-                            <label>Image (400px * 500px) </label>
-                            <input type="file" class="form-control-file" name="image">
-                        </div>  
+                            <label>Order</label>
+                            <input type="text" class="form-control" name="order" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Status</label>
+                            <select class="form-control" name="status" required>
+                                    <option value="Enabled">Enable</option>   
+                                    <option value="Disabled">Disable</option>                                
+                            </select>
+                        </div>
+
                     </div>
                     <div class="modal-footer">
                         
                         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary" value="Add New">
+                        <input type="submit" class="btn btn-success" value="Add New">
                     </div>
                 </form>
 
@@ -91,8 +87,7 @@
         </div>
     </div>
 
-
-     <!-- Modal delete -->
+    <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -106,7 +101,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <h5>Are you sure you want to remove this Team?</h5>
+                            <h5>Are you sure you want to remove this Job Opportunity?</h5>
                         </div>                        
 
                     </div>
@@ -126,19 +121,19 @@
         $(function () {
             var table = $('#villadatatable').DataTable({
                 processing: true,
-                ajax: "{{route('admin.team.GetTableDetails')}}",
+                ajax: "{{route('admin.careers.GetTableDetails')}}",
                 serverSide: true,
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'name', name: 'name'},
-                    {data: 'job_role', name: 'job_role'},
-                    {data: 'jobgroup_name', name: 'jobgroup_name'},
+                    {data: 'title', name: 'title'},
                     {data: 'description', name: 'description'},
+                    {data: 'order', name: 'order'},
+                    {data: 'status', name: 'status'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
-
+            
             var user_id;
 
             $(document).on('click', '.delete', function(){
@@ -148,7 +143,7 @@
 
             $('#ok_button').click(function(){
             $.ajax({
-            url:"team/delete/"+user_id,
+            url:"careers/delete/"+user_id,
             
             success:function(data)
             {

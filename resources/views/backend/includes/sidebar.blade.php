@@ -140,6 +140,33 @@
                     </ul>
                 </li>
 
+                <li class="nav-item nav-dropdown ">
+                    <a class="nav-link nav-dropdown-toggle " href="#">
+                        <i class="nav-icon fas fa-briefcase"></i>
+                        Careers
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/careers'))}}" href="{{ route('admin.careers.index') }}">                            
+                                Job Opportunity
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/candidate'))}}" href="{{ route('admin.candidate.candidate_index') }}">                            
+                                Candidates
+                            </a>
+                        </li>      
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link {{active_class(Route::is('admin/contactus'))}}" href="{{ route('admin.contactus.index') }}">
+                        <i class="nav-icon fas fa-comments"></i>     
+                        Contact Us
+                    </a>
+                </li>
+
 
 
 
