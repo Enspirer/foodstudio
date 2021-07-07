@@ -58,17 +58,15 @@
 
                         <div class="form-group">
                             <label>Logo</label>
-                            <input type="file" class="form-control-file" name="image1">
+                            <input type="file" class="form-control-file" name="image1" required>
                         </div>  
 
                         <div class="form-group">
                             <label>Background Image</label>
-                            <input type="file" class="form-control-file" name="image2">
+                            <input type="file" class="form-control-file" name="image2" required>
                         </div> 
 
-                        <!-- <hr style="border-top: 3px solid #bbb; border-radius: 5px;"> -->                        
-
-
+                        <!-- <hr style="border-top: 3px solid #bbb; border-radius: 5px;"> --> 
                         <br>
                         <div class="card">
                             <div class="card-header">
@@ -81,12 +79,12 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Pop-Up Image</label>
-                                    <input type="file" class="form-control-file" name="popimage">
+                                    <input type="file" class="form-control-file" name="popimage" required>
                                 </div>                                                
 
                                 <div class="form-group">
                                     <label>Upload Menu ( pdf )</label>
-                                    <input type="file" class="form-control-file" name="upload">
+                                    <input type="file" class="form-control-file" name="upload" required>
                                 </div>
                             </div>
                         </div>                      

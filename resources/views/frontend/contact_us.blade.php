@@ -99,29 +99,29 @@
           <div class="form-group ">
             <div class="row m-0">
               <div class="col-sm-6 mt-10">
-                <input type="text" name="name" class="form-control" placeholder="Name">
+                <input type="text" name="name" class="form-control" placeholder="Name" required>
               </div>
 
               <div class="col-sm-6 mt-10">
-                <input type="text" name="email" class="form-control" placeholder="Email">
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
               </div>
             </div>
           </div>
           <div class="form-group">
             <div class="row m-0">
               <div class="col-sm-6 mt-10">
-                <input type="text" name="contact" class="form-control" placeholder="Contact">
+                <input type="text" name="contact" class="form-control" placeholder="Contact" required>
               </div>
 
               <div class="col-sm-6 mt-10">
-                <input type="text" name="subject" class="form-control" placeholder="Subject">
+                <input type="text" name="subject" class="form-control" placeholder="Subject" required>
               </div>
             </div>
           </div>
           <div class="form-group">
             <div class="row m-0">
               <div class="col-sm-12 mt-10">
-                <textarea class="form-control" name="message" placeholder="Message"></textarea>
+                <textarea class="form-control" name="message" placeholder="Message" required></textarea>
               </div>
             </div>
           </div>

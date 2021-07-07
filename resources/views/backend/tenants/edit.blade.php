@@ -4,8 +4,11 @@
 
 @section('content')
     
+<div class="row">
+        <div class="col">
 
-<div class="modal-dialog" role="document">
+            <div class="card">  
+
             <div class="modal-content">
             <!-- <span id="form_result"></span> -->
                 <form action="{{route('admin.tenants.update')}}" method="post" enctype="multipart/form-data">
@@ -25,7 +28,7 @@
                             <label>Logo</label>
                             <input type="file" class="form-control-file" name="image1">
                         </div> 
-                        <img src="{{url('files/tenants/',$tenant->photo)}}" style="width: 30%" alt="">
+                        <img src="{{url('files/tenants/',$tenant->photo)}}" style="width: 20%" alt="">
                         <br><br>
                         <div class="form-group">
                             <label>Background Image</label>
@@ -58,7 +61,7 @@
                                     <label>Upload Menu ( pdf )</label>
                                     <input type="file" class="form-control-file" name="upload">
                                     <br>
-                                    <!-- {{$tenant->upload}} -->
+                                    {{$tenant->upload}}
                                 </div>
                             </div>
                         </div>                         
@@ -73,6 +76,7 @@
             </div>
         </div>
 
-
+</div>
+</div>
 
 @endsection

@@ -5,7 +5,10 @@
 @section('content')
     
 
-<div class="modal-dialog" role="document">
+<div class="row">
+        <div class="col">
+
+            <div class="card">  
             <div class="modal-content">
             <!-- <span id="form_result"></span> -->
                 <form action="{{route('admin.promotion.update')}}" method="post" enctype="multipart/form-data">
@@ -19,18 +22,18 @@
 
                         <div class="form-group">
                             <label>Image (366 * 548px) </label>
-                            <input type="file" class="form-control-file" name="image" required>
+                            <input type="file" class="form-control-file" name="image">
                             <br>
                             <img src="{{url('files/promotions/',$promotion->image)}}" style="width: 30%;" alt="" >
                         </div>  
                         <br>                                                
                         <label>Description</label>
-                        <textarea class="form-control" name="description" rows="4">{{ $promotion->description }}</textarea>
+                        <textarea class="form-control" name="description" rows="4" required>{{ $promotion->description }}</textarea>
 
                         <br>
                         <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="link" value="{{ $promotion->link }}">
+                            <input type="text" class="form-control" name="link" value="{{ $promotion->link }}" required>
                         </div>
                         
                     </div>
@@ -43,6 +46,7 @@
             </div>
         </div>
 
-
+</div>
+</div>
 
 @endsection

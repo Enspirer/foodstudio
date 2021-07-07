@@ -14,8 +14,11 @@ use App\Http\Controllers\Backend\CorporateNewsController;
 use App\Http\Controllers\Backend\TenantNewsController;
 use App\Http\Controllers\Backend\VideoController;
 use App\Http\Controllers\Backend\SocialResponsibilityController;
+
 use App\Http\Controllers\Backend\JobOpportunityController;
 use App\Http\Controllers\Backend\ContactsController;
+use App\Http\Controllers\Backend\EventsController;
+use App\Http\Controllers\Backend\ReservationsController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -110,7 +113,7 @@ Route::get('social/getdetails', [SocialResponsibilityController::class, 'GetTabl
 Route::get('social/edit/{id}', [SocialResponsibilityController::class, 'edit'])->name('social.edit');
 Route::get('social/editvid/{id}', [SocialResponsibilityController::class, 'editvid'])->name('social.editvid');
 Route::post('social/update', [SocialResponsibilityController::class, 'update'])->name('social.update');
-Route::post('social/updatetwo', [SocialResponsibilityController::class, 'update'])->name('social.updatetwo');
+Route::post('social/updatetwo', [SocialResponsibilityController::class, 'updatetwo'])->name('social.updatetwo');
 Route::get('social/delete/{id}', [SocialResponsibilityController::class, 'destroy'])->name('social.destroy');
 
 Route::get('careers', [JobOpportunityController::class, 'index'])->name('careers.index');
@@ -129,5 +132,18 @@ Route::get('contactus/getdetails', [ContactsController::class, 'GetTableDetails'
 Route::get('contactus/delete/{id}', [ContactsController::class, 'delete'])->name('contactus.delete');
 Route::post('contactus/update', [ContactsController::class, 'update'])->name('contactus.update');
 Route::get('contactus/edit/{id}', [ContactsController::class, 'edit'])->name('contactus.edit');
+
+Route::get('events', [EventsController::class, 'index'])->name('events.index');
+Route::post('events/insert', [EventsController::class, 'store'])->name('events.store');
+Route::get('events/getdetails', [EventsController::class, 'GetTableDetails'])->name('events.GetTableDetails');
+Route::get('events/edit/{id}', [EventsController::class, 'edit'])->name('events.edit');
+Route::post('events/update', [EventsController::class, 'update'])->name('events.update');
+Route::get('events/delete/{id}', [EventsController::class, 'destroy'])->name('events.destroy');
+
+Route::get('reservations', [ReservationsController::class, 'index'])->name('reservations.index');
+Route::get('reservations/getdetails', [ReservationsController::class, 'GetTableDetails'])->name('reservations.GetTableDetails');
+Route::get('reservations/edit/{id}', [ReservationsController::class, 'edit'])->name('reservations.edit');
+Route::post('reservations/update', [ReservationsController::class, 'update'])->name('reservations.update');
+Route::get('reservations/delete/{id}', [ReservationsController::class, 'destroy'])->name('reservations.destroy');
 
 

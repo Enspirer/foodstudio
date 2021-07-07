@@ -67,7 +67,7 @@ class TenantController extends Controller
 
         $addtenants->save();
 
-        return back();                      
+        return back()->withFlashSuccess('Added Successfully');                      
 
     }
 
@@ -79,8 +79,7 @@ class TenantController extends Controller
             $data = Tenant::latest()->get();
             return DataTables::of($data)
                     ->addColumn('action', function($data){
-                        // $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm"><i class="fas fa-utensils"></i> Cuisine</button>';
-                        // $button = '<a href="'.route('admin.tenant.cuisine_index',$data->id).'" name="cuisine" id="'.$data->id.'" class="cuisine btn btn-warning btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-utensils"></i> Cuisine</a>';
+                       
                         $button = '<a href="'.route('admin.tenants.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
                         $button2 = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>';
                         return $button . $button2;
@@ -109,34 +108,38 @@ class TenantController extends Controller
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image1->getClientOriginalExtension();
             $fullURLsPreviewFile1 = $request->image1->move(public_path('files/tenants'), $preview_fileName1);
             $image_url1 = $preview_fileName1;
-        }else{
-            $image_url1 = null;
-        } 
+        }else{            
+            $detail = Tenant::where('id',$request->hidden_id)->first();
+            $image_url1 = $detail->photo;            
+        }  
 
         if($request->file('image2'))
         {
             $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
             $fullURLsPreviewFile2 = $request->image2->move(public_path('files/tenants'), $preview_fileName2);
             $image_url2 = $preview_fileName2;
-        }else{
-            $image_url2 = null;
+        }else{            
+            $detail = Tenant::where('id',$request->hidden_id)->first();
+            $image_url2 = $detail->menu;            
         }   
         if($request->file('popimage'))
         {
             $preview_fileName3 = time().'_'.rand(1000,10000).'.'.$request->popimage->getClientOriginalExtension();
             $fullURLsPreviewFile3 = $request->popimage->move(public_path('files/tenants'), $preview_fileName3);
             $image_url3 = $preview_fileName3;
-        }else{
-            $image_url3 = null;
-        }
+        }else{            
+            $detail = Tenant::where('id',$request->hidden_id)->first();
+            $image_url3 = $detail->pop_photo;            
+        }   
         if($request->file('upload'))
         {
             $preview_fileName4 = time().'_'.rand(1000,10000).'.'.$request->upload->getClientOriginalExtension();
             $fullURLsPreviewFile4 = $request->upload->move(public_path('files/pdf_upload'), $preview_fileName4);
             $upload_url = $preview_fileName4;
-        }else{
-            $upload_url = null;
-        }    
+        }else{            
+            $detail = Tenant::where('id',$request->hidden_id)->first();
+            $upload_url = $detail->upload;            
+        }     
         
         $updatetenants = new Tenant;
 
@@ -149,7 +152,7 @@ class TenantController extends Controller
 
         Tenant::whereId($request->hidden_id)->update($updatetenants->toArray());        
                
-        return redirect()->route('admin.tenants.index');                      
+        return redirect()->route('admin.tenants.index')->withFlashSuccess('Updated Successfully');                      
 
     }
 

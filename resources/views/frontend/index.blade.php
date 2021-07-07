@@ -178,7 +178,7 @@
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-dialog-centered " role="document">
-   <img src="img/Coming Soon.png" style="width: 100%;">
+   <img src="{{url('img/Coming Soon.png')}}" style="width: 100%;">
   <a> <div style="    position: absolute;
     top: 25px;
     right: 28px;"><i id="close-btn" style="color:#fff;font-size:20px" class="fa fa-times"></i></div></a>

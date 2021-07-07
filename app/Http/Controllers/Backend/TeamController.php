@@ -54,7 +54,7 @@ class TeamController extends Controller
 
         $addteam->save();
 
-        return back();                      
+        return back()->withFlashSuccess('Added Successfully');                      
 
     }
 
@@ -65,12 +65,17 @@ class TeamController extends Controller
             $data = Team::latest()->get();
             return DataTables::of($data)
                     ->addColumn('action', function($data){
-                        // $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm">Edit</button>';
+                        
                         $button = '<a href="'.route('admin.team.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
                         $button2 = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
                         return $button . $button2;
                     })
-                    ->rawColumns(['action'])
+                    ->addColumn('image', function($data){
+                        $img = '<img src="'.url('files/profile/',$data->image).'" style="width: 100%">';
+                     
+                        return $img;
+                    })
+                    ->rawColumns(['action','image'])
                     ->make(true);
         }
         return back();
@@ -91,9 +96,10 @@ class TeamController extends Controller
             $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
             $fullURLsPreviewFile = $request->image->move(public_path('files/profile'), $preview_fileName);
             $image_url = $preview_fileName;
-        }else{
-            $image_url = null;
-        }
+        }else{            
+            $detail = Team::where('id',$request->hidden_id)->first();
+            $image_url = $detail->image;            
+        }  
 
         $updateteam = new Team;
         $updateteam->name=$request->name;
@@ -104,7 +110,7 @@ class TeamController extends Controller
    
         Team::whereId($request->hidden_id)->update($updateteam->toArray());
                
-        return redirect()->route('admin.team.index');                  
+        return redirect()->route('admin.team.index')->withFlashSuccess('Updated Successfully');                  
 
     }
 

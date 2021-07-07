@@ -40,14 +40,14 @@
                         <br>
                         <div class="form-group">
                             <label>Logo </label>
-                            <input type="file" class="form-control-file" name="logo" required>
+                            <input type="file" class="form-control-file" name="logo" >
                             <br>
                             <img src="{{url('files/tenant_news/',$tenantnews->logo)}}" style="width: 15%;" alt="" >
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Image (1000px * 869px) </label>
-                            <input type="file" class="form-control-file" name="image" required>
+                            <input type="file" class="form-control-file" name="image" >
                             <br>
                             <img src="{{url('files/tenant_news/',$tenantnews->image)}}" style="width: 20%;" alt="" >
                         </div>                        

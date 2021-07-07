@@ -116,8 +116,9 @@ class SocialResponsibilityController extends Controller
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
             $fullURLsPreviewFile1 = $request->image->move(public_path('files/social_responsible'), $preview_fileName1);
             $image_url1 = $preview_fileName1;
-        }else{
-            $image_url1 = null;
+        }else{            
+            $detail = SocialResponsibility::where('id',$request->hidden_id)->first();
+            $image_url1 = $detail->image;            
         } 
         // dd($image_url1);
         
@@ -130,6 +131,23 @@ class SocialResponsibilityController extends Controller
         $updatesimage->type=$request->type;
 
         SocialResponsibility::whereId($request->hidden_id)->update($updatesimage->toArray());
+
+        return redirect()->route('admin.social.index')->withFlashSuccess('Updated Successfully');   
+    }
+
+    public function updatetwo(Request $request)
+    {        
+        // dd($request);
+                
+        $updatesvid = new SocialResponsibility;
+
+        $updatesvid->title=$request->title;
+        $updatesvid->description=$request->description;
+        $updatesvid->video=$request->link;  
+        $updatesvid->order=$request->order;  
+        $updatesvid->type=$request->type;
+
+        SocialResponsibility::whereId($request->hidden_id)->update($updatesvid->toArray());
 
         return redirect()->route('admin.social.index')->withFlashSuccess('Updated Successfully');   
     }

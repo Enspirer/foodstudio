@@ -51,7 +51,7 @@ class VouchersController extends Controller
                         return $button;
                     })
                     ->addColumn('image', function($data){
-                        $img = '<img src="'.url('files/vouchers/',$data->image).'" style="width: 40%">';
+                        $img = '<img src="'.url('files/vouchers/',$data->image).'" style="width: 50%">';
                      
                         return $img;
                     })
@@ -78,8 +78,9 @@ class VouchersController extends Controller
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
             $fullURLsPreviewFile1 = $request->image->move(public_path('files/vouchers'), $preview_fileName1);
             $image_url1 = $preview_fileName1;
-        }else{
-            $image_url1 = null;
+        }else{            
+            $detail = Vouchers::where('id',$request->hidden_id)->first();
+            $image_url1 = $detail->image;            
         } 
 
         $updatevoucher = new Vouchers;

@@ -27,7 +27,7 @@ class MediaController extends Controller
 
     public function tenant()
     {
-        $tnews = DB::table('tenant_news')->orderBy('order', 'DESC')->get();
+        $tnews = DB::table('tenant_news')->orderBy('order', 'ASC')->get();
 
         return view('frontend.media_tenant',[
             'tnews' => $tnews
@@ -36,8 +36,8 @@ class MediaController extends Controller
     public function video()
     {
 
-        $videos = DB::table('videos')->orderBy('order', 'DESC')->get();
-        $defaultvideo = DB::table('videos')->orderBy('order', 'DESC')->first();
+        $videos = DB::table('videos')->orderBy('order', 'ASC')->get();
+        $defaultvideo = DB::table('videos')->orderBy('order', 'ASC')->first();
         // dd($defaultvideo);
 
         return view('frontend.media_video',[

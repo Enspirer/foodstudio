@@ -18,11 +18,8 @@
 
 <div class="container " id="about_page">
     
-  <div class="row">
-        <div class="about-desc-panel">
-
-
-          
+    <div class="row">
+        <div class="about-desc-panel">          
           <h1 class="text-center underline">Who <span class="yellow-text"> We Are </span></h1>
           
           <p class="">As Colombo's skyline evolves, taking on a more global feel, its population is increasingly opting for the perks of vertical living. This new trend in urbanisation perfectly positions Food Studio as an easily accessible option, complete with an abundance of choice.</p>
@@ -111,7 +108,10 @@
           <div class="row m-0">
 
           @foreach(App\Models\Team::where('jobgroup_name',$data->id)->get() as $dat)
-            <div class="col-sm-3">
+
+              @if($data->jobgroup_name =='Directors')
+
+                <div class="col-sm-3">
                 <div class="director-profile">
                   <img src="{{url('files/profile/',$dat->image)}}" style="width:100%" >
                 </div>
@@ -121,11 +121,42 @@
                   <p>{{ $dat->job_role }}</p>
                 </div>
               </div>
+
+              @elseif($data->jobgroup_name =='Non-Executive Directors')
+
+                <div class="col-sm-2 twenty-percent-width">
+                  <div class="director-profile">
+                    <img src="{{url('files/profile/',$dat->image)}}" style="width:100%" >
+                  </div>
+
+                  <div class="details-box">
+                    <h4>{{ $dat->name }}</h4>
+                    <!-- <p>{{ $dat->job_role }}</p> -->
+                  </div>
+                </div>
+
+              @else
+
+                <div class="col-sm-2 twenty-percent-width">
+                  <div class="director-profile">
+                    <img src="{{url('files/profile/',$dat->image)}}" style="width:100%" >
+                  </div>
+
+                  <div class="details-box">
+                    <h4>{{ $dat->name }}</h4>
+                    <p>{{ $dat->job_role }}</p>
+                  </div>
+                </div>
+                
+              @endif
+
+            
             @endforeach
 
         </div>
             
-          @endforeach               
+          @endforeach  
+                       
                  
    </div>         
            

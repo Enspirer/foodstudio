@@ -21,7 +21,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">#ID</th>
-                                <th scope="col">Team Name</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Name</th>
                                 <th scope="col">Job Role</th>
                                 <th scope="col">Job Group</th>
                                 <th scope="col">Description</th>
@@ -77,7 +78,7 @@
                         <br>
                         <div class="form-group">
                             <label>Image (400px * 500px) </label>
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image" required>
                         </div>  
                     </div>
                     <div class="modal-footer">
@@ -131,6 +132,7 @@
                 order: [[0, "desc"]],
                 columns: [
                     {data: 'id', name: 'id'},
+                    {data: 'image', name: 'image'},
                     {data: 'name', name: 'name'},
                     {data: 'job_role', name: 'job_role'},
                     {data: 'jobgroup_name', name: 'jobgroup_name'},

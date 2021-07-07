@@ -36,6 +36,7 @@ Route::get('/contact-us', [ContactUsController::class, 'index'])->name('index');
 Route::post('generaljob/insert', [CareersController::class, 'store'])->name('generaljob.store');
 Route::post('opportunityjob/insert', [CareersController::class, 'storejob'])->name('opportunityjob.storejob');
 
+Route::post('reservation/insert', [EventSpacesController::class, 'store'])->name('reservation.store');
 Route::post('contactus/insert', [ContactUsController::class, 'store'])->name('contactus.store');
 
 

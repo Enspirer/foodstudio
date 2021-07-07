@@ -30,7 +30,7 @@
                         <br>
                         <div class="form-group">
                             <label>Image</label>
-                            <input type="file" class="form-control-file" name="image" required>
+                            <input type="file" class="form-control-file" name="image" >
                             <br>
                             <img src="{{url('files/social_responsible/',$socimage->image)}}" style="width: 20%;" alt="" >
                         </div>

@@ -4,8 +4,11 @@
 
 @section('content')
     
+<div class="row">
+        <div class="col">
 
-<div class="modal-dialog" role="document">
+            <div class="card">  
+
             <div class="modal-content">
             <!-- <span id="form_result"></span> -->
                 <form action="{{route('admin.tenant.update')}}" method="post" enctype="multipart/form-data">
@@ -22,7 +25,7 @@
                         </div>                                             
                                                 
                         <label>Address</label>
-                        <textarea class="form-control" name="address"  rows="2" required>{{ $branch->address }}</textarea>
+                        <textarea class="form-control" name="address"  rows="4" required>{{ $branch->address }}</textarea>
                         <br>
 
                         <div class="form-group">
@@ -50,10 +53,10 @@
                             <label>Logo ( width = 55px ) </label>
                             <input type="file" class="form-control-file" name="image">
                             <br>
-                            <img src="{{url('files/branch_logo/',$branch->logo)}}" style="width: 30%;"  alt="" >
-                        </div>  
+                            <img src="{{url('files/branch_logo/',$branch->logo)}}" style="width: 15%;"  alt="" >
+                        </div>  <br>
                         <div class="form-group">
-                            <label>Image </label>
+                            <label>Image ( 757px * 756px )</label>
                             <input type="file" class="form-control-file" name="image2">
                             <br>
                             <img src="{{url('files/branch_logo/',$branch->image)}}" style="width: 30%;"  alt="" >
@@ -68,6 +71,7 @@
             </div>
         </div>
 
-
+</div>
+</div>
 
 @endsection

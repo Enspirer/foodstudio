@@ -30,7 +30,7 @@
                         <br>
                         <div class="form-group">
                             <label>Image (1000px * 869px) </label>
-                            <input type="file" class="form-control-file" name="image" required>
+                            <input type="file" class="form-control-file" name="image" >
                             <br>
                             <img src="{{url('files/corporate_news/',$corporatenews->image)}}" style="width: 20%;" alt="" >
                         </div> 
@@ -52,7 +52,7 @@
                         </div>
                         <div class="form-group">
                             <label>Featured Story</label>
-                            <select class="form-control" name="featuredstory" value="{{ $corporatenews->feature_story }}" required>
+                            <select class="form-control" name="featuredstory" required>
                                     <option value="0" {{ $corporatenews->feature_story == 0 ? "selected" : "" }} >Disable</option>
                                     <option value="1" {{ $corporatenews->feature_story == 1 ? "selected" : "" }} >Enable</option>
                             </select>

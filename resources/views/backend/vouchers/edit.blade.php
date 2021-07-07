@@ -5,7 +5,10 @@
 @section('content')
     
 
-<div class="modal-dialog" role="document">
+<div class="row">
+        <div class="col">
+
+            <div class="card"> 
             <div class="modal-content">
             <!-- <span id="form_result"></span> -->
                 <form action="{{route('admin.voucher.update')}}" method="post" enctype="multipart/form-data">
@@ -19,13 +22,13 @@
 
                         <div class="form-group">
                             <label>Image (366px * 548px) </label>
-                            <input type="file" class="form-control-file" name="image" required>
+                            <input type="file" class="form-control-file" name="image">
                             <br>
                             <img src="{{url('files/vouchers/',$voucher->image)}}" style="width: 30%;" alt="" >
                         </div>  
                         <br>                                                
                         <label>Description</label>
-                        <textarea class="form-control" name="description" rows="4">{{ $voucher->description }}</textarea>
+                        <textarea class="form-control" name="description" rows="4" required>{{ $voucher->description }}</textarea>
                         <br>                       
                         
                     </div>
@@ -38,6 +41,7 @@
             </div>
         </div>
 
-
+</div>
+</div>
 
 @endsection

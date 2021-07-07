@@ -42,9 +42,10 @@
 
 
       <div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-            <div class="panel-body">
+            <div class="">
               <a href="#" class="btn btn-learn-more pull-right" style="background-color: #DCDCDC" onclick="opentenantpopuomodalone()">Send your CV</a>
             </div>
+            <br><br>
           </div>
 
 
@@ -56,7 +57,7 @@
       <div class="panel-group careers-panel" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default aos-init" data-aos="fade-up" data-aos-delay="0">
           <div class="panel-heading dw-item" role="tab" id="headingOne" style="background: #dab627; opacity: 0.6;">
-            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne{!!$job->id!!}" aria-expanded="true" aria-controls="collapseOne">
               <div class="row ">
                 <div class="col-sm-12">
                   <h5> {!!$job->title!!}
@@ -67,7 +68,7 @@
             </a>
           </div>
 
-          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+          <div id="collapseOne{!!$job->id!!}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="panel-body">
               <p> {!!$job->description!!} </p>
               <a href="#" class="btn btn-learn-more pull-right" data-toggle="modal" data-target="#exampleModal{{$job->id}}">Apply Now</a>
@@ -163,7 +164,7 @@
                   </div>
                   <div class="row m-0">
                     <div class="col-sm-12 mt-10">
-                      <input type="text" name="oemail" class="form-control" placeholder="Email" required="">
+                      <input type="email" name="oemail" class="form-control" placeholder="Email" required="">
                     </div>
                   </div>
                 
@@ -196,7 +197,7 @@
           
                   <div class="row m-0">
                     <div class="col-sm-12 mt-10">
-                      <textarea class="form-control" name="omsg" placeholder="Message"></textarea>
+                      <textarea class="form-control" name="omsg" placeholder="Message" required></textarea>
                     </div>
                   </div>
                 </div>
@@ -242,7 +243,7 @@
                   </div>
                   <div class="row m-0">
                     <div class="col-sm-12 mt-10">
-                      <input type="text" name="gemail" class="form-control" placeholder="Email" required="">
+                      <input type="email" name="gemail" class="form-control" placeholder="Email" required="">
                     </div>
                   </div>       
                   <div class="row m-0">
@@ -261,12 +262,9 @@
                       <div class="col-sm-12 mt-10">
                         <div class="form-control cvupload-div">
                           <span class="pull-left">CV Upload</span>
-                          <!-- <input type="file" class="form-control-file" name="image" required> -->
                           <span class="pull-right"><i class="fa fa-upload"></i></span>
-                          <!-- <input type="file" class="form-control-file" name="image" required> -->
                         </div>
-                        <!-- <input type="file" class="form-control-file" name="image" required> -->
-                        <input type="file" name="cv_upload" id="cv_upload" class="form-control" accept="application/msword,application/pdf" onchange="return validate_fileupload(this.value);" required="">
+                        <input type="file" name="cv_upload" id="cv_upload" class="form-control w-100" accept="application/msword,application/pdf" onchange="return validate_fileupload(this.value);" required="">
                       </div>
                     </div>
                   </div>

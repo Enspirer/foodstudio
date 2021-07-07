@@ -65,7 +65,7 @@ class CorporateNewsController extends Controller
                         return $button;
                     })
                     ->addColumn('image', function($data){
-                        $img = '<img src="'.url('files/corporate_news/',$data->image).'" style="width: 50%">';
+                        $img = '<img src="'.url('files/corporate_news/',$data->image).'" style="width: 70%">';
                      
                         return $img;
                     })
@@ -92,8 +92,9 @@ class CorporateNewsController extends Controller
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
             $fullURLsPreviewFile1 = $request->image->move(public_path('files/corporate_news'), $preview_fileName1);
             $image_url1 = $preview_fileName1;
-        }else{
-            $image_url1 = null;
+        }else{            
+            $detail = CorporateNews::where('id',$request->hidden_id)->first();
+            $image_url1 = $detail->image;            
         } 
 
         if($request->topnews == 1)

@@ -45,7 +45,7 @@
   	  
       @foreach($datas as $key => $data)               
 
-    <li class="tenant-tab">
+    <li class="tenant-tab {{ Request::segment(2)==$data->id ? 'active' :null }}">
       <a style="border: 1px solid;border-radius: 8px;display: flex;" href="{{url('tenant-and-cuisines',$data->id)}}" aria-expanded="false">
         <img src="{{url('files/branch_logo/',$data->logo)}}" style="margin: auto;">
       </a>
@@ -89,14 +89,14 @@
 
 <!-- modal -->
 
-<!-- <div class="modal fade in" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: block; padding-right: 7px;">
+<div class="modal fade in" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: block; padding-right: 7px;">
   <div class="modal-dialog modal-dialog-centered " role="document">
-   <img src="img/Popups_Food concept.png" style="width: 100%;">
+   <img src="{{url('img/Popups_Food concept.png')}}" style="width: 100%;">
   <a> <div style="    position: absolute;
     top: 25px;
     right: 28px;"><i id="close-btn" style="color:#fff;font-size:20px" class="fa fa-times"></i></div></a>
   </div>
-</div> -->
+</div>
 
 @foreach($tenants as $key => $ten) 
 
@@ -118,7 +118,6 @@
                 <div class="discription-content text-center">
                   <h1 class="underline">{{ $ten->name }}</h1>
                   <p class="mb-20">{{ $ten->description }}</p>
-
                   <a href="{{url('files/pdf_upload/',$ten->upload)}}" type="button" download="" class="btn btn-menu">Download Our menu</a>
                   <br>
                   <br>

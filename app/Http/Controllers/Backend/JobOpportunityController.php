@@ -101,7 +101,7 @@ class JobOpportunityController extends Controller
             $data = Candidates::latest()->get();
             return DataTables::of($data)
                     ->addColumn('action', function($data){
-                        // $button = '<a href="'.asset("public/files/cv/",$data->cv) .'" class="btn btn-xs  btn-primary"><i class="glyphicon glyphicon-download-alt">Download</i></a>';
+                        
                         $button = '<a href="'.url('files/cv',$data->cv).'" name="download" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px" target="_blank"><i class="fas fa-edit"></i> Download </a>';
                         $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
                         return $button;

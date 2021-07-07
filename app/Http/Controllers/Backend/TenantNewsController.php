@@ -68,7 +68,7 @@ class TenantNewsController extends Controller
                         return $img;
                     })
                     ->addColumn('image', function($data){
-                        $img = '<img src="'.url('files/tenant_news/',$data->image).'" style="width: 80%">';
+                        $img = '<img src="'.url('files/tenant_news/',$data->image).'" style="width: 90%">';
                      
                         return $img;
                     })
@@ -95,8 +95,9 @@ class TenantNewsController extends Controller
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
             $fullURLsPreviewFile1 = $request->image->move(public_path('files/tenant_news'), $preview_fileName1);
             $image_url1 = $preview_fileName1;
-        }else{
-            $image_url1 = null;
+        }else{            
+            $detail = TenantNews::where('id',$request->hidden_id)->first();
+            $image_url1 = $detail->image;            
         } 
 
         if($request->file('logo'))
@@ -104,8 +105,9 @@ class TenantNewsController extends Controller
             $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->logo->getClientOriginalExtension();
             $fullURLsPreviewFile2 = $request->logo->move(public_path('files/tenant_news'), $preview_fileName2);
             $image_url2 = $preview_fileName2;
-        }else{
-            $image_url2 = null;
+        }else{            
+            $detail = TenantNews::where('id',$request->hidden_id)->first();
+            $image_url2 = $detail->logo;            
         } 
         
         $updatetnews = new TenantNews;

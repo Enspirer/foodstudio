@@ -58,7 +58,7 @@
                         </div>  
                                                                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description" rows="4"></textarea>
+                        <textarea class="form-control" name="description" rows="4" required></textarea>
                         <br>
                         
                     </div>
@@ -74,7 +74,7 @@
     </div>
 
     
-     <!-- Modal delete email-->
+     <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

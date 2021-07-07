@@ -113,7 +113,7 @@
                         <br>                        
                         <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="video" required>
+                            <input type="url" class="form-control" name="video" required>
                         </div>
                         <div class="form-group">
                             <label>Order</label>

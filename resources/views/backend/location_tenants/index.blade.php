@@ -61,7 +61,7 @@
                         </div>                                             
                                                 
                         <label>Address</label>
-                        <textarea class="form-control" name="address"  rows="2" required></textarea>
+                        <textarea class="form-control" name="address"  rows="4" required></textarea>
                         <br>
 
                         <div class="form-group">
@@ -87,11 +87,11 @@
 
                         <div class="form-group">
                             <label>Logo ( width = 55px ) </label>
-                            <input type="file" class="form-control-file" name="image">
+                            <input type="file" class="form-control-file" name="image" required>
                         </div>  
                         <div class="form-group">
                             <label>Image ( 757px * 756px )</label>
-                            <input type="file" class="form-control-file" name="image2">
+                            <input type="file" class="form-control-file" name="image2" required>
                         </div> 
                     </div>
                     <div class="modal-footer">

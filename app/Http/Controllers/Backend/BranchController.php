@@ -52,7 +52,7 @@ class BranchController extends Controller
 
         $addbranch->save();
 
-        return back();   
+        return back()->withFlashSuccess('Added Successfully');   
     }
 
     public function GetTableDetails(Request $request)
@@ -62,7 +62,7 @@ class BranchController extends Controller
             $data = Branch::latest()->get();
             return DataTables::of($data)
                     ->addColumn('action', function($data){
-                        // $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-warning btn-sm"><i class="fas fa-utensils"></i> Cuisine</button>';
+                       
                         $button = '<a href="'.route('admin.tenant.cuisine_index',$data->id).'" name="cuisine" id="'.$data->id.'" class="cuisine btn btn-warning btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-utensils"></i> Tenants</a>';
                         $button2 = '<a href="'.route('admin.tenant.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
                         $button3 = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>';
@@ -83,17 +83,19 @@ class BranchController extends Controller
             $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
             $fullURLsPreviewFile = $request->image->move(public_path('files/branch_logo'), $preview_fileName);
             $image_url = $preview_fileName;
-        }else{
-            $image_url = null;
+        }else{            
+            $detail = Branch::where('id',$request->hidden_id)->first();
+            $image_url = $detail->logo;            
         }    
         if($request->file('image2'))
         {
             $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
             $fullURLsPreviewFile2 = $request->image2->move(public_path('files/branch_logo'), $preview_fileName2);
             $image_url2 = $preview_fileName2;
-        }else{
-            $image_url2 = null;
-        }    
+        }else{            
+            $detail = Branch::where('id',$request->hidden_id)->first();
+            $image_url2 = $detail->image;            
+        }     
         
         $updatebranch = new Branch;
 
@@ -108,7 +110,7 @@ class BranchController extends Controller
 
         Branch::whereId($request->hidden_id)->update($updatebranch->toArray());
                
-        return redirect()->route('admin.tenant.index');                      
+        return redirect()->route('admin.tenant.index')->withFlashSuccess('Updated Successfully');                      
 
     }
 

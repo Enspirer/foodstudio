@@ -59,12 +59,12 @@
                         </div>  
                                                                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description" rows="4"></textarea>
+                        <textarea class="form-control" name="description" rows="4" required></textarea>
 
                         <br>
                         <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="link">
+                            <input type="text" class="form-control" name="link" required>
                         </div>
 
                     </div>
@@ -80,7 +80,7 @@
     </div>
 
     
-     <!-- Modal delete email-->
+     <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

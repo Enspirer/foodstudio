@@ -21,21 +21,21 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Title</label>
-                            <input type="text" class="form-control" name="title" value="{{ $jobs->title }}" >
+                            <input type="text" class="form-control" name="title" value="{{ $jobs->title }}" required>
                         </div>
                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description" rows="4"> {{ $jobs->description }} </textarea>
+                        <textarea class="form-control" name="description" rows="4" required> {{ $jobs->description }} </textarea>
                         <br>
 
                         <div class="form-group">
                             <label>order</label>
-                            <input type="text" class="form-control" name="order" value="{{ $jobs->order }}" >
+                            <input type="text" class="form-control" name="order" value="{{ $jobs->order }}" required>
                         </div>
 
                         <div class="form-group">
                             <label>Status</label>
-                            <select class="form-control" name="status">        
+                            <select class="form-control" name="status" required>        
                                 <option value="Enabled" {{ $jobs->status == 'Enabled' ? "selected" : "" }} >Enable</option>   
                                 <option value="Disabled" {{ $jobs->status == 'Disabled' ? "selected" : "" }} >Disable</option>                                
                             </select>                            

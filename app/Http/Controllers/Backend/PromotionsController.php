@@ -79,8 +79,9 @@ class PromotionsController extends Controller
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
             $fullURLsPreviewFile1 = $request->image->move(public_path('files/promotions'), $preview_fileName1);
             $image_url1 = $preview_fileName1;
-        }else{
-            $image_url1 = null;
+        }else{            
+            $detail = Promotions::where('id',$request->hidden_id)->first();
+            $image_url1 = $detail->image;            
         } 
 
         $updatepromotion = new Promotions;

@@ -30,7 +30,7 @@
                         <br>
                         <div class="form-group">
                             <label>Thumbnail</label>
-                            <input type="file" class="form-control-file" name="thumbnail" required>
+                            <input type="file" class="form-control-file" name="thumbnail" >
                             <br>
                             <img src="{{url('files/video_thumbnail/',$video->thumbnail)}}" style="width: 20%;" alt="" >
                         </div> 
@@ -53,7 +53,8 @@
           
         </div>
 
-</div>
+    </div>
+
 </div>
 </div>
 

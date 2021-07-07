@@ -105,7 +105,7 @@
     </div>
 
     
-     <!-- Modal delete email-->
+     <!-- Modal delete -->
      <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="ModalDeleteLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

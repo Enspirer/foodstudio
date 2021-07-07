@@ -36,7 +36,7 @@ class JobGroupController extends Controller
 
         $addgroup->save();
 
-        return back();                      
+        return back()->withFlashSuccess('Added Successfully');                      
 
     }
 
@@ -74,7 +74,7 @@ class JobGroupController extends Controller
    
         JobGroup::whereId($request->hidden_id)->update($updategroup->toArray());
 
-        return back();                      
+        return back()->withFlashSuccess('Updated Successfully');                      
 
     }
 

@@ -59,7 +59,7 @@
                         </div>
                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description"  rows="4"></textarea>
+                        <textarea class="form-control" name="description"  rows="4" required></textarea>
                         <br>
                         <div class="form-group">
                             <label>HTML Code</label>
@@ -105,7 +105,7 @@
                         </div>
                         
                         <label>Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="4"></textarea>
+                        <textarea class="form-control" name="description" id="description" rows="4" required></textarea>
                         <br>
                         <div class="form-group">
                             <label>HTML Code</label>

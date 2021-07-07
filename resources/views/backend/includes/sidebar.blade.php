@@ -110,6 +110,26 @@
 
                 <li class="nav-item nav-dropdown ">
                     <a class="nav-link nav-dropdown-toggle " href="#">
+                        <i class="nav-icon far fa-calendar-alt"></i>
+                        Event Spaces
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/events'))}}" href="{{ route('admin.events.index') }}">                            
+                                Events
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{active_class(Route::is('admin/reservations'))}}" href="{{ route('admin.reservations.index') }}">                               
+                                Reservations
+                            </a>
+                        </li>                       
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown ">
+                    <a class="nav-link nav-dropdown-toggle " href="#">
                         <i class="nav-icon far fa-newspaper"></i>
                         Media
                     </a>

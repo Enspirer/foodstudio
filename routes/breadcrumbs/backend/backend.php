@@ -106,6 +106,21 @@ Breadcrumbs::for('admin.contactus.edit', function ($trail) {
 });
 
 
+Breadcrumbs::for('admin.events.index', function ($trail) {
+    $trail->push('Event Location', route('admin.events.index'));
+});
+Breadcrumbs::for('admin.events.edit', function ($trail) {
+    $trail->push('Edit Event Location', route('admin.events.edit',1));
+});
+
+Breadcrumbs::for('admin.reservations.index', function ($trail) {
+    $trail->push('Reservations', route('admin.reservations.index'));
+});
+Breadcrumbs::for('admin.reservations.edit', function ($trail) {
+    $trail->push('Edit Reservation', route('admin.reservations.edit',1));
+});
+
+
 
 
 require __DIR__.'/auth.php';

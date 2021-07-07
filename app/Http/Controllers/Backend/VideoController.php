@@ -53,7 +53,7 @@ class VideoController extends Controller
                         return $button;
                     })
                     ->addColumn('image', function($data){
-                        $img = '<img src="'.url('files/video_thumbnail/',$data->thumbnail).'" style="width: 50%">';
+                        $img = '<img src="'.url('files/video_thumbnail/',$data->thumbnail).'" style="width: 70%">';
                      
                         return $img;
                     })
@@ -80,8 +80,9 @@ class VideoController extends Controller
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->thumbnail->getClientOriginalExtension();
             $fullURLsPreviewFile1 = $request->thumbnail->move(public_path('files/video_thumbnail'), $preview_fileName1);
             $image_url1 = $preview_fileName1;
-        }else{
-            $image_url1 = null;
+        }else{            
+            $detail = Video::where('id',$request->hidden_id)->first();
+            $image_url1 = $detail->thumbnail;            
         } 
         
         $updatevideo = new Video;
