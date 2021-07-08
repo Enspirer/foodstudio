@@ -83,48 +83,31 @@
     <div class="col-sm-6">
       <div id="homeCarousel" class="carousel carousel-fade slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/1.jpg" alt="...">
+        
+        @foreach($images as $key => $ima)
+
+        @if($key == 0)
+        <div class="item active">
+            <img src="{{url('files/home_page/',$ima->image)}}" alt="...">
           </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/2.jpg" alt="...">
+        @else
+          <div class="item">
+            <img src="{{url('files/home_page/',$ima->image)}}" alt="...">
           </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/3.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/4.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/5.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/6.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/7.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/8.jpg" alt="...">
-          </div>
-                  <div class="item active">
-            <img src="https://www.foodstudio.lk/img/Slideshow/9.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/10.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/11.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/12.jpg" alt="...">
-          </div>
-                  <div class="item">
-            <img src="https://www.foodstudio.lk/img/Slideshow/Artboard 6.jpg.jpg" alt="...">
-          </div>
-                </div>
+        @endif
+          
+                  
+          @endforeach
+
+        
+
+
+        </div>
       </div>
     </div>
+
+
+    
     <div class="col-sm-6 aboutus-container" id="about">
       <div class="about-desc-panel">
         <h1 class="text-center underline">About <span class="yellow-text"> Us </span></h1>
@@ -134,13 +117,17 @@
         <p>Each location, strategically placed at key retail hubs, is in tandem with global standards, featuring the entire spectrum of favourites from hawker fare to fine dining. With dishes by growing local brands alongside highly coveted international names, Food Studio is where masterpieces in the business of food happen</p>
 
         <div style="padding-top:20px">
-                  <a href="about-us" class="btn btn-readmore"> Learn More </a>
+                  <a href="{{url('about-us')}}" class="btn btn-readmore"> Learn More </a>
           <!--<a href="about-us" class="btn btn-learn-more">Learn More</a>-->
         </div>
       </div>
     </div>
   </div>
 </div>
+
+@if(count($feature) == 0)
+
+@else
 
 <div class="container-fluid">
   <div class="row whatson-container flex-align-items-center">
@@ -152,26 +139,27 @@
     <div class="col-sm-6 ">
       <div class="events-panel">
         <h1 class="mt-0"> <span> Feature Events </span></h1>
-       <a href="whats-on"> <h5 class="yellow-text"> The Ultimate Monopoly Deal Challenge</h5></a>
-        <!--<p class="event-desc-text">Love gelato? Can't have enough of it? Then here's the perfect challenge for you! Food Studio & Isle of Gelato are bringing you the Brain Freeze Challenge! Rules are simple! Whoever finishes the gelato that is presented to them the fastest walks away the Winner!</p>-->
-        <p class="event-desc-text">
-            Monopoly is a game that has been in the center of quarrels between
-            friends for a long time!
-            This is your time to put your Monopoly Deal skills to the test &amp; to once
-            and for all settle the debate on who the ultimate Monopoly Deal Player
-            is!
-        </p>
-        
-         <a href="whats-on"> <h5 class="yellow-text"> Spicy Mala Challenge</h5></a>
-        <p class="event-desc-text">To celebrate World Hot &amp; Spicy Day, we are calling out all the spice fanatics to take part in the Spicy Mala Challenge! You think you can handle the heat of the Spicy Mala Hotpot? Get in touch with us via our social channels to book your spot!</p>
 
-         <a href="whats-on"> <h5 class="yellow-text"> Marvel Quiz</h5></a>
-        <p class="event-desc-text">Avengers Assemble! <br> The time has come to assemble your squad to take on the ultimate test of Marvel knowledge! The quiz will test your knowledge of the Infinity Saga with questions spanning across all 23 movies!</p>
-          
+
+        @foreach($feature as $key => $fea)
+
+       <a href="{{url('whats-on')}}"> <h5 class="yellow-text"> {!!$fea->title!!}</h5></a>
+        
+        <p class="event-desc-text">
+          {!!$fea->description!!}
+        </p>
+
+        @endforeach
+        
+
       </div>
     </div>
   </div>
 </div>
+
+@endif
+
+
 
 
 <!-- Model -->

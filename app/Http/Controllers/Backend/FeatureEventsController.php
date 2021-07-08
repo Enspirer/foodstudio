@@ -31,6 +31,7 @@ class FeatureEventsController extends Controller
         $addfeature->title=$request->title;        
         $addfeature->description=$request->description;
         $addfeature->link=$request->link;
+        $addfeature->home_publish=$request->status;
 
         $addfeature->save();
 
@@ -77,6 +78,7 @@ class FeatureEventsController extends Controller
         $updatefeature->title=$request->title;        
         $updatefeature->description=$request->description;
         $updatefeature->link=$request->link;
+        $updatefeature->home_publish=$request->status;
 
         FeatureEvents::whereId($request->hidden_id)->update($updatefeature->toArray());
 

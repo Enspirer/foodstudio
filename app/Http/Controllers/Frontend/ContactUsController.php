@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Branch;
 use App\Models\ContactUs;
 use DB;
+use Mail;  
+use \App\Mail\ContactUsMail;
 
 class ContactUsController extends Controller
 {
@@ -26,6 +28,8 @@ class ContactUsController extends Controller
                 
         $contactus = new ContactUs;
 
+        // dd($contactus->id);
+
         $contactus->name=$request->name;
         $contactus->email=$request->email;
         $contactus->contact=$request->contact;
@@ -35,6 +39,18 @@ class ContactUsController extends Controller
         // dd($contactus);
 
         $contactus->save();
+
+        // dd($request->subject);
+
+        $details = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'contact' => $request->contact,
+            'subject' => $request->subject,
+            'message' => $request->message
+        ];
+
+        \Mail::to('nihsaan.enspirer@gmail.com')->send(new ContactUsMail($details));
 
         return back()->withFlashSuccess('Added Successfully');    
     }

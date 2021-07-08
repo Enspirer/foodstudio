@@ -4,6 +4,15 @@ Breadcrumbs::for('admin.dashboard', function ($trail) {
     $trail->push(__('strings.backend.dashboard.title'), route('admin.dashboard'));
 });
 
+
+Breadcrumbs::for('admin.home.index', function ($trail) {
+    $trail->push('Home', route('admin.home.index'));
+});
+Breadcrumbs::for('admin.home.edit', function ($trail) {
+    $trail->push('Edit Home', route('admin.home.edit',1));
+});
+
+
 Breadcrumbs::for('admin.jobgroup.index', function ($trail) {
     $trail->push('Job Group', route('admin.jobgroup.index'));
 });

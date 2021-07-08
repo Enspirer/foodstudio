@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\DashboardController;
+
+use App\Http\Controllers\Backend\HomeController;
+
 use App\Http\Controllers\Backend\JobGroupController;
 use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\BranchController;
@@ -23,6 +26,13 @@ use App\Http\Controllers\Backend\ReservationsController;
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('home', [HomeController::class, 'index'])->name('home.index');
+Route::post('home/insert', [HomeController::class, 'store'])->name('home.store');
+Route::get('home/getdetails', [HomeController::class, 'GetTableDetails'])->name('home.GetTableDetails');
+Route::get('home/edit/{id}', [HomeController::class, 'edit'])->name('home.edit');
+Route::post('home/update', [HomeController::class, 'update'])->name('home.update');
+Route::get('home/delete/{id}', [HomeController::class, 'destroy'])->name('home.destroy');
 
 Route::get('jobgroup', [JobGroupController::class, 'index'])->name('jobgroup.index');
 Route::post('jobgroup/insert', [JobGroupController::class, 'add_job_group'])->name('jobgroup.add_job_group');

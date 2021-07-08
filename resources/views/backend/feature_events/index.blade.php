@@ -24,6 +24,7 @@
                                 <th scope="col">Title</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Link</th>
+                                <th scope="col">Home</th>
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -65,11 +66,13 @@
                             <label>Link</label>
                             <input type="text" class="form-control" name="link" required>
                         </div>
-
-                        <!-- <div class="form-group">
-                            <label>Image (400px * 500px) </label>
-                            <input type="file" class="form-control-file" name="image">
-                        </div>   -->
+                        <div class="form-group">
+                            <label>Publish in Homepage</label>
+                            <select class="form-control" name="status" required>
+                                    <option value="Enabled">Enable</option>   
+                                    <option value="Disabled">Disable</option>                                
+                            </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         
@@ -110,6 +113,13 @@
                             <label>Link</label>
                             <input type="text" class="form-control" name="link" id="link" required>
                         </div>
+                        <div class="form-group">
+                            <label>Publish in Homepage</label>
+                            <select class="form-control" name="status" id="status" required>        
+                                <option value="Enabled">Enable</option>   
+                                <option value="Disabled">Disable</option>                                
+                            </select>                            
+                        </div> 
 
                     </div>
                     <div class="modal-footer">
@@ -166,6 +176,7 @@
                     {data: 'title', name: 'title'},
                     {data: 'description', name: 'description'},
                     {data: 'link', name: 'link'},
+                    {data: 'home_publish', name: 'home_publish'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });
@@ -186,6 +197,7 @@
                 $('#title').val(data.result.title);
                 $('#description').val(data.result.description);
                 $('#link').val(data.result.link);
+                $('#status').val(data.result.home_publish);
                 $('#hidden_id').val(user_id);
                 $('#editModal').modal('show');
             }

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\FeatureEvents;
+use App\Models\Home;
+use DB;
 
 /**
  * Class HomeController.
@@ -15,6 +18,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        $feature = DB::table('feature_events')->where('home_publish', '=', 'Enabled')->get();
+        $images = DB::table('homes')->orderBy('order', 'DESC')->get();
+
+        // dd($images);
+        // dd($feature);
+
+        return view('frontend.index',[
+            'feature' => $feature,
+            'images' => $images
+        ]);
     }
 }

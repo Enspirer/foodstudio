@@ -3,15 +3,15 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.login_box_title'))
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
-                <div class="card-header">
+<div class="container">
+    <div class="card" style="padding: 0 300px 0 300px;">
+        <!-- <div class="card text-center"> -->
+                <div class="card-header mt-50">
                     <strong>
                         @lang('labels.frontend.auth.login_box_title')
                     </strong>
                 </div><!--card-header-->
-
+  
                 <div class="card-body">
                     {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
                         <div class="row">
@@ -84,10 +84,15 @@
                             </div>
                         </div><!--col-->
                     </div><!--row-->
-                </div><!--card body-->
-            </div><!--card-->
-        </div><!-- col-md-8 -->
-    </div><!-- row -->
+                
+                </div> <!-- body -->
+            
+        <!-- </div> -->
+    </div>    
+</div>
+
+<br>
+
 @endsection
 
 @push('after-scripts')
