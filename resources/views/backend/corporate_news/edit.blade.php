@@ -29,14 +29,14 @@
                         <textarea class="form-control" name="description" rows="4" required>{{ $corporatenews->description }}</textarea>
                         <br>
                         <div class="form-group">
-                            <label>Image (1000px * 869px) </label>
+                            <label>Image ( dimensions = width: 1000px * height: 869px ) </label>
                             <input type="file" class="form-control-file" name="image" >
                             <br>
                             <img src="{{url('files/corporate_news/',$corporatenews->image)}}" style="width: 20%;" alt="" >
                         </div> 
                         <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="link" value="{{ $corporatenews->link }}" required>
+                            <input type="url" class="form-control" name="link" value="{{ $corporatenews->link }}" required>
                         </div>
                         <div class="form-group">
                             <label>Order</label>

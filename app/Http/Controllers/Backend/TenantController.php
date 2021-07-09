@@ -21,6 +21,10 @@ class TenantController extends Controller
     {        
         // dd($request);
 
+        $this->validate($request, [
+            'upload'  => 'mimes:pdf|max:40000'
+        ]);
+
         if($request->file('image1'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image1->getClientOriginalExtension();
@@ -102,6 +106,10 @@ class TenantController extends Controller
     public function update(Request $request)
     {        
         // dd($request);
+
+        $this->validate($request, [
+            'upload'  => 'mimes:pdf|max:40000'
+        ]);
 
         if($request->file('image1'))
         {

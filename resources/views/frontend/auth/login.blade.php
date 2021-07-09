@@ -3,20 +3,24 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.auth.login_box_title'))
 
 @section('content')
-<div class="container">
-    <div class="card" style="padding: 0 300px 0 300px;">
+<br>
+<div class="container" style="padding: 0 300px 0 300px;">
+<div class="jumbotron text-center mt-30" style="background-color: #141414; border-style: solid; border-color: #b8860b; border-radius: 25px;">
+    <div class="card" >
         <!-- <div class="card text-center"> -->
-                <div class="card-header mt-50">
-                    <strong>
+
+                
+                <div class="card-header ">
+                    <strong style="color: white;">
                         @lang('labels.frontend.auth.login_box_title')
                     </strong>
                 </div><!--card-header-->
-  
+                <br>
                 <div class="card-body">
                     {{ html()->form('POST', route('frontend.auth.login.post'))->open() }}
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" align="left">
                                     {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
 
                                     {{ html()->email('email')
@@ -30,7 +34,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" align="left">
                                     {{ html()->label(__('validation.attributes.frontend.password'))->for('password') }}
 
                                     {{ html()->password('password')
@@ -43,7 +47,7 @@
 
                         <div class="row">
                             <div class="col">
-                                <div class="form-group">
+                                <div class="form-group" align="left">
                                     <div class="checkbox">
                                         {{ html()->label(html()->checkbox('remember', true, 1) . ' ' . __('labels.frontend.auth.remember_me'))->for('remember') }}
                                     </div>
@@ -90,6 +94,8 @@
         <!-- </div> -->
     </div>    
 </div>
+</div>
+
 
 <br>
 

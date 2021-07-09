@@ -36,7 +36,7 @@
                         </div> 
                         <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="link" value="{{ $video->link }}" required>
+                            <input type="url" class="form-control" name="link" value="{{ $video->link }}" required>
                         </div>
                         <div class="form-group">
                             <label>Order</label>

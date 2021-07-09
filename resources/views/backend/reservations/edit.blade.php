@@ -34,7 +34,7 @@
                         </div>                                          
                         
                         <div class="form-group">
-                            <label>Time</label>
+                            <label>Time (24 Hours)</label>
                             <input type="text" class="form-control" name="time" value="{{ $reservations->time }}" readonly required>
                         </div> 
                         <div class="form-group">

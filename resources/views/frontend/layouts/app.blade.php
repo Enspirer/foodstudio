@@ -152,6 +152,7 @@
   });
 </script>
 
+
 <script type="text/javascript">
     $('#homeCarousel').carousel({
       interval: 2000

@@ -22,9 +22,9 @@
                             <tr>
                                 <th scope="col">#ID</th>
                                 <th scope="col">Job Group</th>
-                                <th scope="col">Description</th>
+                                <!-- <th scope="col">Description</th> -->
                                 <th scope="col">Order</th>
-                                <th scope="col">Created At</th>
+                                <!-- <th scope="col">Created At</th> -->
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -169,9 +169,9 @@
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'jobgroup_name', name: 'jobgroup_name'},
-                    {data: 'description', name: 'description'},
+                    // {data: 'description', name: 'description'},
                     {data: 'order', name: 'order'},
-                    {data: 'created_at', name: 'created_at'},
+                    // {data: 'created_at', name: 'created_at'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

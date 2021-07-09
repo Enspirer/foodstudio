@@ -24,7 +24,7 @@
                                 <th scope="col">#ID</th>
                                 <!-- <th scope="col">Thumbnail</th> -->
                                 <th scope="col">Title</th>
-                                <th scope="col">Description</th>
+                                <!-- <th scope="col">Description</th> -->
                                 <th scope="col">Type</th>
                                 <!-- <th scope="col">Link</th> -->
                                 <th scope="col">Order</th>
@@ -65,7 +65,7 @@
                         <textarea class="form-control" name="description" rows="3" required></textarea>
                         <br>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image ( dimensions = width: 1610px * height: 2048px )</label>
                             <input type="file" class="form-control-file" name="image" required>
                         </div>                         
                         <div class="form-group">
@@ -73,7 +73,7 @@
                             <input type="text" class="form-control" name="order" required>
                         </div> 
                         <div class="form-group">
-                            <input type="hidden" class="form-control" name="type" value="0">
+                            <input type="hidden" class="form-control" name="type" value="Image">
                         </div>                       
                         
                     </div>
@@ -120,7 +120,7 @@
                             <input type="text" class="form-control" name="order" required>
                         </div>  
                         <div class="form-group">
-                            <input type="hidden" class="form-control" name="type" value="1">
+                            <input type="hidden" class="form-control" name="type" value="Video">
                         </div>                      
                         
                     </div>
@@ -177,7 +177,7 @@
                     {data: 'id', name: 'id'},
                     // {data: 'image', name: 'image'},
                     {data: 'title', name: 'title'},
-                    {data: 'description', name: 'description'},
+                    // {data: 'description', name: 'description'},
                     {data: 'type', name: 'type'},
                     // {data: 'link', name: 'link'},
                     {data: 'order', name: 'order'},

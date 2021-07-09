@@ -21,7 +21,7 @@
                     <div class="modal-body">  
 
                         <div class="form-group">
-                            <label>Image (366 * 548px) </label>
+                            <label>Image ( dimensions = width: 366px * height: 548px ) </label>
                             <input type="file" class="form-control-file" name="image">
                             <br>
                             <img src="{{url('files/promotions/',$promotion->image)}}" style="width: 30%;" alt="" >

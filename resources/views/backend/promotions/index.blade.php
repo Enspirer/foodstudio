@@ -22,8 +22,8 @@
                             <tr>
                                 <th scope="col">#ID</th>
                                 <th scope="col">Image</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Link</th>
+                                <!-- <th scope="col">Description</th> -->
+                                <!-- <th scope="col">Link</th> -->
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -54,7 +54,7 @@
                     <div class="modal-body">
                         
                         <div class="form-group">
-                            <label>Image (366 * 548px) </label>
+                            <label>Image ( dimensions = width: 366px * height: 548px ) </label>
                             <input type="file" class="form-control-file" name="image" required>
                         </div>  
                                                                         
@@ -120,8 +120,8 @@
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'image', name: 'image'},
-                    {data: 'description', name: 'description'},
-                    {data: 'link', name: 'link'},
+                    // {data: 'description', name: 'description'},
+                    // {data: 'link', name: 'link'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

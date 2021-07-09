@@ -31,7 +31,7 @@
                          
                         <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="link" value="{{ $tenantnews->link }}" required>
+                            <input type="url" class="form-control" name="link" value="{{ $tenantnews->link }}" required>
                         </div>
                         <div class="form-group">
                             <label>Order</label>
@@ -46,7 +46,7 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <label>Image (1000px * 869px) </label>
+                            <label>Image ( dimensions = width: 1000px * height: 869px ) </label>
                             <input type="file" class="form-control-file" name="image" >
                             <br>
                             <img src="{{url('files/tenant_news/',$tenantnews->image)}}" style="width: 20%;" alt="" >

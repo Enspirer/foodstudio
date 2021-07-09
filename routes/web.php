@@ -3,10 +3,6 @@
 use App\Http\Controllers\LanguageController;
 
 
-
-Route::get('single-pixel/{id}/{image_id}', 'Frontend\ImageTrackerController@single_track_image');
-
-
 /*
  * Global Routes
  * Routes that are used between both frontend and backend.

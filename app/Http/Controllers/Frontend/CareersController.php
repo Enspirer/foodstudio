@@ -22,6 +22,11 @@ class CareersController extends Controller
     public function store(Request $request)
     {        
         // dd($request);
+
+        // $this->validate($request, [
+        //     'cv_upload'  => 'mimes:pdf,doc|max:50000'
+        // ]);
+        
         if($request->file('cv_upload'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->cv_upload->getClientOriginalExtension();
@@ -43,12 +48,19 @@ class CareersController extends Controller
 
         $addgjob->save();
 
-        return back()->withFlashSuccess('Added Successfully');    
+        session()->flash('message','Thanks!');
+
+        return back();    
     }
 
     public function storejob(Request $request)
     {        
         // dd($request);
+
+        // $this->validate($request, [
+        //     'cv_upload'  => 'mimes:pdf,doc|max:50000'
+        // ]);
+
         if($request->file('cv_upload'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->cv_upload->getClientOriginalExtension();
@@ -70,7 +82,9 @@ class CareersController extends Controller
 
         $addojob->save();
 
-        return back()->withFlashSuccess('Added Successfully');    
+        session()->flash('message','Thanks!');
+
+        return back();    
     }
 
 }

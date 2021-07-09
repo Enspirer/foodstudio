@@ -24,7 +24,7 @@ class ContactsController extends Controller
             return DataTables::of($data)
                     ->addColumn('action', function($data){
                        
-                        $button = '<a href="'.route('admin.contactus.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> View </a>';
+                        $button = '<a href="'.route('admin.contactus.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fa fa-eye"></i> View </a>';
                                               
                         $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"> <i class="fas fa-trash"></i>&nbsp;Delete</button>';
                         return $button;

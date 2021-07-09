@@ -4,6 +4,26 @@
 
 @section('content')
 
+
+@if ( session()->has('message') )
+
+<div class="container-fluid" style="background-color: black">  
+    <div class="container-fluid jumbotron text-center mt-30">
+      <h1 class="display-3 mt-20">Thank You!</h1><br>
+      <p class="lead"><h3>We appreciate you booking us. One of our member will get back in touch with you soon!<br><br> Have a great day!</h3></p>
+    
+      <hr>
+      
+      <p class="lead mb-20">
+        <a class="btn btn-primary btn-md" href="{{url('event-spaces')}}" role="button">Go Back to Event Spaces Page</a>
+      </p>
+    </div>
+  </div>
+
+@else
+
+
+
 <div class="container-fluid corporate-container mt-20 mb-20" id="events">
   <div class="row">
     <div class="container corporate-panel p-30" style="padding-left:0px;padding-right:0px">
@@ -115,5 +135,8 @@
     </div>
   </div>
 </div>
+
+
+@endif
 
 @endsection

@@ -37,6 +37,8 @@ class EventSpacesController extends Controller
 
         $reservation->save();
 
+        session()->flash('message','Thanks!');
+
         return back()->withFlashSuccess('Added Successfully');    
     }
 

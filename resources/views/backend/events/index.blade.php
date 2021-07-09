@@ -71,7 +71,7 @@
                         <textarea class="form-control" name="description" rows="3" required></textarea>
                         <br>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image ( dimensions = width: 644px * height: 561px )</label>
                             <input type="file" class="form-control-file" name="image" required>
                         </div>
                         <br>                         
@@ -81,7 +81,7 @@
                         </div> 
                         <!-- <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="link" required>
+                            <input type="url" class="form-control" name="link" required>
                         </div>  -->
                         <div class="form-group">
                             <label>Status</label>

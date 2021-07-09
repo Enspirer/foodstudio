@@ -53,7 +53,7 @@
                     <div class="modal-body">
                         
                         <div class="form-group">
-                            <label>Image (366px * 548px) </label>
+                            <label>Image ( dimensions = width: 400px * height: 364px ) </label>
                             <input type="file" class="form-control-file" name="image" required>
                         </div>  
                                                                         

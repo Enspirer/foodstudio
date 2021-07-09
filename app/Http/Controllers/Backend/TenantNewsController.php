@@ -19,6 +19,11 @@ class TenantNewsController extends Controller
     public function store(Request $request)
     {        
         // dd($request);
+
+        $this->validate($request, [
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1000,height=869'
+        ]);
+
         if($request->file('image'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
@@ -90,6 +95,12 @@ class TenantNewsController extends Controller
     public function update(Request $request)
     {        
         // dd($request);
+
+        $this->validate($request, [
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1000,height=869'
+        ]);
+
+        
         if($request->file('image'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();

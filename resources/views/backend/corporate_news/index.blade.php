@@ -23,8 +23,8 @@
                                 <th scope="col">#ID</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Link</th>
+                                <!-- <th scope="col">Description</th> -->
+                                <!-- <th scope="col">Link</th> -->
                                 <th scope="col">Order</th>
                                 <th scope="col">Top News</th>
                                 <th scope="col">Feature Story</th>
@@ -65,12 +65,12 @@
                         <textarea class="form-control" name="description" rows="4" required></textarea>
                         <br>
                         <div class="form-group">
-                            <label>Image (1000px * 869px) </label>
+                            <label>Image ( dimensions = width: 1000px * height: 869px ) </label>
                             <input type="file" class="form-control-file" name="image" required>
                         </div> 
                         <div class="form-group">
                             <label>Link</label>
-                            <input type="text" class="form-control" name="link" required>
+                            <input type="url" class="form-control" name="link" required>
                         </div>
                         <div class="form-group">
                             <label>Order</label>
@@ -146,8 +146,8 @@
                     {data: 'id', name: 'id'},
                     {data: 'image', name: 'image'},
                     {data: 'title', name: 'title'},
-                    {data: 'description', name: 'description'},
-                    {data: 'link', name: 'link'},
+                    // {data: 'description', name: 'description'},
+                    // {data: 'link', name: 'link'},
                     {data: 'order', name: 'order'},
                     {data: 'top_news', name: 'top_news'},
                     {data: 'feature_story', name: 'feature_story'},

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Validator;
+// use Illuminate\Validation\Rule;
+// use Illuminate\Contracts\Validation\Validator;
 use DataTables;
 use DB;
 use App\Models\FeatureEvents;
@@ -19,7 +22,12 @@ class VouchersController extends Controller
 
     public function store(Request $request)
     {        
-        // dd($request);
+        // dd($request); 
+
+        $this->validate($request, [
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=400,height=364'
+        ]);
+
         if($request->file('image'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
@@ -73,6 +81,11 @@ class VouchersController extends Controller
     public function update(Request $request)
     {        
         // dd($request);
+
+        $this->validate($request, [
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=400,height=364'
+        ]);
+
         if($request->file('image'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();

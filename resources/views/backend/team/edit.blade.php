@@ -45,7 +45,7 @@
 
                         <br>
                         <div class="form-group">
-                            <label>Image (400px * 500px) </label>
+                            <label>Image ( dimensions = width: 400px * height: 500px ) </label>
                             <input type="file" class="form-control-file" name="image">
                             
                             <br>

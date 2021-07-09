@@ -29,7 +29,7 @@
                         <textarea class="form-control" name="description" rows="4" required>{{ $socvid->description }}</textarea>
                         <br>                        
                         <div class="form-group">
-                            <label>Video</label>
+                            <label>Link</label>
                             <input type="url" class="form-control" name="link" value="{{ $socvid->video }}" required>
                         </div>
                         <div class="form-group">

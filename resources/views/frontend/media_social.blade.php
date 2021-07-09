@@ -50,7 +50,7 @@
 
 @foreach($socialres as $key => $social)
 
-@if($social->type =='1') 
+@if($social->type =='Video') 
 
 <input type="hidden" value="{{ preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $social->video, $matches) }}" />
   <div class="row">

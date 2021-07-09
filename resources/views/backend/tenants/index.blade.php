@@ -22,7 +22,7 @@
                             <tr>
                                 <th scope="col">#ID</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Description</th>
+                                <!-- <th scope="col">Description</th> -->
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -141,7 +141,7 @@
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
-                    {data: 'description', name: 'description'},
+                    // {data: 'description', name: 'description'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

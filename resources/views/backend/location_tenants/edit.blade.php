@@ -56,7 +56,7 @@
                             <img src="{{url('files/branch_logo/',$branch->logo)}}" style="width: 15%;"  alt="" >
                         </div>  <br>
                         <div class="form-group">
-                            <label>Image ( 757px * 756px )</label>
+                            <label>Image ( dimensions = width: 757px * height: 756px )</label>
                             <input type="file" class="form-control-file" name="image2">
                             <br>
                             <img src="{{url('files/branch_logo/',$branch->image)}}" style="width: 30%;"  alt="" >

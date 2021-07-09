@@ -29,7 +29,7 @@
                         <textarea class="form-control" name="description" rows="4" required>{{ $socimage->description }}</textarea>
                         <br>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image ( dimensions = width: 1610px * height: 2048px )</label>
                             <input type="file" class="form-control-file" name="image" >
                             <br>
                             <img src="{{url('files/social_responsible/',$socimage->image)}}" style="width: 20%;" alt="" >

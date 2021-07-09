@@ -25,7 +25,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Job Role</th>
                                 <th scope="col">Job Group</th>
-                                <th scope="col">Description</th>
+                                <!-- <th scope="col">Description</th> -->
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -77,7 +77,7 @@
 
                         <br>
                         <div class="form-group">
-                            <label>Image (400px * 500px) </label>
+                            <label>Image ( dimensions = width: 400px * height: 500px ) </label>
                             <input type="file" class="form-control-file" name="image" required>
                         </div>  
                     </div>
@@ -136,7 +136,7 @@
                     {data: 'name', name: 'name'},
                     {data: 'job_role', name: 'job_role'},
                     {data: 'jobgroup_name', name: 'jobgroup_name'},
-                    {data: 'description', name: 'description'},
+                    // {data: 'description', name: 'description'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

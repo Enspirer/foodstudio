@@ -4,6 +4,24 @@
 
 @section('content')
 
+
+@if ( session()->has('message') )
+
+<div class="container-fluid" style="background-color: black">  
+    <div class="container-fluid jumbotron text-center mt-30">
+      <h1 class="display-3 mt-20">Thank You!</h1><br>
+      <p class="lead"><h3>We received your application. We appreciate you taking the time to apply.<br><br>  If you are selected for an interview, our human resources department will be in contact with you.</h3></p>
+    
+      <hr>
+      
+      <p class="lead mb-20">
+        <a class="btn btn-primary btn-md" href="{{url('careers')}}" role="button">Go Back to Careers Page</a>
+      </p>
+    </div>
+  </div>
+
+@else
+
 <div class="page-banner">
   <div class="row">
     <div class="container-fluid">
@@ -291,10 +309,6 @@
 <!-------------------------------------------------- model general end---------------------------------->
 
 
-
-
-
-
 <script>
   function opentenantpopuomodal(val) {
     // Prevent the # from being at the url
@@ -308,8 +322,6 @@
 
 
 
-
-
   function opentenantpopuomodalone(val) {
     // Prevent the # from being at the url
     event.preventDefault();
@@ -320,5 +332,7 @@
     $('#exampleModalone').modal('show');
   }
 </script>
+
+@endif
 
 @endsection

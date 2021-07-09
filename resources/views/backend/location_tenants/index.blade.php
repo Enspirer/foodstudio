@@ -22,11 +22,11 @@
                             <tr>
                                 <th scope="col">#ID</th>
                                 <th scope="col">Branch Name</th>
-                                <th scope="col">Address</th>
+                                <!-- <th scope="col">Address</th> -->
                                 <th scope="col">Email</th>
                                 <th scope="col">Number</th>
                                 <th scope="col">Order</th>
-                                <th scope="col">Description</th>
+                                <!-- <th scope="col">Description</th> -->
                                 <th scope="col">Option</th>
                             </tr>
                         </thead>
@@ -90,7 +90,7 @@
                             <input type="file" class="form-control-file" name="image" required>
                         </div>  
                         <div class="form-group">
-                            <label>Image ( 757px * 756px )</label>
+                            <label>Image ( dimensions = width: 757px * height: 756px )</label>
                             <input type="file" class="form-control-file" name="image2" required>
                         </div> 
                     </div>
@@ -146,11 +146,11 @@
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
-                    {data: 'address', name: 'address'},
+                    // {data: 'address', name: 'address'},
                     {data: 'email', name: 'email'},
                     {data: 'contact_number', name: 'contact_number'},
                     {data: 'order', name: 'order'},
-                    {data: 'description', name: 'description'},
+                    // {data: 'description', name: 'description'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

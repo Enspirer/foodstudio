@@ -52,7 +52,11 @@ class ContactUsController extends Controller
 
         \Mail::to('nihsaan.enspirer@gmail.com')->send(new ContactUsMail($details));
 
-        return back()->withFlashSuccess('Added Successfully');    
+        
+        session()->flash('message','Thanks!');
+
+
+        return back();    
     }
 
 

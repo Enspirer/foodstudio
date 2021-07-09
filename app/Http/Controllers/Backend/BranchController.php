@@ -22,6 +22,10 @@ class BranchController extends Controller
     {        
         // dd($request);
 
+        $this->validate($request, [
+            'image2'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=757,height=756'
+        ]);
+
         if($request->file('image'))
         {
             $preview_fileName = time().'_'.rand(1000,10000).'.'.$request->image->getClientOriginalExtension();
@@ -77,6 +81,10 @@ class BranchController extends Controller
     public function update(Request $request)
     {        
         // dd($request);
+
+        $this->validate($request, [
+            'image2'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=757,height=756'
+        ]);
 
         if($request->file('image'))
         {

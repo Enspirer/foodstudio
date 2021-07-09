@@ -4,6 +4,26 @@
 
 @section('content')
 
+
+
+@if ( session()->has('message') )
+
+<div class="container-fluid" style="background-color: black">  
+    <div class="container-fluid jumbotron text-center mt-30">
+      <h1 class="display-3 mt-20">Thank You!</h1><br>
+      <p class="lead"><h3>We appreciate you contacting us. One of our member will get back in touch with you soon!<br><br> Have a great day!</h3></p>
+    
+      <hr>
+      
+      <p class="lead mb-20">
+        <a class="btn btn-primary btn-md" href="{{url('contact-us')}}" role="button">Go Back to Contact Us Page</a>
+      </p>
+    </div>
+  </div>
+
+@else
+  
+
 <div class="page-banner whatson-container" style="background-image: url(https://www.foodstudio.lk/img/contact-us.jpg) !important; background-position: top !important;">
   <div class="row">
     <div class="container-fluid">
@@ -85,12 +105,15 @@
 
 </div>
 
+           
+
 <div class="row contact-page-container m-0 mt-10">
     <div class="col-md-6 col-sm-6 col-xs-12">
    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.101478063854!2d79.8549729!3d6.9174374!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2fe163fb84b07bd7!2sFood%20Studio%20-%20Colombo%20City%20Centre!5e0!3m2!1sen!2slk!4v1610969969785!5m2!1sen!2slk" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </div>
     
-    
+            
+
         <div class="col-md-6 col-sm-6 col-xs-12">
       <div class="contact-form-panel text-center">
         <h4 class="underline" style="margin-left:15px">Contact Us</h4>
@@ -130,9 +153,13 @@
       </div>
     </div>
     
-    
-    
-
+     
   </div>
+  
+@endif
+
+ 
+
+
 
 @endsection

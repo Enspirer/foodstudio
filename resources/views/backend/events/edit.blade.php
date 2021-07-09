@@ -36,7 +36,7 @@
                         <textarea class="form-control" name="description" rows="4" required>{{ $events->description }}</textarea>
                         <br>
                         <div class="form-group">
-                            <label>Image</label>
+                            <label>Image ( dimensions = width: 644px * height: 561px )</label>
                             <input type="file" class="form-control-file" name="image">
                             <br>
                             <img src="{{url('files/events/',$events->image)}}" style="width: 20%;" alt="" >
