@@ -69,7 +69,7 @@ class BranchController extends Controller
                        
                         $button = '<a href="'.route('admin.tenant.cuisine_index',$data->id).'" name="cuisine" id="'.$data->id.'" class="cuisine btn btn-warning btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-utensils"></i> Tenants</a>';
                         $button2 = '<a href="'.route('admin.tenant.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
-                        $button3 = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>';
+                        $button3 = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button . $button2 . $button3;
                     })
                     ->rawColumns(['action'])
@@ -194,7 +194,7 @@ class BranchController extends Controller
                         return $img;
                     })
                     ->addColumn('action', function($data){                       
-                        $button = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>';
+                        $button = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button;
                     })
                     ->rawColumns(['action','photo'])

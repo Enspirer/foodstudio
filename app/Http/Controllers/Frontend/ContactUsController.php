@@ -25,7 +25,7 @@ class ContactUsController extends Controller
     public function store(Request $request)
     {        
         // dd($request);
-                
+   
         $contactus = new ContactUs;
 
         // dd($contactus->id);

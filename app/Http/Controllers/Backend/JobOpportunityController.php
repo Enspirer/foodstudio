@@ -42,7 +42,7 @@ class JobOpportunityController extends Controller
             return DataTables::of($data)
                     ->addColumn('action', function($data){
                         $button = '<a href="'.route('admin.careers.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
-                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button;
                     })
                     ->rawColumns(['action'])
@@ -103,7 +103,7 @@ class JobOpportunityController extends Controller
                     ->addColumn('action', function($data){
                         
                         $button = '<a href="'.url('files/cv',$data->cv).'" name="download" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px" target="_blank"><i class="fas fa-download"></i> Download </a>';
-                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button;
                     })
 

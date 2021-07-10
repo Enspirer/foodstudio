@@ -22,7 +22,9 @@ class TenantController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'upload'  => 'mimes:pdf|max:40000'
+            'upload'  => 'mimes:pdf|max:40000',
+            'name' => 'max:35',
+            'description' => 'max:760'
         ]);
 
         if($request->file('image1'))
@@ -85,7 +87,7 @@ class TenantController extends Controller
                     ->addColumn('action', function($data){
                        
                         $button = '<a href="'.route('admin.tenants.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
-                        $button2 = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>';
+                        $button2 = '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button . $button2;
                     })
                     ->rawColumns(['action'])
@@ -108,7 +110,9 @@ class TenantController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'upload'  => 'mimes:pdf|max:40000'
+            'upload'  => 'mimes:pdf|max:40000',
+            'name' => 'max:35',
+            'description' => 'max:760'
         ]);
 
         if($request->file('image1'))

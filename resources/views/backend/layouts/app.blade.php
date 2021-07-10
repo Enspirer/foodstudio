@@ -16,6 +16,8 @@
     <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
     <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
+    
+
     @yield('meta')
 
     {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
@@ -27,6 +29,7 @@
     {{ style(mix('css/backend.css')) }}
 
     @stack('after-styles')
+    
 </head>
 
 {{--

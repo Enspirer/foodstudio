@@ -96,7 +96,7 @@
           <a href="{!!$cfeatured->link!!}" target="_blank">
             <div class="news-image-box">
               <img src="{{url('files/corporate_news/',$cfeatured->image)}}" width="100%" height="500px">
-              <div class="highlight-news">Featured Story</div>
+              <div class="highlight-news">Featured Story</div>--&gt;
             </div>
             <div class="news-details-box">
               <h3>{!!$cfeatured->title!!}</h3>

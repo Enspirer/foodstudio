@@ -119,6 +119,8 @@
         <h4 class="underline" style="margin-left:15px">Contact Us</h4>
         <form action="{{route('frontend.contactus.store')}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
+
+        
           <div class="form-group ">
             <div class="row m-0">
               <div class="col-sm-6 mt-10">
@@ -148,6 +150,16 @@
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+            <div class="row m-0">
+              <div class="col-sm-12 mt-10">
+                <!-- <div class="g-recaptcha" data-sitekey="6LfNb4gbAAAAABOAb9uTAnQTFGvTMy4zLFCDLvLI"></div> -->
+                <div id="html_element"></div>
+              </div>
+            </div>
+          </div>
+
           <input type="submit" class="btn btn-contact">
         </form>
       </div>
@@ -155,6 +167,14 @@
     
      
   </div>
+
+  <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfNb4gbAAAAABOAb9uTAnQTFGvTMy4zLFCDLvLI'
+        });
+      };
+    </script>
   
 @endif
 

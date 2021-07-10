@@ -21,7 +21,9 @@ class CorporateNewsController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1000,height=869'
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1000,height=869',
+            'title' => 'max:68',
+            'description' => 'max:240'
         ]);
 
         if($request->file('image'))
@@ -66,7 +68,7 @@ class CorporateNewsController extends Controller
             return DataTables::of($data)
                     ->addColumn('action', function($data){
                         $button = '<a href="'.route('admin.corporatenews.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
-                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm">Delete</button>';
+                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button;
                     })
                     ->addColumn('image', function($data){
@@ -94,7 +96,9 @@ class CorporateNewsController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1000,height=869'
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1000,height=869',
+            'title' => 'max:68',
+            'description' => 'max:240'
         ]);
         
         if($request->file('image'))

@@ -49,8 +49,8 @@
                         <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status">        
-                                <option value="Pending">Pending</option>   
-                                <option value="Confirmed">Confirmed</option>  
+                                <option value="Pending" {{ $reservations->status == 'Pending' ? "selected" : "" }}>Pending</option>   
+                                <option value="Confirmed" {{ $reservations->status == 'Confirmed' ? "selected" : "" }}>Confirmed</option>  
                                 <!-- <option value="Cancelled">Cancelled</option> -->
                             </select>                            
                         </div> 

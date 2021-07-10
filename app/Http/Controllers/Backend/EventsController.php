@@ -21,7 +21,9 @@ class EventsController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=644,height=561'
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=644,height=561',
+            'des_title' => 'max:30',
+            'description' => 'max:330'
         ]);
 
         if($request->file('image'))
@@ -58,7 +60,7 @@ class EventsController extends Controller
                     ->addColumn('action', function($data){
                        
                         $button = '<a href="'.route('admin.events.edit',$data->id).'" name="edit" id="'.$data->id.'" class="edit btn btn-secondary btn-sm ml-3" style="margin-right: 10px"><i class="fas fa-edit"></i> Edit </a>';
-                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Delete</button>';
+                        $button .= '&nbsp;&nbsp;&nbsp;<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>';
                         return $button;
                     })
                     ->addColumn('image', function($data){
@@ -77,7 +79,9 @@ class EventsController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=644,height=561'
+            'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=644,height=561',
+            'des_title' => 'max:30',
+            'description' => 'max:330'
         ]);
 
        

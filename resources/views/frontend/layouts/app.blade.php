@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{{url('css/style.css')}}">
     <link rel="icon" type="image/png" href="{{url('img/logo-fs.png')}}" sizes="32x32"/>
 
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
