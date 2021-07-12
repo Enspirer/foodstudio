@@ -1,6 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
+@section('title', 'Contact Food Studio | Colombo City Centre | One Galle Face | 0761 414 242')
+@section('meta_description', 'For corporate inquiries, tenant requests and private events, get in touch with us on 0761 414 242
+or email us on info@foodstudio.lk')
 
 @section('content')
     <div class="row justify-content-center">

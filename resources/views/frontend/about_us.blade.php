@@ -1,6 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Unique, diverse and affordable dining experience in Sri Lanka | Food Studio')
+@section('meta_description', 'Corporate events and VIP gatherings at the most prestigious venues in Colombo. Shopping malls in
+Colombo Galle face One and Colombo City Centre')
 
 @section('content')
 

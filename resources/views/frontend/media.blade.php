@@ -1,6 +1,8 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Corporate news | Tenant news | social responsibility |Food Video | Food Studio')
+@section('meta_description', 'Latest events ate Food Studio, We fight food waste, World Food day, The story of the Chinese
+Dumplings at Food Studio, Colombo’s Best Food court experience')
 
 @section('content')
 

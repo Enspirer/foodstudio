@@ -1,6 +1,9 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Private Events | Corporate events | VIP Rooms at Food Studio')
+@section('meta_description', 'Book in advance to pre arrange ambiance or décor, customize your menu for VIP function.
+Fusion Cuisines at Food Studio | multi cuisine | Cocktail Bar Colombo')
+
 
 @section('content')
 

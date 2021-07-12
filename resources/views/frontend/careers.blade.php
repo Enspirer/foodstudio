@@ -1,6 +1,9 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Jobs at Food studio | Food courts in Colombo | Apply now')
+@section('meta_description', 'Join the exciting team of food lovers, Find a job in Colombo, Food experts, Food industry. Food
+studio at Colombo City centre and One Galle face')
+
 
 @section('content')
 

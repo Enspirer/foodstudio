@@ -1,6 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('title', 'Best Multi Cuisine Food Court with outdoor bar in Colombo |Food Studio')
+@section('meta_description', 'International cuisines: The Best Food court experience in Colombo. Endless choices of')
 
 @section('content')
 

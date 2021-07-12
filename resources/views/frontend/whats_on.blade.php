@@ -1,6 +1,11 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Eating challenges, Game nights, Quiz nights, Food Offers, Happy Hour deals')
+
+@section('meta_description', 'The venue to hangout with friends, exciting food challenges, cocktails at the roof top bar,
+Colombo city centre and One Galleface. gift card from Food Studio Now')
+
+
 
 @section('content')
 
