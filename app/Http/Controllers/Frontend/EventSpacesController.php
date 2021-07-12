@@ -45,7 +45,7 @@ class EventSpacesController extends Controller
             'title' => $request->title,
             'name' => $request->name,
             'email' => $request->email,
-            'text' => $request->text
+            'phone' => $request->phone
         ];
 
         \Mail::to('nihsaan.enspirer@gmail.com')->send(new ReservationMail($details));

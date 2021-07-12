@@ -33,6 +33,6 @@ class ReservationMail extends Mailable
     public function build()
     {
         
-        return $this->subject('Food Studio - Contact Us')->view('frontend.mail.contactus_mail');
+        return $this->subject('Food Studio - Reservation')->view('frontend.mail.reservation_mail');
     }
 }

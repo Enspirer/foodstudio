@@ -9,8 +9,11 @@
     <link rel="stylesheet" type="text/css" href="{{url('css/style.css')}}">
     <link rel="icon" type="image/png" href="{{url('img/logo-fs.png')}}" sizes="32x32"/>
 
+    <!--- reCAPTCHA start ----->
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>     
+    <!--- reCAPTCHA end ----->
+
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -36,10 +39,10 @@
 
         gtag('config', 'G-VQHDJLTY9Y');
     </script>
-    <link rel="stylesheet" type="text/css" href="css/aos.css">
+    <link rel="stylesheet" type="text/css" href="{{url('css/aos.css')}}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{url('css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url('css/owl.theme.default.min.css')}}">
     <!-- <script src="https://kit.fontawesome.com/274adbce03.js"></script> -->
 </head>
 <body>
@@ -134,12 +137,12 @@
 <script type="text/javascript" src="{{url('js/aos.js')}}"></script>
 <script type="text/javascript" src="{{url('js/script.js')}}"></script>
 
-<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="{{url('css/owl.carousel.min.css')}}">
 
 <!--<script type="text/javascript" src="https://www.foodstudio.lk/js/jquery.easing.min.js"></script>-->
 <!--<script type="text/javascript" src="https://www.foodstudio.lk/js/jslide.js"></script>-->
 
-<script type="text/javascript" src="https://www.foodstudio.lk/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="{{url('js/owl.carousel.min.js')}}"></script>
 <!-- <script type="text/javascript" src="js/owl.carousel.min.js"></script> -->
 
 <script type="text/javascript">
