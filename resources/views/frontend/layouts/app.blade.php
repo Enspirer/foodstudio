@@ -10,9 +10,7 @@
     <link rel="icon" type="image/png" href="{{url('img/logo-fs.png')}}" sizes="32x32"/>
 
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer>
-    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -128,9 +126,16 @@
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="https://www.foodstudio.lk/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="https://www.foodstudio.lk/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://www.foodstudio.lk/js/aos.js"></script>
-<script type="text/javascript" src="https://www.foodstudio.lk/js/script.js"></script>
+<script type="text/javascript" src="https://www.foodstudio.lk/js/script.js"></script> -->
+
+<script type="text/javascript" src="{{url('js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{url('js/aos.js')}}"></script>
+<script type="text/javascript" src="{{url('js/script.js')}}"></script>
+
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+
 <!--<script type="text/javascript" src="https://www.foodstudio.lk/js/jquery.easing.min.js"></script>-->
 <!--<script type="text/javascript" src="https://www.foodstudio.lk/js/jslide.js"></script>-->
 

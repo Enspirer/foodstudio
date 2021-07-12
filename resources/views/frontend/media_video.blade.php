@@ -52,6 +52,10 @@
       
       
       <input type="hidden" value="{{ preg_match("#(?<=v=)[a-zA-Z0-9-]+(?=&)|(?<=v\/)[^&\n]+|(?<=v=)[^&\n]+|(?<=youtu.be/)[^&\n]+#", $defaultvideo->link, $defaultmatch) }}" />
+       
+        <div id="ytb" youtubeid="{{$defaultmatch[0]}}">
+
+        </div>
 
         <div class="col-sm-9 p-0">
           <div class="video-content-box p-30 pt-0">

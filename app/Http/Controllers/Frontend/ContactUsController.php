@@ -25,6 +25,14 @@ class ContactUsController extends Controller
     public function store(Request $request)
     {        
         // dd($request);
+
+        if($request->get('g-recaptcha-response') == null){
+            return back()->with('error', 'Error!.....Please fill reCAPTCHA!');
+        }
+        // $this->validate($request, [
+            
+        //     'html_element' => 'required|captcha',
+        // ]);
    
         $contactus = new ContactUs;
 

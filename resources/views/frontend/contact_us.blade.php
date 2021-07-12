@@ -160,6 +160,18 @@
             </div>
           </div>
 
+          <div class="form-group">
+            <div class="row m-0">
+              
+              @if(session()->has('error'))
+                  <div class="alert alert-danger">
+                      {{ session()->get('error') }}
+                  </div>
+              @endif
+                                      
+            </div>
+          </div>
+
           <input type="submit" class="btn btn-contact">
         </form>
       </div>

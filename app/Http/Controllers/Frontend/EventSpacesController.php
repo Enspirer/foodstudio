@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Reservations;
 use DB;
+use Mail;  
+use \App\Mail\ReservationMail;
 
 class EventSpacesController extends Controller
 {
@@ -36,6 +38,17 @@ class EventSpacesController extends Controller
         // dd($reservation);
 
         $reservation->save();
+
+        $details = [
+            'date' => $request->date,
+            'time' => $request->time,
+            'title' => $request->title,
+            'name' => $request->name,
+            'email' => $request->email,
+            'text' => $request->text
+        ];
+
+        \Mail::to('nihsaan.enspirer@gmail.com')->send(new ReservationMail($details));
 
         session()->flash('message','Thanks!');
 
