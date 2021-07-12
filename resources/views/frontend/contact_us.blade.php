@@ -24,7 +24,7 @@
 @else
   
 
-<div class="page-banner whatson-container" style="background-image: url(https://www.foodstudio.lk/img/contact-us.jpg) !important; background-position: top !important;">
+<div class="page-banner whatson-container" style="background-image: url('img/contact-us.jpg') !important; background-position: top !important;">
   <div class="row">
     <div class="container-fluid">
       <div class="banner-img-div " style="overflow: hidden;">

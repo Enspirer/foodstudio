@@ -26,6 +26,10 @@ class CareersController extends Controller
         // $this->validate($request, [
         //     'cv_upload'  => 'mimes:pdf,doc|max:50000'
         // ]);
+
+        if($request->get('g-recaptcha-response') == null){
+            return back()->with('error', 'Error!.....Please fill reCAPTCHA!');
+        }
         
         if($request->file('cv_upload'))
         {
@@ -61,6 +65,7 @@ class CareersController extends Controller
         //     'cv_upload'  => 'mimes:pdf,doc|max:50000'
         // ]);
 
+        
         if($request->file('cv_upload'))
         {
             $preview_fileName1 = time().'_'.rand(1000,10000).'.'.$request->cv_upload->getClientOriginalExtension();

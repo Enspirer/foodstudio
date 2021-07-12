@@ -6,12 +6,12 @@
 
 <div id="container">
 <div id="slideshow">
-  <img src="https://www.foodstudio.lk/img/about_slide/About us banner-01.jpg" style="opacity: 0;">
-  <img src="https://www.foodstudio.lk/img/about_slide/About us banner-02.jpg" style="opacity: 0;">
+  <img src="{{url('img/about_slide/About us banner-01.jpg')}}" style="opacity: 0;">
+  <img src="{{url('img/about_slide/About us banner-02.jpg')}}" style="opacity: 0;">
   <!--<img src="https://www.foodstudio.lk/img/about_slide/About us banner-03.jpg">-->
-    <img src="https://www.foodstudio.lk/img/about_slide/About us banner-04.jpg" style="opacity: 0;">
-      <img src="https://www.foodstudio.lk/img/about_slide/About us banner-05.jpg" style="opacity: 0;">
-            <img src="https://www.foodstudio.lk/img/about_slide/About us banner-06.jpg" style="opacity: 0;">
+    <img src="{{url('img/about_slide/About us banner-04.jpg')}}" style="opacity: 0;">
+      <img src="{{url('img/about_slide/About us banner-05.jpg')}}" style="opacity: 0;">
+            <img src="{{url('img/about_slide/About us banner-06.jpg')}}" style="opacity: 0;">
 </div>
 
 </div>

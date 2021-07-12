@@ -7,7 +7,7 @@
 <div class="landing-body home-main-baner ">
   <div class="row  landing-sec-container m-0">
     <div class="col-sm-6 p-0 window-height landing-sec landing-sec-1 ccc-box" style="height: 476px;">
-      <a href="https://www.foodstudio.lk/tenant-and-cuisines#ccc">
+      <a href="{{url('tenant-and-cuisines/1')}}">
         <img src="img/CCC.png">
         <div class="desc-container">
           <h1 class="text-center">Colombo <br> City Center</h1>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="col-sm-6 p-0 window-height landing-sec landing-sec-1 ogf-box" style="height: 476px;">
-      <a href="https://www.foodstudio.lk/tenant-and-cuisines#ogf">
+      <a href="{{url('tenant-and-cuisines/2')}}">
         <img src="img/OGC.png">
         <div class="desc-container">
           <h1 class="text-center">One <br> Galle Face</h1>

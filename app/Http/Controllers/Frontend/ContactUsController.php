@@ -28,11 +28,7 @@ class ContactUsController extends Controller
 
         if($request->get('g-recaptcha-response') == null){
             return back()->with('error', 'Error!.....Please fill reCAPTCHA!');
-        }
-        // $this->validate($request, [
-            
-        //     'html_element' => 'required|captcha',
-        // ]);
+        }        
    
         $contactus = new ContactUs;
 

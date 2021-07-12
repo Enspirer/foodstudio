@@ -121,6 +121,24 @@
                   </div>
                 </div>
               </div>
+
+              <div class="form-group">
+                <div class="row m-0">
+                  <div class="col-sm-12 mt-10">
+                  <div id="html_element"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row m-0">
+                @if(session()->has('error'))
+                  <div class="alert alert-danger">
+                      {{ session()->get('error') }}
+                  </div>
+                @endif
+                </div>
+              </div>
+
               <div class="form-group">
                 <div class="row m-0">
                   <div class="col-sm-12 mt-10">
@@ -135,6 +153,15 @@
     </div>
   </div>
 </div>
+
+
+<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LfNb4gbAAAAABOAb9uTAnQTFGvTMy4zLFCDLvLI'
+        });
+      };
+    </script>
 
 
 @endif

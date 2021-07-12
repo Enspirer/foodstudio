@@ -26,7 +26,7 @@
   <div class="row">
     <div class="container-fluid">
       <div class="banner-img-div" style="overflow: hidden;">
-        <img src="https://www.foodstudio.lk/img/about_us.png" width="100%">
+        <img src="{{url('img/about_us.png')}}" width="100%">
       </div>
     </div>
   </div>
@@ -64,12 +64,23 @@
               <a href="#" class="btn btn-learn-more pull-right" style="background-color: #DCDCDC" onclick="opentenantpopuomodalone()">Send your CV</a>
             </div>
             <br><br>
+
+                  <div class="form-group">
+                    <div class="row m-0">
+                      <br>
+                      @if(session()->has('error'))
+                          <div class="alert alert-danger">
+                              {{ session()->get('error') }}
+                          </div>
+                      @endif
+                                              
+                    </div>
+                  </div>
           </div>
 
 
       <h3>Current Vacancies</h3><br>
-
-
+               
       @foreach($jobs as $key => $job)
 
       <div class="panel-group careers-panel" id="accordion" role="tablist" aria-multiselectable="true">
@@ -218,6 +229,8 @@
                       <textarea class="form-control" name="omsg" placeholder="Message" required></textarea>
                     </div>
                   </div>
+
+                 
                 </div>
             </div>
             <div class="modal-footer">
@@ -292,6 +305,16 @@
                       <textarea class="form-control" name="gmsg" placeholder="Message" required></textarea>
                     </div>
                   </div>
+
+                  <div class="form-group">
+                    <div class="row m-0">
+                      <div class="col-sm-12 mt-10">
+                        <div id="html_element"></div>
+                      </div>
+                    </div>
+                  </div>                  
+
+
                 </div>
             </div>
             <div class="modal-footer">
@@ -332,6 +355,16 @@
     $('#exampleModalone').modal('show');
   }
 </script>
+
+
+<script type="text/javascript">
+  var onloadCallback = function() {
+    grecaptcha.render('html_element', {
+      'sitekey' : '6LfNb4gbAAAAABOAb9uTAnQTFGvTMy4zLFCDLvLI'
+    });
+  };
+</script>
+
 
 @endif
 

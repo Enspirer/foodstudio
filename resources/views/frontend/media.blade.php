@@ -8,7 +8,7 @@
   <div class="row" style="height:100%">
 	  <div class="container-fluid" style="height:100%">
       <div class="banner-img-div" style="overflow: hidden;height:100%">
-        <img src="https://www.foodstudio.lk/img/meals_Mains.png" width="100%" style="height:100%">
+        <img src="{{url('img/meals_Mains.png')}}" width="100%" style="height:100%">
       </div>
       <div class="scroll-next-indicator">
         <div class="indicator-container">
