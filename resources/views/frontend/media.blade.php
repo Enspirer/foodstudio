@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Corporate news | Tenant news | social responsibility |Food Video | Food Studio')
 
 @section('content')
 
