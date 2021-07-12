@@ -139,6 +139,9 @@ $(function(){
     $('#youtubeplayer iframe').attr('src',youtubeUrl);    
   });  
 
+//   $( document ).ready(function() {
+//     alert('aletr');
+//     });
   
 //   $("#youtubevideotabs").mCustomScrollbar({
 //     scrollButtons:{
