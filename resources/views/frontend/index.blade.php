@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Best Multi Cuisine Food Court with outdoor bar in Colombo |Food Studio')
 
 @section('content')
 
