@@ -1,6 +1,12 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Order your Food Online from Food Studio | WhatsApp on 0761 414 242')
+
+@section('meta_description', 'Your favourite food now delivered fast with Uber eats and Pickme Food. Variety of Specialties,
+Delivered to you doorstep by Food studio, WhatsApp on 0761 414 242')
+
+
+
 
 @section('content')
 

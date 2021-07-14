@@ -1,6 +1,10 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('navs.general.home'))
+@section('title', 'Indonesian, Thai, Indian, Chinese restaurants at Colombo City centre and One Galle Face')
+
+@section('meta_description', 'Latest events ate Food Studio, We fight food waste, World Food day, The story of the Chinese
+Dumplings at Food Studio, Colombo’s Best Food court experience')
+
 
 @section('content')
 
