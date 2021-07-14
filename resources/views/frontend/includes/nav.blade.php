@@ -50,9 +50,8 @@
                                     <a href="{{url('event-spaces')}}">
                                         Event Spaces              </a>
                                 </li>
-                                <li class="{{ Request::segment(1)=='media' ? 'active' :null || 
-                                Request::segment(1)=='media-tenant' ? 'active' :null || Request::segment(1)=='media-video' ? 'active' :null ||
-                                Request::segment(1)=='media-social' ? 'active' :null }}">
+                                <li class="{{ Request::segment(1)=='media' ? 'active' : (Request::segment(1)=='media-tenant' ? 'active' :(Request::segment(1)=='media-video' ? 'active' :(Request::segment(1)=='media-social' ? 'active' :null) ) )   }}">    
+                                 
                                     <a href="{{url('media')}}">
                                         Media              </a>
                                 </li>
