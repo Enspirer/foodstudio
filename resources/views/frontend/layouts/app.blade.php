@@ -8,6 +8,10 @@
     <meta name="description" content="@yield('meta_description')">
     <link rel="stylesheet" type="text/css" href="{{url('css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('css/style.css')}}">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+
     <link rel="icon" type="image/png" href="{{url('img/logo-fs.png')}}" sizes="32x32"/>
 
     <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
@@ -42,6 +46,56 @@
     <link rel="stylesheet" href="{{url('css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{url('css/owl.theme.default.min.css')}}">
     <!-- <script src="https://kit.fontawesome.com/274adbce03.js"></script> -->
+
+    <style>
+      
+      .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper-container {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-button-next{
+        color:white;
+      }
+      .swiper-button-prev{
+        color:white;
+      }
+
+    </style>
+
+
 </head>
 <body>
 
@@ -222,4 +276,25 @@ function fadeInOut( element, fadeIn, visible, fadeOut, onComplete){
     $("#close-btn").click(function () {
        $('#exampleModalCenter').modal('hide');
     });
+</script>
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 </script>

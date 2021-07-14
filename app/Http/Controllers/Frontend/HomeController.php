@@ -20,13 +20,15 @@ class HomeController extends Controller
     {
         $feature = DB::table('feature_events')->where('home_publish', '=', 'Enabled')->get();
         $images = DB::table('homes')->orderBy('order', 'DESC')->get();
+        $branches = DB::table('branches')->orderBy('order', 'ASC')->get();
 
         // dd($images);
         // dd($feature);
 
         return view('frontend.index',[
             'feature' => $feature,
-            'images' => $images
+            'images' => $images,
+            'branches' => $branches
         ]);
     }
 }

@@ -90,8 +90,8 @@
                             <input type="file" class="form-control-file" name="image" required>
                         </div>  
                         <div class="form-group">
-                            <label>Image ( dimensions = width: 757px * height: 756px )</label>
-                            <input type="file" class="form-control-file" name="image2" required>
+                            <label>Image ( dimensions = width: 1280px * height: 800px )</label>
+                            <input type="file" class="form-control-file" name="background_image" required>
                         </div> 
                     </div>
                     <div class="modal-footer">

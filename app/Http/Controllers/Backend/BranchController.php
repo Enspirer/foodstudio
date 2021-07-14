@@ -23,7 +23,7 @@ class BranchController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'image2'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=757,height=756'
+            'background_image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1280,height=800'
         ]);
 
         if($request->file('image'))
@@ -34,10 +34,10 @@ class BranchController extends Controller
         }else{
             $image_url = null;
         } 
-        if($request->file('image2'))
+        if($request->file('background_image'))
         {
-            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
-            $fullURLsPreviewFile2 = $request->image2->move(public_path('files/branch_logo'), $preview_fileName2);
+            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->background_image->getClientOriginalExtension();
+            $fullURLsPreviewFile2 = $request->background_image->move(public_path('files/branch_logo'), $preview_fileName2);
             $image_url2 = $preview_fileName2;
         }else{
             $image_url2 = null;
@@ -83,7 +83,7 @@ class BranchController extends Controller
         // dd($request);
 
         $this->validate($request, [
-            'image2'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=757,height=756'
+            'background_image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=1280,height=800'
         ]);
 
         if($request->file('image'))
@@ -95,10 +95,10 @@ class BranchController extends Controller
             $detail = Branch::where('id',$request->hidden_id)->first();
             $image_url = $detail->logo;            
         }    
-        if($request->file('image2'))
+        if($request->file('background_image'))
         {
-            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->image2->getClientOriginalExtension();
-            $fullURLsPreviewFile2 = $request->image2->move(public_path('files/branch_logo'), $preview_fileName2);
+            $preview_fileName2 = time().'_'.rand(1000,10000).'.'.$request->background_image->getClientOriginalExtension();
+            $fullURLsPreviewFile2 = $request->background_image->move(public_path('files/branch_logo'), $preview_fileName2);
             $image_url2 = $preview_fileName2;
         }else{            
             $detail = Branch::where('id',$request->hidden_id)->first();
