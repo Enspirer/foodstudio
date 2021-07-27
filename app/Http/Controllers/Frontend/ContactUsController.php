@@ -54,7 +54,7 @@ class ContactUsController extends Controller
             'message' => $request->message
         ];
 
-        \Mail::to('nihsaan.enspirer@gmail.com')->send(new ContactUsMail($details));
+        \Mail::to('info@foodstudio.lk')->send(new ContactUsMail($details));
 
         
         session()->flash('message','Thanks!');

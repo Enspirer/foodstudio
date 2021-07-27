@@ -52,7 +52,7 @@ class EventSpacesController extends Controller
             'phone' => $request->phone
         ];
 
-        \Mail::to('nihsaan.enspirer@gmail.com')->send(new ReservationMail($details));
+        \Mail::to('info@foodstudio.lk')->send(new ReservationMail($details));
 
         session()->flash('message','Thanks!');
 
