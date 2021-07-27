@@ -61,6 +61,8 @@ studio at Colombo City centre and One Galle face')
         <p>We are always open to hear from people passionate about bringing up-and-coming brands to the fore! If you consider yourself an expert on food, that’s a bonus. Apply to any of the vacancies listed below to begin your venture into Sri Lanka’s growing food experience industry.</p>
       </div>
 
+      <!-- <br> -->
+      <a href="#" class="btn btn-learn-more pull-left" style="background-color: #DCDCDC; " >Learn more about Food Studio</a>
 
       <div id="" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
             <div class="">

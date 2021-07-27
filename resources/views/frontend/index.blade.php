@@ -5,27 +5,55 @@
 
 @section('content')
 
- 
-    <div class="swiper-container mySwiper">
-      <div class="swiper-wrapper">
+<div class="landing-body home-main-baner ">
+  <div class="row  landing-sec-container m-0">
+    <div class="col-sm-6 p-0 window-height landing-sec landing-sec-1 ccc-box" style="height: 476px;">
+      <a href="{{url('tenant-and-cuisines',1)}}">
+        <img src="img/CCC.png">
+        <div class="desc-container">
+          <h1 class="text-center">Colombo <br> City Center</h1>
+          <div class="scroll-next-indicator">
+            <div class="indicator-container">
+              <div class="indicator-arrow top">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
 
-      @foreach($branches as $key => $branch)
-        
-        <div class="swiper-slide" style="background-image: url('{{url('files/branch_logo',$branch->image)}}'); background-size: cover;">
-        
-        <h1 style="color: white; font-size: 60px; text-transform: uppercase;"><b>{!!$branch->name!!}</b></h1>
-         
-       
+              <div class="indicator-arrow bottom">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
         </div>
-        
-      @endforeach
-        
-      </div>
-      <div class="swiper-button-next" style="margin-right:30px;"></div>
-      <div class="swiper-button-prev" style="margin-left:30px"></div>
-      <div class="swiper-pagination"></div>
+      </a>
     </div>
 
+    <div class="col-sm-6 p-0 window-height landing-sec landing-sec-1 ogf-box" style="height: 476px;">
+      <a href="{{url('tenant-and-cuisines',2)}}">
+        <img src="img/OGC.png">
+        <div class="desc-container">
+          <h1 class="text-center">One <br> Galle Face</h1>
+          <div class="scroll-next-indicator">
+            <div class="indicator-container">
+              <div class="indicator-arrow top">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+
+              <div class="indicator-arrow bottom">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
 
     <div class="scroll-next-indicator">
       <div class="indicator-container">
@@ -137,14 +165,14 @@
 
 <!-- Model -->
 
-<!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display: none;">
   <div class="modal-dialog modal-dialog-centered " role="document">
    <img src="{{url('img/Coming Soon.png')}}" style="width: 100%;">
   <a> <div style="    position: absolute;
     top: 25px;
     right: 28px;"><i id="close-btn" style="color:#fff;font-size:20px" class="fa fa-times"></i></div></a>
   </div>
-</div> -->
+</div>
 
 
 

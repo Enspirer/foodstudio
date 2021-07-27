@@ -12,7 +12,7 @@
                 <div class="card-header">
                     <strong>Location&nbsp;</strong>
 
-                    <div class="btn btn-primary pull-right ml-3" data-toggle="modal" data-target="#exampleModal">Add New</div>
+                    <!-- <div class="btn btn-primary pull-right ml-3" data-toggle="modal" data-target="#exampleModal">Add New</div> -->
                    
                 </div><!--card-header-->
 
