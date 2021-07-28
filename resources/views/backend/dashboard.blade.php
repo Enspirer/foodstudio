@@ -140,7 +140,92 @@
     </div>
 
 
+    <div class="modal fade" id="overlay">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+      <h4 class="modal-title pull-left">Instructions for Limitations</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        
+      </div>
+      <div class="modal-body">
 
+        <h5 class="mb-3">Home Page->About Us</h5>
+        <p>Image ( dimensions = width: 540px * height: 540px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+        <hr>
+        <h5 class="mb-3">About Us->Team</h5>
+        <p>Image ( dimensions = width: 400px * height: 500px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+        <hr>
+        <h5 class="mb-3">Tenants and Cuisine->Tenants</h5>
+        <p>Upload Menu ( Size = Maximum size should be 40MB )</p>
+        <p>Upload Menu ( Type = pdf )</p>
+        <br>
+        <p>Name ( Length = Maximum Characters should be 35 )</p>
+        <p>Description ( Length = Maximum Characters should be 760 )</p>
+        <hr>
+        <h5 class="mb-3">What's On->Promotions</h5>
+        <p>Image ( dimensions = width: 366px * height: 548px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+        <hr>
+        <h5 class="mb-3">What's On->Vouchers</h5>
+        <p>Image ( dimensions = width: 400px * height: 364px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+        <hr>
+        <h5 class="mb-3">Event Spaces->Events</h5>
+        <p>Image ( dimensions = width: 644px * height: 561px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+        <br>
+        <p>Description Title ( Length = Maximum Characters should be 30 )</p>
+        <p>Description ( Length = Maximum Characters should be 330 )</p>
+        <hr>
+        <h5 class="mb-3">Media->Corporate News</h5>
+        <p>Image ( dimensions = width: 1000px * height: 869px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+        <br>
+        <p>Title ( Length = Maximum Characters should be 68 )</p>
+        <p>Description ( Length = Maximum Characters should be 240 )</p>
+        <hr>
+        <h5 class="mb-3">Media->Tenants News</h5>
+        <p>Image ( dimensions = width: 1000px * height: 869px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+        <hr>
+        <h5 class="mb-3">Media->Social Responsibility</h5>
+        <p>Image ( dimensions = width: 1610px * height: 2048px )</p>
+        <p>Image ( Size = Maximum size should be 25MB )</p>
+        <p>Image ( Type = jpeg,png,jpg )</p>
+
+
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+$(window).on('load', function() {
+        $('#overlay').modal('show');
+    });
+$("#close-btn").click(function () {
+       $('#overlay').modal('hide');
+});
+
+</script> 
 
 
 

@@ -30,7 +30,7 @@
                         </div> 
                         <div class="form-group">
                             <label>Description Title</label>
-                            <input type="text" class="form-control" name="des_title" value="{{ $events->description_title }}" required>
+                            <input type="text" class="form-control" name="description_title" value="{{ $events->description_title }}" required>
                         </div>                                          
                         <label>Description</label>
                         <textarea class="form-control" name="description" rows="4" required>{{ $events->description }}</textarea>

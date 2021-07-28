@@ -22,7 +22,7 @@ class EventsController extends Controller
 
         $this->validate($request, [
             'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=644,height=561',
-            'des_title' => 'max:30',
+            'description_title' => 'max:30',
             'description' => 'max:330'
         ]);
 
@@ -39,7 +39,7 @@ class EventsController extends Controller
 
         $addevents->title=$request->title;
         $addevents->title_html=$request->html;
-        $addevents->description_title=$request->des_title;
+        $addevents->description_title=$request->description_title;
         $addevents->description=$request->description;
         $addevents->order=$request->order;
         $addevents->status=$request->status;
@@ -80,7 +80,7 @@ class EventsController extends Controller
 
         $this->validate($request, [
             'image'  => 'mimes:jpeg,png,jpg|max:25000|dimensions:width=644,height=561',
-            'des_title' => 'max:30',
+            'description_title' => 'max:30',
             'description' => 'max:330'
         ]);
 
@@ -99,7 +99,7 @@ class EventsController extends Controller
 
         $updateevents->title=$request->title;
         $updateevents->title_html=$request->html;
-        $updateevents->description_title=$request->des_title;
+        $updateevents->description_title=$request->description_title;
         $updateevents->description=$request->description;
         $updateevents->order=$request->order;
         $updateevents->status=$request->status;
